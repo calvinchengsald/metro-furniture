@@ -26,3 +26,24 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.background{
+  background-color: #305269;
+}
+
+.content{
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.heading1{
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3em;
+}
+
+.img-align{
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+}
