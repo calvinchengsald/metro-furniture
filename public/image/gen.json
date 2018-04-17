@@ -1,0 +1,173 @@
+"Base":{
+	"Cast_Iron":{
+	},
+	"Stainles_Steel":{
+	},
+},
+"Booth":{
+	"Fast_Food_Table":{
+	},
+	"Traditional_Booth":{
+	},
+},
+"Cabinet":{
+	"Cashier_Counter":{
+	},
+	"Garbage_Cabinet":{
+	},
+	"Maitred_D_Stand":{
+	},
+	"Waiter_Station":{
+	},
+},
+"Chair":{
+	"Metal_Barstool":{
+	},
+	"Metal_Chair":{
+		"A04":{
+			0 : "A04-B.png",
+		},
+		"A05":{
+			0 : "A05-B.png",
+			1 : "A05-BU.png",
+		},
+		"A111":{
+		},
+		"A112":{
+		},
+		"MC003":{
+		},
+		"MC006":{
+		},
+		"MC007":{
+		},
+		"MC052":{
+		},
+		"MC079":{
+		},
+		"MC11":{
+		},
+		"MC116":{
+		},
+		"MC117":{
+		},
+		"MC12":{
+		},
+		"MC13":{
+		},
+		"MC17":{
+		},
+		"MC18":{
+		},
+		"MC20":{
+		},
+		"MC28":{
+		},
+		"MC38":{
+		},
+		"MC715":{
+		},
+		"MC810":{
+		},
+		"MC815":{
+		},
+		"MC816":{
+		},
+		"MC818":{
+		},
+		"MC902":{
+		},
+		"MC912":{
+		},
+		"MC916":{
+		},
+		"SD018":{
+		},
+		"SD078":{
+		},
+		"SD116":{
+		},
+		"SD120":{
+		},
+		0 : "gen.json",
+	},
+	"Outdoor_Chair":{
+	},
+	"Wooden_Barstool":{
+	},
+	"Wooden_Chair":{
+		"WC101":{
+			0 : "WC101-B.png",
+			1 : "WC101-M.png",
+			2 : "WC101-N.png",
+			3 : "WC101-W.png",
+		},
+		"WC102":{
+			0 : "WC102-C.png",
+			1 : "WC102-M.jpg",
+			2 : "WC102-N.png",
+			3 : "WC102-W.png",
+		},
+		"WC103":{
+		},
+		"WC104":{
+		},
+		"WC105":{
+		},
+		"WC106":{
+		},
+		"WC109":{
+		},
+		"WC113":{
+		},
+		"WC114":{
+		},
+		"WC118":{
+		},
+		"WC123":{
+		},
+		"WC230":{
+		},
+		0 : "gen.json",
+	},
+},
+"Other":{
+	"Ash_Barrel":{
+	},
+	"Japanese_Tableware":{
+	},
+	"LED_Sign":{
+	},
+	"Menu_A-Frame_Board":{
+	},
+	"Wallpaper":{
+	},
+	"Wooden_Screen":{
+	},
+},
+"Table":{
+	"Fiber_Glass":{
+	},
+	"Laminate":{
+	},
+	"Metal_Laminate":{
+	},
+	"Resin":{
+	},
+	"Solid_Wood":{
+	},
+	"Veneer":{
+	},
+},
+0 : "gen.json",
+1 : "gen.sh",
+"icon":{
+	0 : "base.png",
+	1 : "booth.png",
+	2 : "cabinet.png",
+	3 : "chair.png",
+	4 : "gen.json",
+	5 : "other.png",
+	6 : "table.png",
+},
+
