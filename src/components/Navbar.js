@@ -13,27 +13,19 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div id="sidebar">
+      <div id="sidebar" className={this.props.navCollapse?"":"col-2"}>
           {this.props.navCollapse?
           <div>
-            <button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn" onClick={this.props.collapseSidebar}>
-               Toggle Sidebar
-            </button>
           </div>
           :
-          <div className = "col-2" >
-            <button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn" onClick={this.props.collapseSidebar}>
-               Toggle Sidebar
-            </button>
-            <div className = "sidebar">
-              <ul>
-                 <li className="active" ><a href="/">Home</a></li>
-                 <li><a href="/">Chair</a></li>
-                 <li><a href="/">Table</a></li>
-                 <li><a href="/">Base</a></li>
-                 <li><a href="/">Booth</a></li>
-              </ul>
-            </div>
+          <div className = "sidebar">
+            <ul>
+               <li className="active" ><a href="/">Home</a></li>
+               <li><a href="/">Chair</a></li>
+               <li><a href="/">Table</a></li>
+               <li><a href="/">Base</a></li>
+               <li><a href="/">Booth</a></li>
+            </ul>
           </div>
           }
       </div>

@@ -1,0 +1,62 @@
+{
+  "B1_S" : {
+      "info" : "ring"
+  },
+  "B1_SW" : {
+      "info" : "note here"
+  },
+  "B2_S" : {
+      "info" : "ring"
+  },
+  "B3_S" : {
+      "info" : "note here"
+  },
+  "B4_S" : {
+      "info" : "ring"
+  },
+  "B4_SW" : {
+      "info" : "note here"
+  },
+  "B5_S" : {
+      "info" : "ring"
+  },
+  "B10_S" : {
+      "info" : "note here"
+  },
+  "B10_SW" : {
+      "info" : "ring"
+  },
+  "B11_S" : {
+      "info" : "note here"
+  },
+  "B13_S" : {
+      "info" : "ring"
+  },
+  "B21_S" : {
+      "info" : "note here"
+  },
+  "B23_S" : {
+      "info" : "ring"
+  },
+  "B24_S" : {
+      "info" : "note here"
+  },
+  "B25_S" : {
+      "info" : "ring"
+  },
+  "B28_SW" : {
+      "info" : "ring"
+  },
+  "B50" : {
+      "info" : "note here"
+  },
+  "B57_S" : {
+      "info" : "ring"
+  },
+  "B58_S" : {
+      "info" : "note here"
+  },
+  "B80_S" : {
+      "info" : "ring"
+  }
+}

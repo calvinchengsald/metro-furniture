@@ -1,0 +1,20 @@
+{
+  "GC001_B_HOLE" : {
+      "info" : "ring"
+  },
+  "GC001_B" : {
+      "info" : "note here"
+  },
+  "GC001_M" : {
+      "info" : "ring"
+  },
+  "GC001_N" : {
+      "info" : "note here"
+  },
+  "Inner" : {
+      "info" : "ring"
+  },
+  "WS003_M" : {
+      "info" : "note here"
+  }
+}

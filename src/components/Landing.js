@@ -1,11 +1,5 @@
 
 import React, { Component } from 'react';
-import chairPic from '../image/chair.png';
-import tablePic from '../image/table.png';
-import basePic from '../image/base.png';
-import boothPic from '../image/booth.png';
-import cabinetPic from '../image/cabinet.png';
-import otherPic from '../image/other.png';
 
 class Landing extends Component {
 
@@ -16,49 +10,47 @@ class Landing extends Component {
       type: "none"
     };
     this.category = [];
-    this.categoryKeys = ["chair", "table", "base", "booth" , "cabinet", "other"];
+    this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
     var types = [];
-    types.push("Wooden Chair");
-    types.push("Metal Chair");
-    types.push("Wooden Barstool");
-    types.push("Metal Barstool");
-    types.push("Outdoor Chair")
+    types.push("Wooden_Chair");
+    types.push("Metal_Chair");
+    types.push("Wooden_Barstool");
+    types.push("Metal_Barstool");
+    types.push("Outdoor_Chair")
     this.category[this.categoryKeys[0]] = types;
-    var types = [];
-    types.push("Solid Wood");
+    types = [];
+    types.push("Solid_Wood");
     types.push("Resin");
     types.push("Veneer");
     types.push("Laminated");
-    types.push("Metal Laminated")
-    types.push("Fiber Glass")
+    types.push("Metal_Laminated")
+    types.push("Fiber_Glass")
     this.category[this.categoryKeys[1]] = types;
-    var types = [];
-    types.push("Cast Iron");
-    types.push("Stainless Steel");
+    types = [];
+    types.push("Cast_Iron");
+    types.push("Stainless_Steel");
     this.category[this.categoryKeys[2]] = types;
-    var types = [];
-    types.push("Fast Food Table");
-    types.push("Traditional Booth");
+    types = [];
+    types.push("Fast_Food_Table");
+    types.push("Traditional_Booth");
     this.category[this.categoryKeys[3]] = types;
-    var types = [];
-    types.push("Garbage Cabinet");
-    types.push("Maitred D Stand");
-    types.push("Waiter Station");
-    types.push("Cashier Counter");
+    types = [];
+    types.push("Garbage_Cabinet");
+    types.push("Maitred_D_Stand");
+    types.push("Waiter_Station");
+    types.push("Cashier_Counter");
     this.category[this.categoryKeys[4]] = types;
-    var types = [];
+    types = [];
     types.push("Wallpaper");
-    types.push("Japanese Tableware");
-    types.push("LED Signs");
-    types.push("A-Frame Board");
-    types.push("Wooden Screen");
-    types.push("Ash Barrel");
-    types.push("Color Options");
+    types.push("Japanese_Tableware");
+    types.push("LED_Sign");
+    types.push("Menu_A-Frame_Board");
+    types.push("Wooden_Screen");
+    types.push("Ash_Barrel");
+    types.push("Color_Options");
     this.category[this.categoryKeys[5]] = types;
+    //console.log("hi u should see one only once");
 
-    this.categoryKeys.map((key,index)=>{
-      this.category[key]
-    })
   }
 
   setCategory(cat){
@@ -66,6 +58,13 @@ class Landing extends Component {
       category: cat,
     });
 
+  }
+
+  unlinkify(str){
+    return str.replace(/_/g, ' ');
+  }
+  linkify(str){
+    return str.replace(/ /g, '_');
   }
 
 
@@ -81,11 +80,11 @@ class Landing extends Component {
         </div>
         <div className = "row" id="category">
           <div className="offset-1 col-10">
-            <div className="btn-group" role="group">
+            <div className="btn-group row" role="group">
               {this.categoryKeys.map((key, index)=>{
-                return <button type="button" className="btn btn-secondary" onClick={()=>this.setCategory(key)}>
-                    <img src={chairPic} className="img-fluid img-thumbnail" alt="Chair"/>
-                    <div> {key} </div>
+                return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.setCategory(key)}>
+                    <img src={'/image/icon/'+key+'.png'} className="img-fluid img-thumbnail" alt="Chair"/>
+                    <div> {this.unlinkify(key)} </div>
                   </button>;
               })}
 
@@ -98,18 +97,22 @@ class Landing extends Component {
         <div>
           <div className="row">
             <div className="offset-2 col-8">
-              <div className="heading1"> Select the type of {this.state.category}</div>
+              <div className="heading2"> Select the type of {this.state.category}</div>
             </div>
           </div>
 
           <div id="type" className="row">
             <div className="offset-1 col-10">
-              <div className="btn-group" role="group">
+              <div className="btn-group row justify-content-center" role="group">
                 {this.category[this.state.category].map((type, index)=>{
-                  return <button type="button" className="btn btn-secondary" >
-                      <img src={chairPic} className="img-fluid img-thumbnail" alt="Chair"/>
-                      <div> {type} </div>
-                    </button>;
+                  return <div key={index} className="card bg-light col-4">
+                    <a href={`/inventory/${this.state.category}/`+type}>
+                    <img className="card-img-top " src={`/image/icon/${type}.png`} alt={type}/>
+                    <div className="card-body text-left ">
+                      <div className="text-muted text-center">{this.unlinkify(type)}</div>
+                    </div>
+                    </a>
+                  </div>;
                 })}
 
               </div>

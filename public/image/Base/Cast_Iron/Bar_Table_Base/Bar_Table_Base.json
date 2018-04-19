@@ -1,0 +1,17 @@
+{
+  "TBB18_R" : {
+      "info" : "red"
+  },
+  "TBB18_RR" : {
+      "info" : "red ring"
+  },
+  "TBB945_B" : {
+      "info" : "black"
+  },
+  "TBB2222_R" : {
+      "info" : "red"
+  },
+  "TBB2222" : {
+      "info" : "none"
+  }
+}

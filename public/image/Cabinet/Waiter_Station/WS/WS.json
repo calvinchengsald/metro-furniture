@@ -1,0 +1,20 @@
+{
+  "WS001_W" : {
+      "info" : "ring"
+  },
+  "WS004_M_No_Door" : {
+      "info" : "note here"
+  },
+  "WS004_N" : {
+      "info" : "ring"
+  },
+  "WS008_N_With_Shelf" : {
+      "info" : "note here"
+  },
+  "WS008_N" : {
+      "info" : "ring"
+  },
+  "WS015_M_No_Door" : {
+      "info" : "note here"
+  }
+}

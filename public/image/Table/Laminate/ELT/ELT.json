@@ -1,0 +1,59 @@
+{
+  "ELT1_R" : {
+      "info" : "ring"
+  },
+  "ELT4_BS" : {
+      "info" : "note here"
+  },
+  "ELT5_BRS" : {
+      "info" : "ring"
+  },
+  "ELT6_GM" : {
+      "info" : "note here"
+  },
+  "ELT7" : {
+      "info" : "ring"
+  },
+  "ELT8_SD" : {
+      "info" : "note here"
+  },
+  "ELT9" : {
+      "info" : "ring"
+  },
+  "ELT12_M" : {
+      "info" : "note here"
+  },
+  "ELT13_W" : {
+      "info" : "note here"
+  },
+  "ELT14_GD" : {
+      "info" : "ring"
+  },
+  "ELT15_N" : {
+      "info" : "note here"
+  },
+  "ELT16_B" : {
+      "info" : "ring"
+  },
+  "ELT17_GRD" : {
+      "info" : "note here"
+  },
+  "ELT19_BM" : {
+      "info" : "ring"
+  },
+  "ELT20_BRM" : {
+      "info" : "note here"
+  },
+  "ELT25_PD" : {
+      "info" : "ring"
+  },
+  "ELT1003_W" : {
+      "info" : "note here"
+  },
+  "ELT8086_Z" : {
+      "info" : "note here"
+  },
+  "ELT8249_BZ" : {
+      "info" : "note here"
+  }
+}

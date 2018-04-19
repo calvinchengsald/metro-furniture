@@ -1,0 +1,32 @@
+{
+  "B1_D" : {
+      "info" : "ring"
+  },
+  "B4_D" : {
+      "info" : "note here"
+  },
+  "B10_DW" : {
+      "info" : "ring"
+  },
+  "B13_D" : {
+      "info" : "note here"
+  },
+  "B13_DW" : {
+      "info" : "ring"
+  },
+  "B27_D" : {
+      "info" : "note here"
+  },
+  "B29_D" : {
+      "info" : "ring"
+  },
+  "B41_D" : {
+      "info" : "note here"
+  },
+  "B60_D" : {
+      "info" : "ring"
+  },
+  "B70_D" : {
+      "info" : "note here"
+  }
+}

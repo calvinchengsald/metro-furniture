@@ -1,0 +1,29 @@
+{
+  "CH501_22X13" : {
+      "info" : "ring"
+  },
+  "CH703_19X10" : {
+      "info" : "note here"
+  },
+  "CH710_19X19" : {
+      "info" : "ring"
+  },
+  "HC020_19X10" : {
+      "info" : "note here"
+  },
+  "HC021_19X10" : {
+      "info" : "ring"
+  },
+  "HC028_19X10" : {
+      "info" : "note here"
+  },
+  "HC601_16X25" : {
+      "info" : "ring"
+  },
+  "HC4060_24X16" : {
+      "info" : "note here"
+  },
+  "LS132_22X13" : {
+      "info" : "note here"
+  }
+}

@@ -8,6 +8,9 @@ getLS(){  #1 is file, 2 is tab
   counter=0;
   for entry in ${data}
   do
+    if [[ $entry == *".json"* ]] || [[ $entry == "directory.js" ]];  then
+      continue
+    fi
   #  str=${str}{\\\n$2name: \'${entry}\\n\' ;
     tabber=$2;
     str=`echo $str$2\{\\\n`
