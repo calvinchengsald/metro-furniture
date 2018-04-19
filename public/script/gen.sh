@@ -8,23 +8,42 @@ getLS(){  #1 is file, 2 is tab
   counter=0;
   for entry in ${data}
   do
+  #  str=${str}{\\\n$2name: \'${entry}\\n\' ;
+    tabber=$2;
+    str=`echo $str$2\{\\\n`
+    tabber=$tabber\\t;
+    str=`echo $str$tabber name: \'$entry\',\\\n`;
     if [ -d "${entry}" ] ; then
-#      echo -e $2\"${entry}\": { #>>$1;
-      str=${str}$2\"${entry}\":{\\\n  ;
+
+      str=`echo $str$tabber dirs: [\\\n`;
+
       cd ${entry};
-      getLS "${file}" "$2\\t";
+      getLS "${file}" "$tabber\\t" "${entry}";
       cd ..;
 
-  #    echo -e $2}, #>>$1;
-      str=${str}$2},\\\n ;
-    else
-#      echo -e $2${counter} : \"${entry}\", #>>$1;
-#      str=${str}$2${counter} : \"${entry}\",\\n ;
-      str=`echo $str$2$counter : \"$entry\",\\\n`;
 
-      counter=$((counter+1));
+      str=${str}$2\\t],\\\n ;
+
+    else
+      if [[ $entry != *".json"* ]] && [[ $entry != "directory.js" ]]; then
+        changedName=${entry//-/_}
+        changedName=${changedName/.png/""}
+        changedName=${changedName/.jpg/""}
+        if [ ! -f $3.json ]; then
+            echo "$3.json is not found under /$3"
+        else
+          #  echo "parsing $entry at $3"
+            add=`jq .$changedName.info $3.json`;
+            str=`echo $str$tabber note: $add,\\\n`;
+        fi
+      fi
+
 
     fi
+
+
+    str=${str}$2},\\\n ;
+
 
   done
 }
