@@ -37,7 +37,7 @@ getLS(){  #1 is file, 2 is tab
         else
           #  echo "parsing $entry at $3"
             add=`jq .$changedName.info $3.json`;
-            str=`echo $str$tabber note: $add,\\\n`;
+            str=`echo $str$tabber info: $add,\\\n`;
         fi
       fi
 
