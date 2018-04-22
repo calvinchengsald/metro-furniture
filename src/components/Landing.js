@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import {Link}  from 'react-router-dom';
 
 class Landing extends Component {
 
@@ -105,13 +106,14 @@ class Landing extends Component {
             <div className="offset-1 col-10">
               <div className="btn-group row justify-content-center" role="group">
                 {this.category[this.state.category].map((type, index)=>{
-                  return <div key={index} className="card bg-light col-4">
-                    <a href={`/inventory/${this.state.category}/`+type}>
+                  return <div key={index} className="card bg-light col-3">
+                    <Link to={`/inventory/${this.state.category}/`+type}>
+
                     <img className="card-img-top " src={`/image/icon/${type}.png`} alt={type}/>
                     <div className="card-body text-left ">
                       <div className="text-muted text-center">{this.unlinkify(type)}</div>
                     </div>
-                    </a>
+                    </Link>
                   </div>;
                 })}
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import {Route}  from 'react-router-dom';
 import './App.css';
+import Sidebar from './components/Sidebar.js';
 import Navbar from './components/Navbar.js';
 import Landing from './components/Landing.js';
 import Item from './components/Item.js';
@@ -14,6 +15,48 @@ class App extends Component {
     this.state = {
         navCollapse: false
     };
+
+    this.category = [];
+    this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
+    var types = [];
+    types.push("Wooden_Chair");
+    types.push("Metal_Chair");
+    types.push("Wooden_Barstool");
+    types.push("Metal_Barstool");
+    types.push("Outdoor_Chair")
+    this.category[this.categoryKeys[0]] = types;
+    types = [];
+    types.push("Solid_Wood");
+    types.push("Resin");
+    types.push("Veneer");
+    types.push("Laminate");
+    types.push("Metal_Laminate")
+    types.push("Fiber_Glass")
+    this.category[this.categoryKeys[1]] = types;
+    types = [];
+    types.push("Cast_Iron");
+    types.push("Stainless_Steel");
+    this.category[this.categoryKeys[2]] = types;
+    types = [];
+    types.push("Fast_Food_Table");
+    types.push("Traditional_Booth");
+    this.category[this.categoryKeys[3]] = types;
+    types = [];
+    types.push("Garbage_Cabinet");
+    types.push("Maitred_D_Stand");
+    types.push("Waiter_Station");
+    types.push("Cashier_Counter");
+    this.category[this.categoryKeys[4]] = types;
+    types = [];
+    types.push("Wallpaper");
+    types.push("Japanese_Tableware");
+    types.push("LED_Sign");
+    types.push("Menu_A-Frame_Board");
+    types.push("Wooden_Screen");
+    types.push("Ash_Barrel");
+    types.push("Color_Options");
+    this.category[this.categoryKeys[5]] = types;
+    //console.log("hi u should see one only once");
   }
 
   collapseSidebar(){
@@ -21,7 +64,6 @@ class App extends Component {
     this.setState({
       navCollapse: tempCol
     });
-    console.log("clicked");
   }
 
   render() {
@@ -31,15 +73,21 @@ class App extends Component {
         <main>
         </main>
         <div className="main-holder container-fluid">
+          <div className='row'>
+            <Navbar
+              category = {this.category}
+              categoryKeys = {this.categoryKeys}
+            />
+          </div>
           <div className="row">
             <div className="col">
               <button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
-                 Toggle Sidebar
+                 &#920;
               </button>
             </div>
           </div>
           <div className="row">
-            <Navbar
+            <Sidebar
               navCollapse = {this.state.navCollapse}
             />
             <div className = {this.state.navCollapse?"col-12 content":"col-10 content"} >
