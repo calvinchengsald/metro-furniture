@@ -13,7 +13,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        navCollapse: false
+        navCollapse: false,
+        landingCategory: "none",
     };
 
     this.category = [];
@@ -57,6 +58,33 @@ class App extends Component {
     types.push("Color_Options");
     this.category[this.categoryKeys[5]] = types;
     //console.log("hi u should see one only once");
+    this.customLanding = (props) => {
+      return (
+        <Landing
+          category={this.category}
+          categoryKeys={this.categoryKeys}
+          landingCategory={this.state.landingCategory}
+          setCategory={(key)=>this.setLandingCategory(key)}
+        />
+      );
+    }
+  }
+  setLandingCategory(cat){
+    console.log(cat);
+    this.setState({
+      landingCategory: cat,
+    });
+    console.log("been set");
+    this.customLanding = (props) => {
+      return (
+        <Landing
+          category={this.category}
+          categoryKeys={this.categoryKeys}
+          landingCategory={this.state.landingCategory}
+          setCategory={(key)=>this.setLandingCategory(key)}
+        />
+      );
+    }
   }
 
   collapseSidebar(){
@@ -91,7 +119,7 @@ class App extends Component {
               navCollapse = {this.state.navCollapse}
             />
             <div className = {this.state.navCollapse?"col-12 content":"col-10 content"} >
-              <Route exact path = "/" component = {Landing}/>
+              <Route exact path = "/" render = {this.customLanding}/>
               <Route exact path = "/inventory/:category/:type" component = {Type}/>
               <Route exact path = "/inventory/:category/:type/:item" component = {Item}/>
             </div>

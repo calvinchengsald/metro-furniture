@@ -15,3 +15,9 @@ all images are 500x500 png
 In directory, each folder with actualy image needs a
   [directoryName].json file which has a JSON object for each picture, with info field
   swap all '-' char in the name for '_'
+
+
+todo:
+get actual bootstrap not minfied link CDN
+read in categories from json instead
+fix item toggle with up/down

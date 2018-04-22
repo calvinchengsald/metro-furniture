@@ -6,9 +6,9 @@ class Item extends Component {
 
   constructor(props){
     super(props);
-    this.initialize();
+    this.initialize(false);
   }
-  initialize(){
+  initialize(set){
     this.category = this.props.match.params.category;
     this.type = this.props.match.params.type;
     this.item = this.props.match.params.item;
@@ -51,6 +51,32 @@ class Item extends Component {
     else {
       this.notFound = true;
     }
+    if(set){
+      this.setState({
+
+      });
+    }
+  }
+
+  handleKeyPress(e){
+    console.log("presed");
+    if(e.keyCode === 38){
+      this.scrollPic(1);
+    }
+    else if(e.keyCode === 40){
+      this.scrollPic(0);
+    }
+  }
+  scrollPic(dir){
+    if(dir===0){
+      this.mainPic = (this.mainPic+this.content.length-1) % this.content.length;
+        console.log("down");
+    }
+    else {
+      this.mainPic = (this.mainPic+this.content.length+1) % this.content.length;
+
+        console.log("up");
+    }
     this.setState({
 
     });
@@ -68,7 +94,7 @@ class Item extends Component {
   }
   checkRefresh(str){
     if(str !== this.type){
-      this.initialize();
+      this.initialize(true);
     }
     return "";
   }
@@ -87,7 +113,7 @@ class Item extends Component {
     }
     else
     return (
-      <div id="item">
+      <div id="item" >
         <div className='row justify-content-center'>
             <div className='heading1 text-center'>
               {this.unlinkify(this.props.match.params.item)}
@@ -101,7 +127,7 @@ class Item extends Component {
                   <div className="list-group" id="list-tab" role="tablist">
                     {this.content.map((content, index)=>{
 
-                      return <a key={`${index}`} className={index===0?`list-group-item list-group-item-action active`:`list-group-item list-group-item-action`} id={`list-${content.name}-list`} data-toggle="list" href={`#list-${content.name}`} role="tab" aria-controls={`${content.name}`}>
+                      return <a onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===0?`list-group-item list-group-item-action active`:`list-group-item list-group-item-action`} id={`list-${content.name}-list`} data-toggle="list" href={`#list-${content.name}`} role="tab" aria-controls={`${content.name}`} >
                           <div>
                           {content.name}
                           </div>
