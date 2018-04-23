@@ -1,20 +1,19 @@
 
 import React, { Component } from 'react';
 import directoryData from '../data/directory';
+import HistoryBar from './HistoryBar';
 
 class Item extends Component {
 
   constructor(props){
     super(props);
-    this.initialize(false);
-  }
-  initialize(set){
+    this.firstRef= React.createRef();
     this.category = this.props.match.params.category;
     this.type = this.props.match.params.type;
     this.item = this.props.match.params.item;
     this.content = [];
-    this.mainPic = 0;
     this.notFound = false;
+    this.mainPic = 0;
 
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
@@ -37,14 +36,69 @@ class Item extends Component {
     else {
       this.notFound = true;
     }
-
+    let hash = this.props.location.hash.replace('#', '');
     if(this.itemType !== undefined && this.itemType.dirs !== undefined){
       this.itemType.dirs.map((item,index)=>{
         this.content.push({
           image: `/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
-          name: this.unPicturify(item.name)
+          name: this.unPicturify(item.name),
+          note: item.info,
         });
         this.notFound = false;
+        if(hash === this.unPicturify(item.name)){
+          this.mainPic = index;
+        }
+        return item;
+      });
+    }
+    else {
+      this.notFound = true;
+    }
+    this.state = {
+      mainPic : this.mainPic,
+    };
+  }
+  initialize(set){
+    this.category = this.props.match.params.category;
+    this.type = this.props.match.params.type;
+    this.item = this.props.match.params.item;
+    this.content = [];
+    this.notFound = false;
+    this.mainPic = 0;
+
+    this.menuCat = directoryData.find((cat)=>{
+      return cat.name === this.category;
+    });
+
+    if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
+      this.menuType = this.menuCat.dirs.find((type)=>{
+        return type.name === this.type;
+      });
+    }
+    else {
+      this.notFound = true;
+    }
+
+    if(this.menuType !== undefined && this.menuType.dirs !== undefined){
+      this.itemType = this.menuType.dirs.find((item)=>{
+        return item.name === this.item;
+      });
+    }
+    else {
+      this.notFound = true;
+    }
+    let hash = this.props.location.hash.replace('#', '');
+    if(this.itemType !== undefined && this.itemType.dirs !== undefined){
+      this.itemType.dirs.map((item,index)=>{
+        this.content.push({
+          image: `/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
+          name: this.unPicturify(item.name),
+          note: item.info,
+        });
+        this.notFound = false;
+        if(hash === this.unPicturify(item.name)){
+          this.mainPic = index;
+        }
         return item;
       });
     }
@@ -53,33 +107,42 @@ class Item extends Component {
     }
     if(set){
       this.setState({
-
+        mainPic : this.mainPic,
       });
+    }
+  }
+  componentDidMount(){
+    if(!this.notFound){
+      this.firstRef.current.focus();
+    }
+  }
+  componentDidUpdate(){
+    if(!this.notFound){
+      this.firstRef.current.focus();
     }
   }
 
   handleKeyPress(e){
-    console.log("presed");
-    if(e.keyCode === 38){
+    if(e.keyCode === 87){
       this.scrollPic(1);
     }
-    else if(e.keyCode === 40){
+    else if(e.keyCode === 81){
       this.scrollPic(0);
     }
   }
   scrollPic(dir){
     if(dir===0){
-      this.mainPic = (this.mainPic+this.content.length-1) % this.content.length;
-        console.log("down");
+      this.mainPic = (this.state.mainPic+this.content.length-1) % this.content.length;
     }
     else {
-      this.mainPic = (this.mainPic+this.content.length+1) % this.content.length;
-
-        console.log("up");
+      this.mainPic = (this.state.mainPic+this.content.length+1) % this.content.length;
     }
     this.setState({
-
+      mainPic: this.mainPic,
     });
+    this.props.history.push(`#${this.content[this.mainPic].name}`);
+
+
   }
 
   unlinkify(str){
@@ -98,6 +161,11 @@ class Item extends Component {
     }
     return "";
   }
+  setMainPic(index){
+    this.setState({
+      mainPic: index,
+    });
+  }
 
 
   render() {
@@ -113,8 +181,19 @@ class Item extends Component {
     }
     else
     return (
-      <div id="item" >
-        <div className='row justify-content-center'>
+      <div id="item"  >
+          <div className='row'>
+            <div className='col-10 offset-1'>
+              <HistoryBar
+                category = {this.category}
+                type = {this.type}
+                item = {this.item}
+                unlinkify = {(str)=>this.unlinkify(str)}
+              />
+            </div>
+          </div>
+          <div className='row justify-content-center'>
+
             <div className='heading1 text-center'>
               {this.unlinkify(this.props.match.params.item)}
             </div>
@@ -127,7 +206,8 @@ class Item extends Component {
                   <div className="list-group" id="list-tab" role="tablist">
                     {this.content.map((content, index)=>{
 
-                      return <a onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===0?`list-group-item list-group-item-action active`:`list-group-item list-group-item-action`} id={`list-${content.name}-list`} data-toggle="list" href={`#list-${content.name}`} role="tab" aria-controls={`${content.name}`} >
+                      return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===this.state.mainPic?`list-group-item list-group-item-action active`:`list-group-item list-group-item-action`} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+
                           <div>
                           {content.name}
                           </div>
@@ -137,15 +217,9 @@ class Item extends Component {
                   </div>
                 </div>
                 <div className="col-xs-12 col-md-9">
-                  <div className="tab-content" id="nav-tabContent">
-                    {this.content.map((content, index)=>{
-
-                      return <div key={`${index}`} className={index===0?`tab-pane fade show active`:`tab-pane fade show`} id={`list-${content.name}`} role="tabpanel" aria-labelledby={`list-${content.name}-list`}>
-                        <img className="img-fluid " src={`${content.image}`} alt={content.name}/>
-                      </div>
-                    })}
-
-                  </div>
+                  <img className="img-fluid " src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                  <div> {this.content[this.state.mainPic].name}</div>
+                  <div> {this.content[this.state.mainPic].note}</div>
                 </div>
 
               </div>

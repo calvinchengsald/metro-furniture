@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        navCollapse: false,
+        navCollapse: true,
         landingCategory: "none",
     };
 
@@ -70,11 +70,9 @@ class App extends Component {
     }
   }
   setLandingCategory(cat){
-    console.log(cat);
     this.setState({
       landingCategory: cat,
     });
-    console.log("been set");
     this.customLanding = (props) => {
       return (
         <Landing
@@ -86,6 +84,7 @@ class App extends Component {
       );
     }
   }
+
 
   collapseSidebar(){
     var tempCol = !this.state.navCollapse;
@@ -107,7 +106,7 @@ class App extends Component {
               categoryKeys = {this.categoryKeys}
             />
           </div>
-          <div className="row">
+          <div className="row d-block d-sm-none">
             <div className="col">
               <button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
                  &#920;

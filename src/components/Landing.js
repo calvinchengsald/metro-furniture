@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import {Link}  from 'react-router-dom';
+import HistoryBar from './HistoryBar';
 
 class Landing extends Component {
 
@@ -27,6 +28,16 @@ class Landing extends Component {
   render() {
     return (
       <div >
+        <div className='row'>
+          <div className='col-10 offset-1'>
+            <HistoryBar
+              category = "none"
+              type = "none"
+              item = "none"
+              unlinkify = {(str)=>this.unlinkify(str)}
+            />
+          </div>
+        </div>
         <div className="row">
           <div className="offset-2 col-8">
             <div className="heading1"> I am looking for... </div>

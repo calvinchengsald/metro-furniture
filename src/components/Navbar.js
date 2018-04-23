@@ -14,6 +14,7 @@ class Navbar extends Component {
       isOpen : arr,
     };
 
+
   }
 
   handleDropdown(index, bool){
@@ -41,24 +42,25 @@ class Navbar extends Component {
           </div>
           :
           <div className = "row">
-            <div className = "col-10 offset-1">
-              <div className = "navbar-2 row">
-                {this.props.categoryKeys.map((cat, index)=>{
-                  return   <div key={`${index}`} className="dropdown col-2 btn bg-light" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
-                    <div >{`${cat}`} <span>&#8681;</span> </div>
-                    <ul className={this.state.isOpen[`${index}`]?`dropdown-menu show `:`dropdown-menu`}>
-                      {this.props.category[`${cat}`].map((type, index)=>{
-                        return <Link key={`${index}-link`} className='dropdown-item' to={`/inventory/${cat}/${type}`}> <li >{this.unlinkify(`${type}`)}</li></Link>
+            <div className="container-fluid">
+              <div className = "row">
+                <div className = "col-10 offset-1">
+                  <div className = "navbar-2 row">
+                    {this.props.categoryKeys.map((cat, index)=>{
+                      return   <div key={`${index}`} className="dropdown col-2 btn bg-light" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
+                        <div >{`${cat}`} <span>&#8681;</span> </div>
+                        <ul className={this.state.isOpen[`${index}`]?`dropdown-menu show `:`dropdown-menu`}>
+                          {this.props.category[`${cat}`].map((type, index)=>{
+                            return <Link key={`${index}-link`} className='dropdown-item' to={`/inventory/${cat}/${type}`}> <li >{this.unlinkify(`${type}`)}</li></Link>
 
-                      })}
-                    </ul>
+                          })}
+                        </ul>
+                      </div>
+                    })}
                   </div>
-                })}
-
-
-
-
+                </div>
               </div>
+              
             </div>
           </div>
           }

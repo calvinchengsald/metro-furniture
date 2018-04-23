@@ -20,4 +20,5 @@ In directory, each folder with actualy image needs a
 todo:
 get actual bootstrap not minfied link CDN
 read in categories from json instead
-fix item toggle with up/down
+√fix item toggle with up/down
+√category/all view button
