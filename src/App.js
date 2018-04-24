@@ -99,31 +99,39 @@ class App extends Component {
 
         <main>
         </main>
-        <div className="main-holder container-fluid">
-          <div className='row'>
+
+        <div className="main-holder  container-fluid">
+          <div className='row d-none d-sm-block'>
             <Navbar
               category = {this.category}
               categoryKeys = {this.categoryKeys}
             />
           </div>
-          <div className="row d-block d-sm-none">
-            <div className="col">
-              <button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
-                 &#920;
-              </button>
-            </div>
-          </div>
+
           <div className="row">
-            <Sidebar
-              navCollapse = {this.state.navCollapse}
-            />
-            <div className = {this.state.navCollapse?"col-12 content":"col-10 content"} >
+            <div className ="col-12 content" >
               <Route exact path = "/" render = {this.customLanding}/>
               <Route exact path = "/inventory/:category/:type" component = {Type}/>
               <Route exact path = "/inventory/:category/:type/:item" component = {Item}/>
             </div>
           </div>
         </div>
+        {this.state.navCollapse?
+          <div></div>
+          :
+          <div>
+          <Sidebar
+            category = {this.category}
+            categoryKeys = {this.categoryKeys}
+          />
+          <button type="button" id="sidebar-toggle" className="btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
+             &#920;
+          </button>
+          </div>
+        }
+        <button type="button" id="sidebar-toggle" className="d-block d-sm-none btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
+           &#920;
+        </button>
       </div>
     );
   }

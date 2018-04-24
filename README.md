@@ -22,3 +22,6 @@ get actual bootstrap not minfied link CDN
 read in categories from json instead
 √fix item toggle with up/down
 √category/all view button
+dropdown sizing is wrong
+arrow in history is weird
+√at items, when sidebar is up still see highlighted item name tab

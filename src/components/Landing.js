@@ -11,6 +11,8 @@ class Landing extends Component {
       type: "none"
     };
 
+    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+
     //console.log("hi u should see one only once");
 
   }
@@ -44,11 +46,11 @@ class Landing extends Component {
           </div>
         </div>
         <div className = "row" id="category">
-          <div className="offset-1 col-10">
+          <div className="col-12">
             <div className="btn-group row" role="group">
               {this.props.categoryKeys.map((key, index)=>{
                 return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.props.setCategory(key)}>
-                    <img src={'/image/icon/'+key+'.png'} className="img-fluid img-thumbnail" alt="Chair"/>
+                    <img src={`${this.awsPath}/image/icon/${key}.png`} className="img-fluid img-thumbnail" alt="Chair"/>
                     <div> {this.unlinkify(key)} </div>
                   </button>;
               })}
@@ -69,15 +71,14 @@ class Landing extends Component {
             <div className="offset-1 col-10">
               <div className="btn-group row justify-content-center" role="group">
                 {this.props.category[this.props.landingCategory].map((type, index)=>{
-                  return <div key={index} className="card bg-light col-3">
-                    <Link to={`/inventory/${this.props.landingCategory}/`+type}>
 
-                    <img className="card-img-top " src={`/image/icon/${type}.png`} alt={type}/>
-                    <div className="card-body text-left ">
-                      <div className="text-muted text-center">{this.unlinkify(type)}</div>
-                    </div>
-                    </Link>
-                  </div>;
+
+                  return <Link className='bg-light col-3' to={`/inventory/${this.props.landingCategory}/`+type}>
+                      <img className="img-fluid" src={`${this.awsPath}/image/icon/${type}.png`} alt={type}/>
+                      <div className='row'>
+                        <div className="col-12 text-muted text-center text-md">{this.unlinkify(type)}</div>
+                      </div>
+                  </Link>
                 })}
 
               </div>

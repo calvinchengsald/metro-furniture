@@ -9,7 +9,7 @@ class Type extends Component {
   constructor(props){
     super(props);
     this.state={
-      showType: 0
+      showType: 1
     };
     this.initialize(false);
 
@@ -22,6 +22,8 @@ class Type extends Component {
     this.content = [];
     this.allItems = [];
 
+    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
     });
@@ -39,7 +41,7 @@ class Type extends Component {
         try{
           this.content.push({
             name: type.name,
-            image: `/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
+            image: `${this.awsPath}/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
             href: `/${this.category}/${this.type}/${type.name}`,
             object: type
           });
@@ -63,7 +65,7 @@ class Type extends Component {
       this.content.map((content, index)=>{
         content.object.dirs.map((item, index) =>{
           this.allItems.push({
-            image: `/image/${this.category}/${this.type}/${content.object.name}/${item.name}`,
+            image: `${this.awsPath}/image/${this.category}/${this.type}/${content.object.name}/${item.name}`,
             name: this.unPicturify(item.name),
             href: `/${this.category}/${this.type}/${content.object.name}#${this.unPicturify(item.name)}`,
           });
@@ -128,16 +130,17 @@ class Type extends Component {
             </div>
           </div>
           <div className='row justify-content-center'>
-            <div className='col-6 offset-3 heading1 text-center'>
+            <div className='col-3'>
+              <div className="btn-group" onClick={()=>this.toggleType()} role="group">
+                <button type="button" className={this.state.showType===0?"text-md btn btn-dark":"text-md btn btn-light" }>Category</button>
+                <button type="button" className={this.state.showType===1?"text-md btn btn-dark":"text-md btn btn-light" }>Individual</button>
+              </div>
+            </div>
+            <div className='col-6 heading1 text-center'>
               {this.unlinkify(this.props.match.params.type)}
               {this.checkRefresh(this.props.match.params.type)}
             </div>
-            <div className='col-3'>
-              <div className="btn-group" onClick={()=>this.toggleType()} role="group">
-                <button type="button" className={this.state.showType===0?"btn btn-dark":"btn btn-light" }>Category</button>
-                <button type="button" className={this.state.showType===1?"btn btn-dark":"btn btn-light" }>Individual</button>
-              </div>
-            </div>
+
           </div>
 
 
@@ -145,30 +148,28 @@ class Type extends Component {
             {this.state.showType===0?
               <div className='row'>
               {this.content.map((content, index)=>{
-                return <div key={index} className="card bg-light col-3">
-                  <Link to={`/inventory${content.href}`}>
+                return <Link className='border bg-light col-3' to={`/inventory${content.href}`}>
                   <img className="card-img-top " src={`${content.image}`} alt={content.name}/>
 
-                  <div className="card-body text-left ">
-                    <div className="text-muted text-center">{this.unlinkify(content.name)}</div>
-                  </div>
-                  </Link>
-                </div>
+                    <div className='row justify-content-center'>
+                      <div className="text-muted text-center">{this.unlinkify(content.name)}</div>
+                    </div>
+                </Link>
               })}
               </div>
               :
               <div className='row'>
               {this.allItems.map((items, index)=>{
 
-                return <div key={index} className="card bg-light col-3">
-                  <Link to={`/inventory${items.href}`}>
-                  <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
+                return <Link className='border bg-light col-3' to={`/inventory${items.href}`}>
+                    <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
 
-                  <div className="card-body text-left ">
-                    <div className="text-muted text-center">{this.unlinkify(items.name)}</div>
-                  </div>
+                    <div className='row justify-content-center'>
+                      <div className="text-muted text-center">{this.unlinkify(items.name)}</div>
+                    </div>
                   </Link>
-                </div>
+
+                return
               })}
               </div>
             }

@@ -14,7 +14,8 @@ class Item extends Component {
     this.content = [];
     this.notFound = false;
     this.mainPic = 0;
-
+    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
     });
@@ -40,7 +41,7 @@ class Item extends Component {
     if(this.itemType !== undefined && this.itemType.dirs !== undefined){
       this.itemType.dirs.map((item,index)=>{
         this.content.push({
-          image: `/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
+          image: `${this.awsPath}/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
           name: this.unPicturify(item.name),
           note: item.info,
         });
@@ -91,7 +92,7 @@ class Item extends Component {
     if(this.itemType !== undefined && this.itemType.dirs !== undefined){
       this.itemType.dirs.map((item,index)=>{
         this.content.push({
-          image: `/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
+          image: `${this.awsPath}/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
           name: this.unPicturify(item.name),
           note: item.info,
         });
@@ -195,20 +196,24 @@ class Item extends Component {
           <div className='row justify-content-center'>
 
             <div className='heading1 text-center'>
-              {this.unlinkify(this.props.match.params.item)}
+              {this.content[this.state.mainPic].name}
             </div>
           </div>
 
           <div className='row justify-content-center'>
             <div className =' col-11'>
               <div className='row'>
-                <div className="col-xs-12 col-md-3">
-                  <div className="list-group" id="list-tab" role="tablist">
+                <div className="col-12 col-md-9">
+                  <img className="img-fluid " src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                  <div className='text-center'> {this.content[this.state.mainPic].note}</div>
+                </div>
+                <div className="col-12 col-md-3">
+                  <div className="row" id="list-tab" role="tablist">
                     {this.content.map((content, index)=>{
 
-                      return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===this.state.mainPic?`list-group-item list-group-item-action active`:`list-group-item list-group-item-action`} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+                      return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===this.state.mainPic?`list-group-item list-group-item-action border border-primary col-md-12 col-4`:`list-group-item list-group-item-action col-md-12 col-4`} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
 
-                          <div>
+                          <div className='text-center'>
                           {content.name}
                           </div>
                         </a>
@@ -216,12 +221,6 @@ class Item extends Component {
 
                   </div>
                 </div>
-                <div className="col-xs-12 col-md-9">
-                  <img className="img-fluid " src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                  <div> {this.content[this.state.mainPic].name}</div>
-                  <div> {this.content[this.state.mainPic].note}</div>
-                </div>
-
               </div>
             </div>
           </div>

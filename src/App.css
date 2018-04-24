@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -39,12 +38,24 @@
 .heading1{
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  font-size: 3em;
+  font-size: 5vw;
 }
 .heading2{
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  font-size: 2em;
+  font-size: 4vw;
+}
+body{
+  font-size: 2vw;
+}
+.div {
+  font-size: 2vw;
+}
+.text-md {
+  font-size: 2vw;
+}
+.text-lg {
+  font-size: 4vw;
 }
 
 .img-align{
@@ -56,4 +67,25 @@
 nav {
   margin-top: 60px;
   box-shadow: 5px 4px 5px #000;
+}
+
+#sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  z-index: 1;
+}
+#sidebar-toggle{
+  position: fixed;
+  bottom: 10vw;
+  right: 10vh;
+  width: 10vw;
+  height: 10vw;
+  z-index: 1;
+}
+#historybar{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }

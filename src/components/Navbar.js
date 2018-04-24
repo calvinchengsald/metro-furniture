@@ -47,11 +47,11 @@ class Navbar extends Component {
                 <div className = "col-10 offset-1">
                   <div className = "navbar-2 row">
                     {this.props.categoryKeys.map((cat, index)=>{
-                      return   <div key={`${index}`} className="dropdown col-2 btn bg-light" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
-                        <div >{`${cat}`} <span>&#8681;</span> </div>
+                      return   <div key={`${index}`} className="dropdown col-2 btn bg-light text-md" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
+                        <div >{`${cat}`} &#8681; </div>
                         <ul className={this.state.isOpen[`${index}`]?`dropdown-menu show `:`dropdown-menu`}>
                           {this.props.category[`${cat}`].map((type, index)=>{
-                            return <Link key={`${index}-link`} className='dropdown-item' to={`/inventory/${cat}/${type}`}> <li >{this.unlinkify(`${type}`)}</li></Link>
+                            return <Link key={`${index}-link`} className='dropdown-item text-md' to={`/inventory/${cat}/${type}`}> <li >{this.unlinkify(`${type}`)}</li></Link>
 
                           })}
                         </ul>
@@ -60,7 +60,7 @@ class Navbar extends Component {
                   </div>
                 </div>
               </div>
-              
+
             </div>
           </div>
           }
