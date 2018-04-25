@@ -22,7 +22,7 @@ class Type extends Component {
     this.content = [];
     this.allItems = [];
 
-    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;

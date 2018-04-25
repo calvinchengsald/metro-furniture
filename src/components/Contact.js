@@ -6,7 +6,7 @@ class Contact extends Component {
   constructor(props){
     super(props);
 
-    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
   }
 

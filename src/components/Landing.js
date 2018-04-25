@@ -11,8 +11,8 @@ class Landing extends Component {
       type: "none"
     };
 
-    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
-    this.awsPath = '';
+    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
+    //this.awsPath = '';
     //console.log("hi u should see one only once");
 
   }

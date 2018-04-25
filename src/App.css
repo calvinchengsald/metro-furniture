@@ -96,6 +96,7 @@ nav {
 }
 #brand-bar{
   background-color: #305269;
+  margin-bottom: 1vh;
 }
 #sidebar-toggle{
   position: fixed;

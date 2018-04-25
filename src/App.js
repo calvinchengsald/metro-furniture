@@ -17,7 +17,7 @@ class App extends Component {
         navCollapse: true,
         landingCategory: "none",
     };
-    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
     this.category = [];
     this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
@@ -102,8 +102,9 @@ class App extends Component {
         <main>
         </main>
         <div id="brand-bar" className='row justify-content-start'>
+          <div className='col-12'>
             <img className='img-fluid' src={`${this.awsPath}/image/icon/logo-top.png`}/>
-
+          </div>
 
         </div>
         <div className="main-holder  container-fluid">

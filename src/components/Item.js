@@ -14,7 +14,7 @@ class Item extends Component {
     this.content = [];
     this.notFound = false;
     this.mainPic = 0;
-    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
