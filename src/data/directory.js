@@ -11,23 +11,23 @@ export default [
 						 dirs: [
 							{
 								 name: 'TBB18-R.png',
-								 info: "red",
+								 info: "Bar height 18\" Round Bottom",
 							},
 							{
 								 name: 'TBB18-RR.png',
-								 info: "red ring",
+								 info: "Bar height 18\" Round Bottom with step ring",
 							},
 							{
 								 name: 'TBB2222-R.png',
-								 info: "red",
+								 info: "Bar height 22\" x 22\" Bottom with step ring",
 							},
 							{
 								 name: 'TBB2222.png',
-								 info: "none",
+								 info: "Bar height 22\" x 22\" Bottom",
 							},
 							{
 								 name: 'TBB945-B.png',
-								 info: "black",
+								 info: "Bar height 4 leg base, Black",
 							},
 						],
 					},
@@ -36,11 +36,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'BAR-RING.png',
-								 info: "ring",
+								 info: "Bar step ring",
 							},
 							{
 								 name: 'FTB.png',
-								 info: "note here",
+								 info: "24\" x 24\" Folding table base",
 							},
 						],
 					},
@@ -49,76 +49,56 @@ export default [
 						 dirs: [
 							{
 								 name: 'TB11-BD.png',
-								 info: "note here",
+								 info: "Bolt Down Base",
 							},
 							{
 								 name: 'TB18R.png',
-								 info: "note here",
+								 info: "18\" Round Bottom",
 							},
 							{
 								 name: 'TB22-R.png',
-								 info: "note here",
+								 info: "22\" Round Bottom",
 							},
 							{
 								 name: 'TB2222.png',
-								 info: "note here",
+								 info: "22\" x 22\" Base",
 							},
 							{
 								 name: 'TB2430.png',
-								 info: "note here",
+								 info: "24\" x 30\" Base",
 							},
 							{
 								 name: 'TB30-R.png',
-								 info: "note here",
+								 info: "30\" Round Bottom",
 							},
 							{
 								 name: 'TB3030.png',
-								 info: "note here",
+								 info: "30\" x 30\" Base",
 							},
 							{
 								 name: 'TB522.png',
-								 info: "note here",
+								 info: "5\" x 22\" Base",
 							},
 							{
 								 name: 'TB945-3.png',
-								 info: "note here",
+								 info: "19\" x 19\" 3 leg Base",
 							},
 							{
 								 name: 'TB945-4.png',
-								 info: "note here",
+								 info: "18\" x 18\" 4 leg Base",
 							},
 							{
 								 name: 'TB945-4G.png',
-								 info: "note here",
+								 info: "18\" x 18\" 3 leg Base, Gold",
 							},
 							{
 								 name: 'TB953-G.png',
-								 info: "note here",
+								 info: "17\" x 17\" Base, Gold",
 							},
 							{
 								 name: 'TB953D-G.png',
-								 info: null,
+								 info: "21\" x 34\" Base, Gold",
 							},
-						],
-					},
-				],
-			},
-			{
-				 name: 'Stainles_Steel',
-				 dirs: [
-					{
-						 name: 'Bar_Table_Base',
-						 dirs: [
-						],
-					},
-					{
-						 name: 'Others',
-						 dirs: [
-						],
-					},
-					{
-						 name: 'Table_Base',
-						 dirs: [
 						],
 					},
 				],
@@ -131,19 +111,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'TBB17-S.png',
-								 info: "note here",
+								 info: "Bar height 18\" round base",
 							},
 							{
 								 name: 'TBB1818-S.png',
-								 info: "ring",
+								 info: "Bar height 18\" x 18\" square base",
 							},
 							{
 								 name: 'TBB1818-SQ.png',
-								 info: "note here",
+								 info: "Bar height 18\" x 18\" square base and column",
 							},
 							{
 								 name: 'TBB8-S.png',
-								 info: "ring",
+								 info: "Bar height bolt down base",
 							},
 						],
 					},
@@ -152,7 +132,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD2828.png',
-								 info: "ring",
+								 info: "28\" x 28\" ",
 							},
 						],
 					},
@@ -161,39 +141,39 @@ export default [
 						 dirs: [
 							{
 								 name: 'TB1625-S.png',
-								 info: null,
+								 info: "16\" x 25\" square base ",
 							},
 							{
 								 name: 'TB1625-SQ.png',
-								 info: null,
+								 info: "16\" x 25\" square base and column ",
 							},
 							{
 								 name: 'TB17-S.png',
-								 info: "note here",
+								 info: "18\" round base",
 							},
 							{
 								 name: 'TB1818-S.png',
-								 info: "note here",
+								 info: "18\" x 18\" square base ",
 							},
 							{
 								 name: 'TB1818-SQ.png',
-								 info: "ring",
+								 info: "18\" x 18\" square base and column ",
 							},
 							{
 								 name: 'TB22-S.png',
-								 info: "ring",
+								 info: "22\" round base",
 							},
 							{
 								 name: 'TB8-S.png',
-								 info: "ring",
+								 info: "Bolt down base",
 							},
 							{
 								 name: 'TB84-D.png',
-								 info: "note here",
+								 info: "5\" x 22\"",
 							},
 							{
 								 name: 'TB84.png',
-								 info: "ring",
+								 info: "19\" x 19\"",
 							},
 						],
 					},
@@ -212,27 +192,27 @@ export default [
 						 dirs: [
 							{
 								 name: 'A31-4N.png',
-								 info: "ring",
+								 info: "4 Seater, Natural",
 							},
 							{
 								 name: 'WFT002-G.png',
-								 info: "note here",
+								 info: "2 Seater, Green",
 							},
 							{
 								 name: 'WFT002-R.png',
-								 info: "ring",
+								 info: "2 Seater, Red",
 							},
 							{
 								 name: 'WFT004-G.png',
-								 info: "note here",
+								 info: "4 Seater, Green",
 							},
 							{
 								 name: 'WFT004-N.png',
-								 info: "ring",
+								 info: "4 Seater, Natural",
 							},
 							{
 								 name: 'WFT004-R.png',
-								 info: "note here",
+								 info: "4 Seater, Red",
 							},
 						],
 					},
@@ -246,43 +226,43 @@ export default [
 						 dirs: [
 							{
 								 name: 'B1-D.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B10-DW.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B13-D.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B13-DW.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B27-D.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B29-D.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B4-D.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B41-D.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B60-D.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B70-D.png',
-								 info: "note here",
+								 info: "",
 							},
 						],
 					},
@@ -291,67 +271,67 @@ export default [
 						 dirs: [
 							{
 								 name: 'B1-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B1-SW.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B10-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B10-SW.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B11-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B13-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B2-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B21-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B23-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B24-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B25-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B28-SW.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B3-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B4-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B4-SW.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B5-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B50-S.png',
@@ -359,15 +339,15 @@ export default [
 							},
 							{
 								 name: 'B57-S.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B58-S.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B80-S.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -376,91 +356,91 @@ export default [
 						 dirs: [
 							{
 								 name: 'B-3.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B-9.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B14.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B18.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B3-C.png',
-								 info: "ring",
-							},
-							{
-								 name: 'B32.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B33.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B34.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B36.png',
-								 info: "note here",
+								 info: null,
 							},
 							{
 								 name: 'B38.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B40.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B45.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B48.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B49.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B6.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B63.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B64.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B65.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B66.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B67.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'B78.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'B79.png',
-								 info: "ring",
+								 info: "",
+							},
+							{
+								 name: 'Custom.png',
+								 info: "Please call for custom sizing and style",
 							},
 						],
 					},
@@ -479,27 +459,27 @@ export default [
 						 dirs: [
 							{
 								 name: 'CT01.png',
-								 info: "ring",
+								 info: "Front Desk, Natural",
 							},
 							{
 								 name: 'CT02.png',
-								 info: "note here",
+								 info: "Front Desk, Mahogany",
 							},
 							{
 								 name: 'CT03.png',
-								 info: "ring",
+								 info: "Front Counter",
 							},
 							{
 								 name: 'CT04.png',
-								 info: "note here",
+								 info: "Front Counter",
 							},
 							{
 								 name: 'CT06.png',
-								 info: "ring",
+								 info: "Cashier Counter",
 							},
 							{
 								 name: 'CT34.png',
-								 info: "note here",
+								 info: "Cashier Counter",
 							},
 						],
 					},
@@ -513,27 +493,27 @@ export default [
 						 dirs: [
 							{
 								 name: 'GC001-B-HOLE.png',
-								 info: "ring",
+								 info: "Black color, with hole",
 							},
 							{
 								 name: 'GC001-B.png',
-								 info: "note here",
+								 info: "Back color",
 							},
 							{
 								 name: 'GC001-M.png',
-								 info: "ring",
+								 info: "Mahogany color",
 							},
 							{
 								 name: 'GC001-N.png',
-								 info: "note here",
+								 info: "Natural color",
 							},
 							{
 								 name: 'Inner.png',
-								 info: "ring",
+								 info: "Inner garbage pale",
 							},
 							{
 								 name: 'WS003-M.png',
-								 info: "note here",
+								 info: "Mahogany color",
 							},
 						],
 					},
@@ -547,23 +527,23 @@ export default [
 						 dirs: [
 							{
 								 name: 'RL4.png',
-								 info: "ring",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'RL6.png',
-								 info: "note here",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'RL8.png',
-								 info: "ring",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'RL810.png',
-								 info: "note here",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'T50.png',
-								 info: "ring",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WMD003-M.png',
@@ -581,27 +561,27 @@ export default [
 						 dirs: [
 							{
 								 name: 'WS001-W.png',
-								 info: "ring",
+								 info: "Black color with door",
 							},
 							{
 								 name: 'WS004-M-No-Door.png',
-								 info: "note here",
+								 info: "Mahogany color with no door",
 							},
 							{
 								 name: 'WS004-N.png',
-								 info: "ring",
+								 info: "Natural color with door",
 							},
 							{
 								 name: 'WS008-N-With-Shelf.png',
-								 info: "note here",
+								 info: "Natural color with over shelf",
 							},
 							{
 								 name: 'WS008-N.png',
-								 info: "ring",
+								 info: "Natural color",
 							},
 							{
 								 name: 'WS015-M-No-Door.png',
-								 info: "note here",
+								 info: "Mahogany color with no door",
 							},
 						],
 					},
@@ -620,7 +600,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB11-N.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -629,19 +609,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB115-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'MB115-R.png',
-								 info: "INFO HERE",
+								 info: "Red",
 							},
 							{
 								 name: 'MB115-RI.png',
-								 info: "INFO HERE",
+								 info: "With ring",
 							},
 							{
 								 name: 'MB115-WB.png',
-								 info: "INFO HERE",
+								 info: "With backing",
 							},
 						],
 					},
@@ -650,7 +630,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB116.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -659,7 +639,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB117.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -668,7 +648,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB12-M.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -677,7 +657,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB125.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -686,7 +666,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB13.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -704,7 +684,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB20.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -713,7 +693,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MB31.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -727,11 +707,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'A04-B.png',
-								 info: "INFO HERE",
-							},
-							{
-								 name: 'A04.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 						],
 					},
@@ -740,11 +716,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'A05-B.png',
-								 info: "INFO HERE",
+								 info: "Black with silver vein frame",
 							},
 							{
 								 name: 'A05-BU.png',
-								 info: "INFO HERE",
+								 info: "Burgundy with silver vein frame",
 							},
 						],
 					},
@@ -753,7 +729,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'A111.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -762,7 +738,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'A112.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -771,7 +747,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC003.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -780,7 +756,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC006.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -789,7 +765,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC007-R.png',
-								 info: "INFO HERE",
+								 info: "Red",
 							},
 						],
 					},
@@ -798,7 +774,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC052.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -807,11 +783,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC11-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany back",
 							},
 							{
 								 name: 'MC11-N.png',
-								 info: "INFO HERE",
+								 info: "Natural back",
 							},
 						],
 					},
@@ -820,7 +796,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC116-M.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -829,11 +805,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC117-DB.png',
-								 info: "INFO HERE",
+								 info: "Dark brown",
 							},
 							{
 								 name: 'MC117-IV.png',
-								 info: "INFO HERE",
+								 info: "Ivory",
 							},
 						],
 					},
@@ -842,7 +818,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC12-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany back",
 							},
 						],
 					},
@@ -851,11 +827,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC13-B.png',
-								 info: "INFO HERE",
+								 info: "Black frame",
 							},
 							{
 								 name: 'MC13-S.png',
-								 info: "INFO HERE",
+								 info: "Silver vein frame",
 							},
 						],
 					},
@@ -864,7 +840,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC17.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -873,7 +849,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC18-M.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -882,11 +858,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC20-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'MC20-BX.png',
-								 info: "INFO HERE",
+								 info: "X-pattern",
 							},
 						],
 					},
@@ -895,7 +871,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC28.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -904,7 +880,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC38.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -913,7 +889,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC715.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -922,7 +898,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC810.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -931,7 +907,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC815.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -940,7 +916,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC816.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -949,7 +925,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC818.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -958,7 +934,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC902.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -967,7 +943,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC912.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -976,11 +952,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'MC916-R.png',
-								 info: "INFO HERE",
+								 info: "Red",
 							},
 							{
 								 name: 'MC916-W.png',
-								 info: "INFO HERE",
+								 info: "White",
 							},
 						],
 					},
@@ -989,7 +965,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD018.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -998,7 +974,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD078.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1007,7 +983,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD079.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1016,7 +992,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD116.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1025,7 +1001,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SD120.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1039,7 +1015,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'AC2424.png',
-								 info: "INFO HERE",
+								 info: "24\" X 24\" table with base",
 							},
 						],
 					},
@@ -1057,7 +1033,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'AC6013.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1066,7 +1042,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'AC6024.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1075,7 +1051,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'AC6101.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1084,7 +1060,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'AT24.png',
-								 info: "INFO HERE",
+								 info: "24\" round table with base",
 							},
 						],
 					},
@@ -1093,7 +1069,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'BC6103.png',
-								 info: "INFO HERE",
+								 info: "Bar height",
 							},
 						],
 					},
@@ -1102,7 +1078,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'BC8000.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1111,7 +1087,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'BC8010.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1125,19 +1101,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB101-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'WB101-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB101-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WB101-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1146,11 +1122,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB102-C.png',
-								 info: "INFO HERE",
+								 info: "Cherry",
 							},
 							{
 								 name: 'WB102-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1159,15 +1135,15 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB103-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB103-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WB103-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1176,11 +1152,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB104-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB104-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1189,11 +1165,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB105-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB105-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 						],
 					},
@@ -1202,11 +1178,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB106-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB106-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 						],
 					},
@@ -1215,7 +1191,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB109-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1224,11 +1200,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB113-C.png',
-								 info: "INFO HERE",
+								 info: "Cherry",
 							},
 							{
 								 name: 'WB113-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1237,11 +1213,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB114-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'WB114-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1250,7 +1226,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB118-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1259,11 +1235,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB121-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WB121-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1272,7 +1248,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WB123-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1286,19 +1262,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC101-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'WC101-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC101-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WC101-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1307,19 +1283,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC102-C.png',
-								 info: "INFO HERE",
+								 info: "Cherry",
 							},
 							{
 								 name: 'WC102-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC102-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WC102-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1328,19 +1304,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC103-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'WC103-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC103-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WC103-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1349,11 +1325,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC104-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC104-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1362,11 +1338,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC105-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC105-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 						],
 					},
@@ -1375,15 +1351,15 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC106-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'WC106-N.png',
-								 info: "INFO HERE",
+								 info: "Natural",
 							},
 							{
 								 name: 'WC106-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1392,11 +1368,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC109-C.png',
-								 info: "INFO HERE",
+								 info: "Cherry",
 							},
 							{
 								 name: 'WC109-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1405,11 +1381,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC113-C.png',
-								 info: "INFO HERE",
+								 info: "Cherry",
 							},
 							{
 								 name: 'WC113-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1418,11 +1394,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC114-B.png',
-								 info: "INFO HERE",
+								 info: "Black",
 							},
 							{
 								 name: 'WC114-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1431,7 +1407,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC118-M.png',
-								 info: "INFO HERE",
+								 info: "Mahogany",
 							},
 						],
 					},
@@ -1440,7 +1416,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC123-W.png',
-								 info: "INFO HERE",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1449,7 +1425,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'WC230.png',
-								 info: "INFO HERE",
+								 info: "",
 							},
 						],
 					},
@@ -1468,19 +1444,19 @@ export default [
 						 dirs: [
 							{
 								 name: 'A25.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'D21.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'RA39.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'RA46.png',
-								 info: "note here",
+								 info: "",
 							},
 						],
 					},
@@ -1494,7 +1470,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'New_Soho.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1508,7 +1484,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'JD12.png',
-								 info: "ring",
+								 info: "Japanese Doll",
 							},
 						],
 					},
@@ -1517,7 +1493,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'LD-32.png',
-								 info: "ring",
+								 info: "32\" Round ",
 							},
 							{
 								 name: 'LD-WL033.png',
@@ -1530,7 +1506,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'M07-6.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1548,7 +1524,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SBR28.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1557,7 +1533,7 @@ export default [
 						 dirs: [
 							{
 								 name: 'SC28.png',
-								 info: "ring",
+								 info: "28\" Round",
 							},
 						],
 					},
@@ -1580,39 +1556,39 @@ export default [
 						 dirs: [
 							{
 								 name: 'CH501-22X13.png',
-								 info: "ring",
+								 info: "22\" x 13\" Open",
 							},
 							{
 								 name: 'CH703-19X10.png',
-								 info: "note here",
+								 info: "19\" x 10\" Open",
 							},
 							{
 								 name: 'CH710-19X19.png',
-								 info: "ring",
+								 info: "19\" x 19\" Cocktails",
 							},
 							{
 								 name: 'HC020-19X10.png',
-								 info: "note here",
+								 info: "19\" x 10\" Coffee",
 							},
 							{
 								 name: 'HC021-19X10.png',
-								 info: "ring",
+								 info: "19\" x 10\" Bar",
 							},
 							{
 								 name: 'HC028-19X10.png',
-								 info: "note here",
+								 info: "19\" x 10\" Pizza",
 							},
 							{
 								 name: 'HC4060-24X16.png',
-								 info: "note here",
+								 info: "24\" x 16\" Custom Display",
 							},
 							{
 								 name: 'HC601-16X25.png',
-								 info: "ring",
+								 info: "16\" x 25\" Coffee/Bakery",
 							},
 							{
 								 name: 'LS132-22X13.png',
-								 info: "note here",
+								 info: "22\" x 13\" Open",
 							},
 						],
 					},
@@ -1626,11 +1602,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'FMB-B.png',
-								 info: "ring",
+								 info: "Black board with chalk",
 							},
 							{
 								 name: 'FMB-W.png',
-								 info: "note here",
+								 info: "White board with dry erase",
 							},
 						],
 					},
@@ -1649,15 +1625,15 @@ export default [
 						 dirs: [
 							{
 								 name: 'MFDH.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MFDS001.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MFDS002.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1666,27 +1642,27 @@ export default [
 						 dirs: [
 							{
 								 name: 'WSC1681-N.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'WSC1682-M.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'WSC1683-M.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'WSC1687-B.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'WSC1688-M.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'WSC1688-N.png',
-								 info: "note here",
+								 info: "",
 							},
 						],
 					},
@@ -1710,79 +1686,79 @@ export default [
 						 dirs: [
 							{
 								 name: 'ELT1-R.png',
-								 info: "ring",
+								 info: "Red",
 							},
 							{
 								 name: 'ELT1003-W.png',
-								 info: "note here",
+								 info: "White",
 							},
 							{
 								 name: 'ELT12-M.png',
-								 info: "note here",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'ELT13-W.png',
-								 info: "note here",
+								 info: "Walnut",
 							},
 							{
 								 name: 'ELT14-GD.png',
-								 info: "ring",
+								 info: "Grey Dot",
 							},
 							{
 								 name: 'ELT15-N.png',
-								 info: "note here",
+								 info: "Natural",
 							},
 							{
 								 name: 'ELT16-B.png',
-								 info: "ring",
+								 info: "Black",
 							},
 							{
 								 name: 'ELT17-GRD.png',
-								 info: "note here",
+								 info: "Green Dot",
 							},
 							{
 								 name: 'ELT19-BM.png',
-								 info: "ring",
+								 info: "Black Marble",
 							},
 							{
 								 name: 'ELT20-BRM.png',
-								 info: "note here",
+								 info: "Brown Marble",
 							},
 							{
 								 name: 'ELT25-PD.png',
-								 info: "ring",
+								 info: "Pink Dot",
 							},
 							{
 								 name: 'ELT4-BS.png',
-								 info: "note here",
+								 info: "Black Stone",
 							},
 							{
 								 name: 'ELT5-BRS.png',
-								 info: "ring",
+								 info: "Brown Stone",
 							},
 							{
 								 name: 'ELT6-GM.png',
-								 info: "note here",
+								 info: "Green Marble",
 							},
 							{
 								 name: 'ELT7.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'ELT8-SD.png',
-								 info: "note here",
+								 info: "Sand Dot",
 							},
 							{
 								 name: 'ELT8086-Z.png',
-								 info: "note here",
+								 info: "Zebra pattern",
 							},
 							{
 								 name: 'ELT8249-BZ.png',
-								 info: "note here",
+								 info: "Black Zebra pattern",
 							},
 							{
 								 name: 'ELT9.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1796,51 +1772,51 @@ export default [
 						 dirs: [
 							{
 								 name: 'MT002.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MT004.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT005.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MT006.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT007.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MT008.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT009.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MT010.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT013.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT014.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'MT017.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'MT020.png',
-								 info: "ring",
+								 info: "",
 							},
 						],
 					},
@@ -1854,39 +1830,39 @@ export default [
 						 dirs: [
 							{
 								 name: 'UVCT-COLOR.png',
-								 info: null,
+								 info: "Solid Color",
 							},
 							{
 								 name: 'UVCT-CUSTOM.png',
-								 info: null,
+								 info: "Please call for custom design",
 							},
 							{
 								 name: 'UVCT11.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'UVCT12.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'UVCT13.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'UVCT3.png',
-								 info: "note here",
+								 info: "",
 							},
 							{
 								 name: 'UVCT5.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'UVCT7.png',
-								 info: "ring",
+								 info: "",
 							},
 							{
 								 name: 'UVCT9.png',
-								 info: "note here",
+								 info: "",
 							},
 						],
 					},
@@ -1900,23 +1876,23 @@ export default [
 						 dirs: [
 							{
 								 name: 'OWT-C.png',
-								 info: "ring",
+								 info: "Cherry",
 							},
 							{
 								 name: 'OWT-DESIGN.png',
-								 info: "note here",
+								 info: "Please call for custom design",
 							},
 							{
 								 name: 'OWT-M.png',
-								 info: "ring",
+								 info: "Mahogany",
 							},
 							{
 								 name: 'OWT-N.png',
-								 info: "note here",
+								 info: "Natural",
 							},
 							{
 								 name: 'OWT-W.png',
-								 info: "ring",
+								 info: "Walnut",
 							},
 						],
 					},
@@ -1930,11 +1906,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'DVT-M.png',
-								 info: "ring",
+								 info: "1-3/4\" thick, Mahogany",
 							},
 							{
 								 name: 'DVT-W.png',
-								 info: "note here",
+								 info: "1-3/4\" thick, Walnut",
 							},
 						],
 					},
@@ -1943,11 +1919,11 @@ export default [
 						 dirs: [
 							{
 								 name: 'VT-M.png',
-								 info: "ring",
+								 info: "1-3/4\" thick, Mahogany",
 							},
 							{
 								 name: 'VT-W.png',
-								 info: "note here",
+								 info: "1-3/4\" thick, Walnut",
 							},
 						],
 					},
@@ -1959,132 +1935,144 @@ export default [
 		 name: 'icon',
 		 dirs: [
 			{
-				 name: 'LED_sign.png',
+				 name: 'Ash_Barrel.png',
 				 info: null,
 			},
 			{
-				 name: 'ash_barrel.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'base.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'booth.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'cabinet.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'cashier_counter.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'cast_iron.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'chair.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'color_options.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'fast_food_table.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'fiber_glass.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'garbage_cabinet.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'japanese_tableware.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'laminate.png',
+				 name: 'Base.png',
 				 info: null,
 			},
 			{
-				 name: 'maitred_d_stand.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'menu_A-Frame_board.png',
+				 name: 'Booth.png',
 				 info: null,
 			},
 			{
-				 name: 'metal_barstool.png',
-				 info: "INFO HERE",
-			},
-			{
-				 name: 'metal_chair.png',
+				 name: 'Cabinet.png',
 				 info: null,
 			},
 			{
-				 name: 'metal_laminate.png',
+				 name: 'Cashier_Counter.png',
 				 info: null,
 			},
 			{
-				 name: 'other.png',
-				 info: "INFO HERE",
+				 name: 'Cast_Iron.png',
+				 info: null,
 			},
 			{
-				 name: 'outdoor_chair.png',
-				 info: "INFO HERE",
+				 name: 'Chair.png',
+				 info: null,
 			},
 			{
-				 name: 'resin.png',
-				 info: "INFO HERE",
+				 name: 'Color_Options.png',
+				 info: null,
 			},
 			{
-				 name: 'solid_wood.png',
-				 info: "INFO HERE",
+				 name: 'Direction.png',
+				 info: null,
 			},
 			{
-				 name: 'stainless_steel.png',
-				 info: "INFO HERE",
+				 name: 'Fast_Food_Table.png',
+				 info: null,
 			},
 			{
-				 name: 'table.png',
-				 info: "INFO HERE",
+				 name: 'Fiber_Glass.png',
+				 info: null,
 			},
 			{
-				 name: 'traditional_booth.png',
-				 info: "INFO HERE",
+				 name: 'Garbage_Cabinet.png',
+				 info: null,
 			},
 			{
-				 name: 'veneer.png',
-				 info: "INFO HERE",
+				 name: 'Japanese_Tableware.png',
+				 info: null,
 			},
 			{
-				 name: 'waiter_station.png',
-				 info: "INFO HERE",
+				 name: 'LED_Sign.png',
+				 info: null,
 			},
 			{
-				 name: 'wallpaper.png',
-				 info: "INFO HERE",
+				 name: 'Laminate.png',
+				 info: null,
 			},
 			{
-				 name: 'wooden_barstool.png',
-				 info: "INFO HERE",
+				 name: 'Logo.png',
+				 info: "Metro Logo",
 			},
 			{
-				 name: 'wooden_chair.png',
-				 info: "INFO HERE",
+				 name: 'Maitred_D_Stand.png',
+				 info: null,
 			},
 			{
-				 name: 'wooden_screen.png',
-				 info: "INFO HERE",
+				 name: 'Menu_A-Frame_Board.png',
+				 info: null,
+			},
+			{
+				 name: 'Metal_Barstool.png',
+				 info: null,
+			},
+			{
+				 name: 'Metal_Chair.png',
+				 info: null,
+			},
+			{
+				 name: 'Metal_Laminate.png',
+				 info: null,
+			},
+			{
+				 name: 'Other.png',
+				 info: null,
+			},
+			{
+				 name: 'Outdoor_Chair.png',
+				 info: null,
+			},
+			{
+				 name: 'Resin.png',
+				 info: null,
+			},
+			{
+				 name: 'Solid_Wood.png',
+				 info: null,
+			},
+			{
+				 name: 'Stainless_Steel.png',
+				 info: null,
+			},
+			{
+				 name: 'Table.png',
+				 info: null,
+			},
+			{
+				 name: 'Traditional_Booth.png',
+				 info: null,
+			},
+			{
+				 name: 'Veneer.png',
+				 info: null,
+			},
+			{
+				 name: 'Waiter_Station.png',
+				 info: null,
+			},
+			{
+				 name: 'Wallpaper.png',
+				 info: null,
+			},
+			{
+				 name: 'Wooden_Barstool.png',
+				 info: null,
+			},
+			{
+				 name: 'Wooden_Chair.png',
+				 info: null,
+			},
+			{
+				 name: 'Wooden_Screen.png',
+				 info: null,
+			},
+			{
+				 name: 'logo-top.png',
+				 info: null,
 			},
 		],
 	},

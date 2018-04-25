@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.js';
 import Landing from './components/Landing.js';
 import Item from './components/Item.js';
 import Type from './components/Type.js';
+import Contact from './components/Contact.js';
 
 
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
         navCollapse: true,
         landingCategory: "none",
     };
-
+    this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
+    //this.awsPath = '';
     this.category = [];
     this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
     var types = [];
@@ -99,8 +101,13 @@ class App extends Component {
 
         <main>
         </main>
+        <div id="brand-bar" className='row justify-content-start'>
+            <img className='img-fluid' src={`${this.awsPath}/image/icon/logo-top.png`}/>
 
+
+        </div>
         <div className="main-holder  container-fluid">
+
           <div className='row d-none d-sm-block'>
             <Navbar
               category = {this.category}
@@ -113,6 +120,8 @@ class App extends Component {
               <Route exact path = "/" render = {this.customLanding}/>
               <Route exact path = "/inventory/:category/:type" component = {Type}/>
               <Route exact path = "/inventory/:category/:type/:item" component = {Item}/>
+              <Route exact path = "/Contact" component = {Contact}/>
+
             </div>
           </div>
         </div>

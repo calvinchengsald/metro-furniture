@@ -47,7 +47,7 @@ class Navbar extends Component {
                 <div className = "col-10 offset-1">
                   <div className = "navbar-2 row">
                     {this.props.categoryKeys.map((cat, index)=>{
-                      return   <div key={`${index}`} className="dropdown col-2 btn bg-light text-md" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
+                      return   <div key={`${index}`} className="dropdown col btn bg-light text-md" onMouseEnter ={()=>this.handleDropdown(`${index}`,true)} onMouseLeave ={()=>this.handleDropdown(`${index}`,false)}>
                         <div >{`${cat}`} &#8681; </div>
                         <ul className={this.state.isOpen[`${index}`]?`dropdown-menu show `:`dropdown-menu`}>
                           {this.props.category[`${cat}`].map((type, index)=>{
@@ -57,6 +57,12 @@ class Navbar extends Component {
                         </ul>
                       </div>
                     })}
+
+                    <div className="col btn bg-light text-md" >
+                      <Link to={`/Contact`} className='text-muted'> Contact
+                      </Link>
+
+                    </div>
                   </div>
                 </div>
               </div>

@@ -15,7 +15,7 @@ class Item extends Component {
     this.notFound = false;
     this.mainPic = 0;
     this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
-    this.awsPath = '';
+    //this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
     });
@@ -196,7 +196,7 @@ class Item extends Component {
           <div className='row justify-content-center'>
 
             <div className='heading1 text-center'>
-              {this.content[this.state.mainPic].name}
+              {this.unlinkify(this.content[this.state.mainPic].name)}
             </div>
           </div>
 
@@ -205,7 +205,7 @@ class Item extends Component {
               <div className='row'>
                 <div className="col-12 col-md-9">
                   <img className="img-fluid " src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                  <div className='text-center'> {this.content[this.state.mainPic].note}</div>
+                  <div className='text-center text-3'> {this.content[this.state.mainPic].note}</div>
                 </div>
                 <div className="col-12 col-md-3">
                   <div className="row" id="list-tab" role="tablist">
@@ -214,7 +214,7 @@ class Item extends Component {
                       return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===this.state.mainPic?`list-group-item list-group-item-action border border-primary col-md-12 col-4`:`list-group-item list-group-item-action col-md-12 col-4`} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
 
                           <div className='text-center'>
-                          {content.name}
+                          {this.unlinkify(content.name)}
                           </div>
                         </a>
                     })}

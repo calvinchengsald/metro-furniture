@@ -1,14 +1,14 @@
 {
   "WC101_B" : {
-      "info" : "INFO HERE"
+      "info" : "Black"
   },
   "WC101_M" : {
-      "info" : "INFO HERE"
+      "info" : "Mahogany"
   },
   "WC101_N" : {
-      "info" : "INFO HERE"
+      "info" : "Natural"
   },
   "WC101_W" : {
-      "info" : "INFO HERE"
+      "info" : "Walnut"
   }
 }

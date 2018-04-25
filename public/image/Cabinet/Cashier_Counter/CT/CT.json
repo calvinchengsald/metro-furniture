@@ -1,20 +1,20 @@
 {
   "CT01" : {
-      "info" : "ring"
+      "info" : "Front Desk, Natural"
   },
   "CT02" : {
-      "info" : "note here"
+      "info" : "Front Desk, Mahogany"
   },
   "CT03" : {
-      "info" : "ring"
+      "info" : "Front Counter"
   },
   "CT04" : {
-      "info" : "note here"
+      "info" : "Front Counter"
   },
   "CT06" : {
-      "info" : "ring"
+      "info" : "Cashier Counter"
   },
   "CT34" : {
-      "info" : "note here"
+      "info" : "Cashier Counter"
   }
 }

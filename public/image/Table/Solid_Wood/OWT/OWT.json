@@ -1,17 +1,17 @@
 {
   "OWT_C" : {
-      "info" : "ring"
+      "info" : "Cherry"
   },
   "OWT_DESIGN" : {
-      "info" : "note here"
+      "info" : "Please call for custom design"
   },
   "OWT_M" : {
-      "info" : "ring"
+      "info" : "Mahogany"
   },
   "OWT_N" : {
-      "info" : "note here"
+      "info" : "Natural"
   },
   "OWT_W" : {
-      "info" : "ring"
+      "info" : "Walnut"
   }
 }

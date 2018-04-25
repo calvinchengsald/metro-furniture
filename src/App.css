@@ -54,6 +54,9 @@ body{
 .text-md {
   font-size: 2vw;
 }
+.text-3 {
+  font-size: 3vw;
+}
 .text-lg {
   font-size: 4vw;
 }
@@ -76,6 +79,23 @@ nav {
   width: 50vw;
   height: 100vh;
   z-index: 1;
+  background-color: rgba(192, 192, 192, 0.9);
+}
+.sidebar-heading{
+  background-color: rgba(182,192,182, 0.9);
+  color: #979797;
+  width: 90%;
+}
+.sidebar-item{
+  background-color: rgba(182,172,182, 0.9);
+  width: 100%;
+}
+.sidebar-collapsible{
+  background-color: rgba(182,192,182, 0.9);
+  width: 100%;
+}
+#brand-bar{
+  background-color: #305269;
 }
 #sidebar-toggle{
   position: fixed;

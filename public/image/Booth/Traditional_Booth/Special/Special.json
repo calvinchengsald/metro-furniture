@@ -1,68 +1,68 @@
 {
+  "Custom" : {
+      "info" : "Please call for custom sizing and style"
+  },
   "B_3" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B_9" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B3_C" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B6" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B14" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B18" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B32" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B33" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B34" : {
-      "info" : "ring"
-  },
-  "B36" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B38" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B40" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B45" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B48" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B49" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B63" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B64" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B65" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B66" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B67" : {
-      "info" : "ring"
+      "info" : ""
   },
   "B78" : {
-      "info" : "note here"
+      "info" : ""
   },
   "B79" : {
-      "info" : "ring"
+      "info" : ""
   }
 }

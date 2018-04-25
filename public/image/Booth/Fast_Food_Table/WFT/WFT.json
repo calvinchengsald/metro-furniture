@@ -1,20 +1,20 @@
 {
   "A31_4N" : {
-      "info" : "ring"
+      "info" : "4 Seater, Natural"
   },
   "WFT002_G" : {
-      "info" : "note here"
+      "info" : "2 Seater, Green"
   },
   "WFT002_R" : {
-      "info" : "ring"
+      "info" : "2 Seater, Red"
   },
   "WFT004_G" : {
-      "info" : "note here"
+      "info" : "4 Seater, Green"
   },
   "WFT004_N" : {
-      "info" : "ring"
+      "info" : "4 Seater, Natural"
   },
   "WFT004_R" : {
-      "info" : "note here"
+      "info" : "4 Seater, Red"
   }
 }

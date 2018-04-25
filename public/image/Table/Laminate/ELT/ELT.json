@@ -1,59 +1,59 @@
 {
   "ELT1_R" : {
-      "info" : "ring"
+      "info" : "Red"
   },
   "ELT4_BS" : {
-      "info" : "note here"
+      "info" : "Black Stone"
   },
   "ELT5_BRS" : {
-      "info" : "ring"
+      "info" : "Brown Stone"
   },
   "ELT6_GM" : {
-      "info" : "note here"
+      "info" : "Green Marble"
   },
   "ELT7" : {
-      "info" : "ring"
+      "info" : ""
   },
   "ELT8_SD" : {
-      "info" : "note here"
+      "info" : "Sand Dot"
   },
   "ELT9" : {
-      "info" : "ring"
+      "info" : ""
   },
   "ELT12_M" : {
-      "info" : "note here"
+      "info" : "Mahogany"
   },
   "ELT13_W" : {
-      "info" : "note here"
+      "info" : "Walnut"
   },
   "ELT14_GD" : {
-      "info" : "ring"
+      "info" : "Grey Dot"
   },
   "ELT15_N" : {
-      "info" : "note here"
+      "info" : "Natural"
   },
   "ELT16_B" : {
-      "info" : "ring"
+      "info" : "Black"
   },
   "ELT17_GRD" : {
-      "info" : "note here"
+      "info" : "Green Dot"
   },
   "ELT19_BM" : {
-      "info" : "ring"
+      "info" : "Black Marble"
   },
   "ELT20_BRM" : {
-      "info" : "note here"
+      "info" : "Brown Marble"
   },
   "ELT25_PD" : {
-      "info" : "ring"
+      "info" : "Pink Dot"
   },
   "ELT1003_W" : {
-      "info" : "note here"
+      "info" : "White"
   },
   "ELT8086_Z" : {
-      "info" : "note here"
+      "info" : "Zebra pattern"
   },
   "ELT8249_BZ" : {
-      "info" : "note here"
+      "info" : "Black Zebra pattern"
   }
 }

@@ -12,7 +12,7 @@ class Landing extends Component {
     };
 
     this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
-
+    this.awsPath = '';
     //console.log("hi u should see one only once");
 
   }
@@ -46,7 +46,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className = "row" id="category">
-          <div className="col-12">
+          <div className="col-12 col-md-10 offset-md-1">
             <div className="btn-group row" role="group">
               {this.props.categoryKeys.map((key, index)=>{
                 return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.props.setCategory(key)}>

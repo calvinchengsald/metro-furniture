@@ -1,20 +1,20 @@
 {
   "GC001_B_HOLE" : {
-      "info" : "ring"
+      "info" : "Black color, with hole"
   },
   "GC001_B" : {
-      "info" : "note here"
+      "info" : "Back color"
   },
   "GC001_M" : {
-      "info" : "ring"
+      "info" : "Mahogany color"
   },
   "GC001_N" : {
-      "info" : "note here"
+      "info" : "Natural color"
   },
   "Inner" : {
-      "info" : "ring"
+      "info" : "Inner garbage pale"
   },
   "WS003_M" : {
-      "info" : "note here"
+      "info" : "Mahogany color"
   }
 }

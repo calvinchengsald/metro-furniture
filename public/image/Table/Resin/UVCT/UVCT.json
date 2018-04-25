@@ -1,29 +1,29 @@
 {
   "UVCT7" : {
-      "info" : "ring"
+      "info" : ""
   },
-  "UCVT_COLOR" : {
-      "info" : "note here"
+  "UVCT_COLOR" : {
+      "info" : "Solid Color"
   },
-  "UVCT_CUTSOM" : {
-      "info" : "ring"
+  "UVCT_CUSTOM" : {
+      "info" : "Please call for custom design"
   },
   "UVCT3" : {
-      "info" : "note here"
+      "info" : ""
   },
   "UVCT5" : {
-      "info" : "ring"
+      "info" : ""
   },
   "UVCT9" : {
-      "info" : "note here"
+      "info" : ""
   },
   "UVCT11" : {
-      "info" : "ring"
+      "info" : ""
   },
   "UVCT12" : {
-      "info" : "note here"
+      "info" : ""
   },
   "UVCT13" : {
-      "info" : "note here"
+      "info" : ""
   }
 }

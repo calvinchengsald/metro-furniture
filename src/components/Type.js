@@ -23,7 +23,7 @@ class Type extends Component {
     this.allItems = [];
 
     this.awsPath = 'https://s3.us-east-2.amazonaws.com/metro-furniture';
-    this.awsPath = '';
+    //this.awsPath = '';
     this.menuCat = directoryData.find((cat)=>{
       return cat.name === this.category;
     });
@@ -142,7 +142,8 @@ class Type extends Component {
             </div>
 
           </div>
-
+          <div className='row'>
+            <div className='col-12 col-md-10 offset-md-1'>
 
 
             {this.state.showType===0?
@@ -168,11 +169,12 @@ class Type extends Component {
                       <div className="text-muted text-center">{this.unlinkify(items.name)}</div>
                     </div>
                   </Link>
-
-                return
               })}
               </div>
             }
+
+            </div>
+          </div>
         </div>
 
       );
