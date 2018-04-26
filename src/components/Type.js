@@ -24,14 +24,11 @@ class Type extends Component {
 
     this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
-    this.menuCat = directoryData.find((cat)=>{
-      return cat.name === this.category;
-    });
+    this.menuCat= this.find(directoryData, this.category);
 
     if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
-      this.menuType = this.menuCat.dirs.find((type)=>{
-        return type.name === this.type;
-      });
+
+      this.menuType= this.find(this.menuCat.dirs, this.type);
     } else {
       this.notFound = true;
     }
@@ -76,7 +73,14 @@ class Type extends Component {
       });
     }
   }
-
+  find(arr, target){
+    for(var i = 0; i < arr.length; i++){
+      if(arr[i].name === target){
+        return arr[i];
+      }
+    }
+    return arr[-1];
+  }
   unlinkify(str){
     return str.replace(/_/g, ' ');
   }
@@ -130,13 +134,13 @@ class Type extends Component {
             </div>
           </div>
           <div className='row justify-content-center'>
-            <div className='col-3'>
+            <div className='col-3 offset-md-1'>
               <div className="btn-group" onClick={()=>this.toggleType()} role="group">
                 <button type="button" className={this.state.showType===0?"text-md btn btn-dark":"text-md btn btn-light" }>Category</button>
                 <button type="button" className={this.state.showType===1?"text-md btn btn-dark":"text-md btn btn-light" }>Individual</button>
               </div>
             </div>
-            <div className='col-9 heading1 text-center'>
+            <div className='col-8 heading1 text-center'>
               {this.unlinkify(this.props.match.params.type)}
               {this.checkRefresh(this.props.match.params.type)}
             </div>

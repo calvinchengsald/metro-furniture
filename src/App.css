@@ -60,6 +60,12 @@ body{
 .text-lg {
   font-size: 4vw;
 }
+.text-5 {
+  font-size: 5vw;
+}
+.text-6 {
+  font-size: 6vw;
+}
 
 .img-align{
   max-width: 100%;

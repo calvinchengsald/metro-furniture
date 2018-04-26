@@ -16,23 +16,18 @@ class Item extends Component {
     this.mainPic = 0;
     this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
-    this.menuCat = directoryData.find((cat)=>{
-      return cat.name === this.category;
-    });
+    this.menuCat= this.find(directoryData, this.category);
+
 
     if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
-      this.menuType = this.menuCat.dirs.find((type)=>{
-        return type.name === this.type;
-      });
+      this.menuType= this.find(this.menuCat.dirs, this.type);
     }
     else {
       this.notFound = true;
     }
 
     if(this.menuType !== undefined && this.menuType.dirs !== undefined){
-      this.itemType = this.menuType.dirs.find((item)=>{
-        return item.name === this.item;
-      });
+      this.itemType= this.find(this.menuType.dirs, this.item);
     }
     else {
       this.notFound = true;
@@ -67,23 +62,18 @@ class Item extends Component {
     this.notFound = false;
     this.mainPic = 0;
 
-    this.menuCat = directoryData.find((cat)=>{
-      return cat.name === this.category;
-    });
+    this.menuCat= this.find(directoryData, this.category);
+
 
     if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
-      this.menuType = this.menuCat.dirs.find((type)=>{
-        return type.name === this.type;
-      });
+      this.menuType= this.find(this.menuCat.dirs, this.type);
     }
     else {
       this.notFound = true;
     }
 
     if(this.menuType !== undefined && this.menuType.dirs !== undefined){
-      this.itemType = this.menuType.dirs.find((item)=>{
-        return item.name === this.item;
-      });
+      this.itemType= this.find(this.menuType.dirs, this.item);
     }
     else {
       this.notFound = true;
@@ -121,6 +111,14 @@ class Item extends Component {
     if(!this.notFound){
       this.firstRef.current.focus();
     }
+  }
+  find(arr, target){
+    for(var i = 0; i < arr.length; i++){
+      if(arr[i].name === target){
+        return arr[i];
+      }
+    }
+    return arr[-1];
   }
 
   handleKeyPress(e){

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route}  from 'react-router-dom';
+import {Link, Route}  from 'react-router-dom';
 import './App.css';
 import Sidebar from './components/Sidebar.js';
 import Navbar from './components/Navbar.js';
@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        navCollapse: false,
+        navCollapse: true,
         landingCategory: "none",
     };
     this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
@@ -101,12 +101,14 @@ class App extends Component {
 
         <main>
         </main>
+        <Link to='/'>
         <div id="brand-bar" className='row justify-content-start'>
           <div className='col-12'>
             <img className='img-fluid' src={`${this.awsPath}/image/icon/logo-top.png`}/>
           </div>
 
         </div>
+        </Link>
         <div className="main-holder  container-fluid">
 
           <div className='row d-none d-sm-block'>

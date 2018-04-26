@@ -32,3 +32,4 @@ read in categories from json instead
 dropdown sizing is wrong
 arrow in history is weird
 √at items, when sidebar is up still see highlighted item name tab
+DOESNT WORK FOR IE

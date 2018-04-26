@@ -28,14 +28,14 @@ class Sidebar extends Component {
                 <div className='row'>
                   <div className='col-12'>
                     <div className='row'>
-                      <Link className='border sidebar-heading text-3 text-left' to='/'>
+                      <Link className='border sidebar-heading text-6 text-left' to='/'>
                         <div className=''>Home</div>
                       </Link>
                     </div>
                   </div>
                   <div className='col-12'>
                     <div className='row'>
-                      <Link className='border sidebar-heading text-3 text-left' to='/Contact'>
+                      <Link className='border sidebar-heading text-6 text-left' to='/Contact'>
                         <div className=''>Contact</div>
                       </Link>
                     </div>
@@ -45,7 +45,7 @@ class Sidebar extends Component {
                   return <div className='row'>
                     <div className='col-12'>
                         <div className='row'>
-                          <button className="border sidebar-heading text-3 text-left" type="button" data-toggle="collapse" data-target={`#${key}-collapse`} aria-expanded="false" aria-controls="collapseExample">
+                          <button className="border sidebar-heading text-6 text-left" type="button" data-toggle="collapse" data-target={`#${key}-collapse`} aria-expanded="false" aria-controls="collapseExample">
                             {key}
                           </button>
                         </div>
@@ -53,7 +53,7 @@ class Sidebar extends Component {
                           {this.props.category[`${key}`].map((type, index)=>{
                             return <div className='col-12'>
                               <Link className='' to={`/inventory/${key}/${type}`}>
-                                <div className='sidebar-item text-muted text-3 text-left'>{this.unlinkify(type)}</div>
+                                <div className='sidebar-item text-muted text-5 text-left'>{this.unlinkify(type)}</div>
                               </Link>
                             </div>
 
