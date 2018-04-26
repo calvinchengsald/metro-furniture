@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        navCollapse: true,
+        navCollapse: false,
         landingCategory: "none",
     };
     this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
@@ -126,19 +126,12 @@ class App extends Component {
             </div>
           </div>
         </div>
-        {this.state.navCollapse?
-          <div></div>
-          :
-          <div>
-          <Sidebar
-            category = {this.category}
-            categoryKeys = {this.categoryKeys}
-          />
-          <button type="button" id="sidebar-toggle" className="btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
-             &#920;
-          </button>
-          </div>
-        }
+
+        <Sidebar
+          category = {this.category}
+          categoryKeys = {this.categoryKeys}
+          navCollapse = {this.state.navCollapse}
+        />
         <button type="button" id="sidebar-toggle" className="d-block d-sm-none btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
            &#920;
         </button>

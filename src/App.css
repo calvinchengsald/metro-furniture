@@ -75,19 +75,21 @@ nav {
 #sidebar{
   position: fixed;
   top: 0;
-  left: 0;
+  left: -50vw;
   width: 50vw;
   height: 100vh;
   z-index: 1;
-  background-color: rgba(192, 192, 192, 0.9);
+  background-color: rgba(192, 192, 192, 1.0);
+}
+#sidebar.active{
+  margin-left: 50vw;
 }
 .sidebar-heading{
   background-color: rgba(182,192,182, 0.9);
-  color: #979797;
   width: 90%;
+  color: #000000;
 }
 .sidebar-item{
-  background-color: rgba(182,172,182, 0.9);
   width: 100%;
 }
 .sidebar-collapsible{

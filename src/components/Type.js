@@ -136,7 +136,7 @@ class Type extends Component {
                 <button type="button" className={this.state.showType===1?"text-md btn btn-dark":"text-md btn btn-light" }>Individual</button>
               </div>
             </div>
-            <div className='col-6 heading1 text-center'>
+            <div className='col-9 heading1 text-center'>
               {this.unlinkify(this.props.match.params.type)}
               {this.checkRefresh(this.props.match.params.type)}
             </div>

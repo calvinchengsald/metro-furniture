@@ -19,27 +19,37 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div id="sidebar" >
-          {this.props.navCollapse?
-          <div>
-          </div>
-          :
+      <div id="sidebar" className={this.props.navCollapse?'':'active'} >
+
           <div className = "sidebar">
             <div className='row'>
               <div className='col-11 offset-1'>
                 <div className='heading1'> Directory </div>
                 <div className='row'>
-                  <Link className='sidebar-heading text-3' to='/'>Home </Link>
+                  <div className='col-12'>
+                    <div className='row'>
+                      <Link className='border sidebar-heading text-3 text-left' to='/'>
+                        <div className=''>Home</div>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className='col-12'>
+                    <div className='row'>
+                      <Link className='border sidebar-heading text-3 text-left' to='/Contact'>
+                        <div className=''>Contact</div>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
                 {this.props.categoryKeys.map((key,index)=>{
                   return <div className='row'>
                     <div className='col-12'>
                         <div className='row'>
-                          <button className="sidebar-heading text-3 text-left" type="button" data-toggle="collapse" data-target={`#${key}-collapse`} aria-expanded="false" aria-controls="collapseExample">
+                          <button className="border sidebar-heading text-3 text-left" type="button" data-toggle="collapse" data-target={`#${key}-collapse`} aria-expanded="false" aria-controls="collapseExample">
                             {key}
                           </button>
                         </div>
-                        <div id={`${key}-collapse`} className='sidebar-collapsible row collapse'>
+                        <div id={`${key}-collapse`} className='sidebar-collapsible border row collapse'>
                           {this.props.category[`${key}`].map((type, index)=>{
                             return <div className='col-12'>
                               <Link className='' to={`/inventory/${key}/${type}`}>
@@ -60,7 +70,6 @@ class Sidebar extends Component {
             </div>
 
           </div>
-          }
       </div>
 
     );
