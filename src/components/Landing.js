@@ -15,6 +15,10 @@ class Landing extends Component {
     //this.awsPath = '';
     //console.log("hi u should see one only once");
 
+    let hash = this.props.location.hash.replace('#!','');
+    if(hash.length!==0){
+      this.props.history.replace(hash);
+    }
   }
 
   unlinkify(str){

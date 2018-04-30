@@ -67,6 +67,7 @@ class App extends Component {
           categoryKeys={this.categoryKeys}
           landingCategory={this.state.landingCategory}
           setCategory={(key)=>this.setLandingCategory(key)}
+          {...props}
         />
       );
     }
@@ -82,6 +83,7 @@ class App extends Component {
           categoryKeys={this.categoryKeys}
           landingCategory={this.state.landingCategory}
           setCategory={(key)=>this.setLandingCategory(key)}
+          {...props}
         />
       );
     }
@@ -96,6 +98,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App background">
 
