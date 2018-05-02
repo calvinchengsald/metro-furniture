@@ -37,7 +37,13 @@ getLS(){  #1 is file, 2 is tab
         else
           #  echo "parsing $entry at $3"
             add=`jq .$changedName.info $3.json`;
+            seating=`jq .$changedName.seating $3.json`;
+            seat=`jq .$changedName.seat $3.json`;
+            frame_color=`jq .$changedName.frame_color $3.json`;
             str=`echo $str$tabber info: $add,\\\n`;
+            str=`echo $str$tabber seating: $seating,\\\n`;
+            str=`echo $str$tabber seat: $seat,\\\n`;
+            str=`echo $str$tabber frame_color: $frame_color,\\\n`;
         fi
       fi
 
@@ -52,7 +58,6 @@ getLS(){  #1 is file, 2 is tab
 }
 
 file="directory.js";
-echo "">${file};
 tab="\\t";
 getLS "${file}" "${tab}";
 str=${str}\\n]\;;
