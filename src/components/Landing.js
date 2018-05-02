@@ -11,7 +11,6 @@ class Landing extends Component {
       type: "none"
     };
 
-    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
     //console.log("hi u should see one only once");
 
@@ -20,6 +19,8 @@ class Landing extends Component {
       this.props.history.replace(hash);
     }
   }
+
+
 
   unlinkify(str){
     return str.replace(/_/g, ' ');
@@ -30,8 +31,8 @@ class Landing extends Component {
 
 
 
-
   render() {
+
     return (
       <div >
         <div className='row'>
@@ -41,6 +42,7 @@ class Landing extends Component {
               type = "none"
               item = "none"
               unlinkify = {(str)=>this.unlinkify(str)}
+              search = {this.props.commonVars.search}
             />
           </div>
         </div>
@@ -52,9 +54,9 @@ class Landing extends Component {
         <div className = "row" id="category">
           <div className="col-12 col-md-10 offset-md-1">
             <div className="btn-group row" role="group">
-              {this.props.categoryKeys.map((key, index)=>{
-                return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.props.setCategory(key)}>
-                    <img src={`${this.awsPath}/image/icon/${key}.png`} className="img-fluid img-thumbnail" alt="Chair"/>
+              {this.props.commonVars.categoryKeys.map((key, index)=>{
+                return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.props.commonVars.setCategory(key)}>
+                    <img src={`${this.props.commonVars.awsPath}/image/!icon/${key}.png`} className="img-fluid img-thumbnail" alt={key}/>
                     <div> {this.unlinkify(key)} </div>
                   </button>;
               })}
@@ -63,22 +65,22 @@ class Landing extends Component {
           </div>
         </div>
 
-        {this.props.landingCategory!=="none"?
+        {this.props.commonVars.landingCategory!=="none"?
         <div>
           <div className="row">
             <div className="offset-2 col-8">
-              <div className="heading2"> Select the type of {this.props.landingCategory}</div>
+              <div className="heading2"> Select the type of {this.props.commonVars.landingCategory}</div>
             </div>
           </div>
 
           <div id="type" className="row">
             <div className="offset-1 col-10">
               <div className="btn-group row justify-content-center" role="group">
-                {this.props.category[this.props.landingCategory].map((type, index)=>{
+                {this.props.commonVars.category[this.props.commonVars.landingCategory].map((type, index)=>{
 
 
-                  return <Link className='bg-light col-3' to={`/inventory/${this.props.landingCategory}/`+type}>
-                      <img className="img-fluid" src={`${this.awsPath}/image/icon/${type}.png`} alt={type}/>
+                  return <Link key={`landing-key-${index}`} className='bg-light col-3' to={`/inventory/${this.props.commonVars.landingCategory}/`+type}>
+                      <img className="img-fluid" src={`${this.props.commonVars.awsPath}/image/!icon/${type}.png`} alt={type}/>
                       <div className='row'>
                         <div className="col-12 text-muted text-center text-md">{this.unlinkify(type)}</div>
                       </div>

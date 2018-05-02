@@ -14,7 +14,7 @@ class HistoryBar extends Component {
 
   render() {
     return (
-        <div id="historybar" className='row bg-light'>
+        <div id="historybar" className='row bg-light d-flex'>
             <Link className='btn btn-info text-md' to={`/`}>
               Home
             </Link>
@@ -46,6 +46,13 @@ class HistoryBar extends Component {
           :
           <div></div>
           }
+          <div className='ml-auto'>
+            <form action="/search">
+              <input name='itemCode' type="text" placeholder='item code' defaultValue={this.props.search}/>
+              <input type="submit" value="Search"/>
+            </form>
+          </div>
+
         </div>
 
 

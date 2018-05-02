@@ -1,5 +1,13 @@
 {
   "WC123_W" : {
-      "info" : "Walnut"
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Walnut",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Green", "image" : "image/!seating/Round_Cushion_G.png"},
+        { "name" : "Wood Walnut", "image" : "image/!seating/Woodseat_W.png"}
+      ]
   }
 }

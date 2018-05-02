@@ -8,9 +8,6 @@ class Type extends Component {
 
   constructor(props){
     super(props);
-    this.state={
-      showType: 1
-    };
     this.initialize(false);
 
   }
@@ -22,7 +19,6 @@ class Type extends Component {
     this.content = [];
     this.allItems = [];
 
-    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
     //this.awsPath = '';
     this.menuCat= this.find(directoryData, this.category);
 
@@ -38,7 +34,7 @@ class Type extends Component {
         try{
           this.content.push({
             name: type.name,
-            image: `${this.awsPath}/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
+            image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
             href: `/${this.category}/${this.type}/${type.name}`,
             object: type
           });
@@ -62,7 +58,7 @@ class Type extends Component {
       this.content.map((content, index)=>{
         content.object.dirs.map((item, index) =>{
           this.allItems.push({
-            image: `${this.awsPath}/image/${this.category}/${this.type}/${content.object.name}/${item.name}`,
+            image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${content.object.name}/${item.name}`,
             name: this.unPicturify(item.name),
             href: `/${this.category}/${this.type}/${content.object.name}#${this.unPicturify(item.name)}`,
           });
@@ -81,16 +77,6 @@ class Type extends Component {
     }
     return arr[-1];
   }
-  unlinkify(str){
-    return str.replace(/_/g, ' ');
-  }
-  linkify(str){
-    return str.replace(/ /g, '_');
-  }
-  unPicturify(str){
-    str = str.replace(/.png/g, '');
-    return str.replace(/.jpg/g, '');
-  }
   checkRefresh(str){
     if(str !== this.type){
       this.initialize(true);
@@ -98,16 +84,17 @@ class Type extends Component {
     str=str.replace(/_/g, ' ');
     return "";
   }
-  toggleType(){
-    if(this.state.showType===1){
-      this.showType=0;
-    }
-    else this.showType = 1;
-    this.setState({
-      showType : this.showType,
-    });
+  unPicturify(str){
+    str = str.replace(/.png/g, '');
+    return str.replace(/.jpg/g, '');
   }
 
+  unlinkify(str){
+    return str.replace(/_/g, ' ');
+  }
+  linkify(str){
+    return str.replace(/ /g, '_');
+  }
 
   render() {
     if(this.notFound){
@@ -130,14 +117,15 @@ class Type extends Component {
                 type = {this.type}
                 item = "none"
                 unlinkify = {(str)=>this.unlinkify(str)}
+                search = {this.props.commonVars.search}
               />
             </div>
           </div>
           <div className='row justify-content-center'>
             <div className='col-3 offset-md-1'>
-              <div className="btn-group" onClick={()=>this.toggleType()} role="group">
-                <button type="button" className={this.state.showType===0?"text-md btn btn-dark":"text-md btn btn-light" }>Category</button>
-                <button type="button" className={this.state.showType===1?"text-md btn btn-dark":"text-md btn btn-light" }>Individual</button>
+              <div className="btn-group" onClick={()=>this.props.commonVars.setTypeView()} role="group">
+                <button type="button" className={this.props.commonVars.typeView===0?"text-md btn btn-dark":"text-md btn btn-light" }>Category</button>
+                <button type="button" className={this.props.commonVars.typeView===1?"text-md btn btn-dark":"text-md btn btn-light" }>Individual</button>
               </div>
             </div>
             <div className='col-8 heading1 text-center'>
@@ -150,10 +138,10 @@ class Type extends Component {
             <div className='col-12 col-md-10 offset-md-1'>
 
 
-            {this.state.showType===0?
+            {this.props.commonVars.typeView===0?
               <div className='row'>
               {this.content.map((content, index)=>{
-                return <Link className='border bg-light col-3' to={`/inventory${content.href}`}>
+                return <Link key={`link-${index}`} className='border bg-light col-3' to={`/inventory${content.href}`}>
                   <img className="card-img-top " src={`${content.image}`} alt={content.name}/>
 
                     <div className='row justify-content-center'>
@@ -166,7 +154,7 @@ class Type extends Component {
               <div className='row'>
               {this.allItems.map((items, index)=>{
 
-                return <Link className='border bg-light col-3' to={`/inventory${items.href}`}>
+                return <Link key={`link2-${index}`} className='border bg-light col-3' to={`/inventory${items.href}`}>
                     <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
 
                     <div className='row justify-content-center'>

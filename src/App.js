@@ -3,10 +3,12 @@ import {Link, Route}  from 'react-router-dom';
 import './App.css';
 import Sidebar from './components/Sidebar.js';
 import Navbar from './components/Navbar.js';
+import Search from './components/Search.js';
 import Landing from './components/Landing.js';
 import Item from './components/Item.js';
 import Type from './components/Type.js';
 import Contact from './components/Contact.js';
+import directoryData from './data/directory';
 
 
 class App extends Component {
@@ -16,78 +18,137 @@ class App extends Component {
     this.state = {
         navCollapse: true,
         landingCategory: "none",
+        typeView: 0,
+        searchCurrent: "",
     };
-    this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
-    //this.awsPath = '';
+    //this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
+    this.awsPath = '';
+    this.categoryKeys = [];
     this.category = [];
-    this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
     var types = [];
-    types.push("Wooden_Chair");
-    types.push("Metal_Chair");
-    types.push("Wooden_Barstool");
-    types.push("Metal_Barstool");
-    types.push("Outdoor_Chair")
-    this.category[this.categoryKeys[0]] = types;
-    types = [];
-    types.push("Solid_Wood");
-    types.push("Resin");
-    types.push("Veneer");
-    types.push("Laminate");
-    types.push("Metal_Laminate")
-    types.push("Fiber_Glass")
-    this.category[this.categoryKeys[1]] = types;
-    types = [];
-    types.push("Cast_Iron");
-    types.push("Stainless_Steel");
-    this.category[this.categoryKeys[2]] = types;
-    types = [];
-    types.push("Fast_Food_Table");
-    types.push("Traditional_Booth");
-    this.category[this.categoryKeys[3]] = types;
-    types = [];
-    types.push("Garbage_Cabinet");
-    types.push("Maitred_D_Stand");
-    types.push("Waiter_Station");
-    types.push("Cashier_Counter");
-    this.category[this.categoryKeys[4]] = types;
-    types = [];
-    types.push("Wallpaper");
-    types.push("Japanese_Tableware");
-    types.push("LED_Sign");
-    types.push("Menu_A-Frame_Board");
-    types.push("Wooden_Screen");
-    types.push("Ash_Barrel");
-    types.push("Color_Options");
-    this.category[this.categoryKeys[5]] = types;
-    //console.log("hi u should see one only once");
+    this.categoryKeys = ["Chair", "Table", "Base", "Booth" , "Cabinet", "Other"];
+
+    for(var i = 0; i < directoryData.length; i++){
+      if(directoryData[i].name[0]!=="!"){
+        types = [];
+        for(var j = 0; j < directoryData[i].dirs.length; j++){
+          types.push(directoryData[i].dirs[j].name);
+        }
+        this.category[directoryData[i].name] =types;
+      }
+    }
+
+    this.commonVars = new Object();
+    this.commonVars.category = this.category;
+    this.commonVars.categoryKeys = this.categoryKeys;
+    this.commonVars.setCategory = (key) => {this.setLandingCategory(key)};
+    this.commonVars.setTypeView = () => {this.setTypeView()};
+    this.commonVars.setSearchCurrent = (str) => {this.setSearchCurrent(str)};
+    this.commonVars.unlinkify = (str) => {this.unlinkify(str)};
+    this.commonVars.linkify = (str) => {this.linkify(str)};
+    this.commonVars.awsPath = this.awsPath;
+    this.commonVars.landingCategory = this.state.landingCategory;
+    this.commonVars.search = this.state.searchCurrent;
+    this.commonVars.typeView = 0;
     this.customLanding = (props) => {
       return (
         <Landing
-          category={this.category}
-          categoryKeys={this.categoryKeys}
-          landingCategory={this.state.landingCategory}
-          setCategory={(key)=>this.setLandingCategory(key)}
+          commonVars = {this.commonVars}
           {...props}
         />
       );
-    }
+    };
+    this.customType = (props) => {
+      return (
+        <Type
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
+    this.customItem = (props) => {
+      return (
+        <Item
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
+    this.customContact = (props) => {
+      return (
+        <Contact
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
+    this.customSearch = (props) => {
+      return (
+        <Search
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
+    //console.log("hi u should see one only once");
+
   }
   setLandingCategory(cat){
     this.setState({
       landingCategory: cat,
     });
+    this.commonVars.landingCategory = cat;
+  }
+  setTypeView(){
+    let typeView = 0;
+    if(this.state.typeView ===0){
+      typeView=1;
+    }
+    this.setState({
+      typeView: typeView,
+    })
+    this.commonVars.typeView = typeView;
+  }
+  setSearchCurrent(str){
+    this.setState({
+      searchCurrent : str,
+    });
+    this.commonVars.search = str;
+  }
+  componentWillUpdate(){
     this.customLanding = (props) => {
       return (
         <Landing
-          category={this.category}
-          categoryKeys={this.categoryKeys}
-          landingCategory={this.state.landingCategory}
-          setCategory={(key)=>this.setLandingCategory(key)}
+          commonVars = {this.commonVars}
           {...props}
         />
       );
     }
+    this.customType = (props) => {
+      return (
+        <Type
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
+    this.customItem = (props) => {
+      return (
+        <Item
+          commonVars = {this.commonVars}
+          {...props}
+        />
+      );
+    };
   }
+  unlinkify(str){
+    return str.replace(/_/g, ' ');
+  }
+  linkify(str){
+    return str.replace(/ /g, '_');
+  }
+
+
 
 
   collapseSidebar(){
@@ -107,7 +168,7 @@ class App extends Component {
         <Link to='/'>
         <div id="brand-bar" className='row justify-content-start'>
           <div className='col-12'>
-            <img className='img-fluid' src={`${this.awsPath}/image/icon/logo-top.png`}/>
+            <img className='img-fluid' src={`${this.awsPath}/image/!icon/logo-top.png`} alt={`logo`}/>
           </div>
 
         </div>
@@ -124,9 +185,10 @@ class App extends Component {
           <div className="row">
             <div className ="col-12 content" >
               <Route exact path = "/" render = {this.customLanding}/>
-              <Route exact path = "/inventory/:category/:type" component = {Type}/>
-              <Route exact path = "/inventory/:category/:type/:item" component = {Item}/>
-              <Route exact path = "/Contact" component = {Contact}/>
+              <Route exact path = "/inventory/:category/:type" render = {this.customType}/>
+              <Route exact path = "/inventory/:category/:type/:item" render = {this.customItem}/>
+              <Route exact path = "/Contact" render = {this.customContact}/>
+              <Route exact path = "/Search" render = {this.customSearch}/>
 
             </div>
           </div>
@@ -137,9 +199,13 @@ class App extends Component {
           categoryKeys = {this.categoryKeys}
           navCollapse = {this.state.navCollapse}
         />
-        <button type="button" id="sidebar-toggle" className="d-block d-sm-none btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
-           &#920;
-        </button>
+        {this.state.navCollapse?
+          <button type="button" id="sidebar-toggle" className="d-block d-sm-none btn btn-info navbar-btn" onClick={()=>this.collapseSidebar()}>
+             &#920;
+          </button>
+          :
+          <div className='sidebar-black' onClick={()=>this.collapseSidebar()}></div>
+        }
       </div>
     );
   }

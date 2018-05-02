@@ -42,7 +42,7 @@ class Sidebar extends Component {
                   </div>
                 </div>
                 {this.props.categoryKeys.map((key,index)=>{
-                  return <div className='row'>
+                  return <div key={`sidebar-cat-${index}`} className='row'>
                     <div className='col-12'>
                         <div className='row'>
                           <button className="border sidebar-heading text-6 text-left" type="button" data-toggle="collapse" data-target={`#${key}-collapse`} aria-expanded="false" aria-controls="collapseExample">
@@ -51,7 +51,7 @@ class Sidebar extends Component {
                         </div>
                         <div id={`${key}-collapse`} className='sidebar-collapsible border row collapse'>
                           {this.props.category[`${key}`].map((type, index)=>{
-                            return <div className='col-12'>
+                            return <div  key={`sidebar-type-${index}`} className='col-12'>
                               <Link className='' to={`/inventory/${key}/${type}`}>
                                 <div className='sidebar-item text-muted text-5 text-left'>{this.unlinkify(type)}</div>
                               </Link>
