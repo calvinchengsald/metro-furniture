@@ -130,10 +130,12 @@ class Item extends Component {
       this.imageRect = this.mainImage.getBoundingClientRect();
       this.popupRectWidth = this.imageRect.width/magnification;
       this.popupRectHeight = this.imageRect.height/magnification;
-      this.popupRectRef.current.style.width = this.popupRectWidth + "px";
-      this.popupRectRef.current.style.height = this.popupRectHeight + "px";
-      this.popupImgWidth = this.imageRect.width*magnification;
-      this.popupImgHeight = this.imageRect.height*magnification;
+      if(this.popupRectRef.current){
+        this.popupRectRef.current.style.width = this.popupRectWidth + "px";
+        this.popupRectRef.current.style.height = this.popupRectHeight + "px";
+        this.popupImgWidth = this.imageRect.width*magnification;
+        this.popupImgHeight = this.imageRect.height*magnification;
+      }
     }
   }
 
@@ -175,6 +177,11 @@ class Item extends Component {
       this.zoomRef.current.style.width = this.popupImgWidth+"px";
       this.zoomRef.current.style.height = this.popupImgHeight+"px";
       this.zoomRef.current.style.margin = `${topper*this.popupImgWidth}px 0% 0% ${lefter*this.popupImgWidth}px`;
+    }
+    else if (e.clientX> this.imageRect.left && e.clientX < this.imageRect.right && e.clientY> this.imageRect.top && e.clientY < this.imageRect.bottom ){
+      this.setState({
+        zoomPopup:  true,
+      });
     }
   }
   setZoomPopup(b){
