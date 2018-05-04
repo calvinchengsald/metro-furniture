@@ -1,0 +1,20 @@
+{
+  "WS001_W" : {
+      "info" : "Black color with door"
+  },
+  "WS004_M_No_Door" : {
+      "info" : "Mahogany color with no door"
+  },
+  "WS004_N" : {
+      "info" : "Natural color with door"
+  },
+  "WS008_N_WS" : {
+      "info" : "Natural color with over shelf"
+  },
+  "WS008_N" : {
+      "info" : "Natural color"
+  },
+  "WS015_M_No_Door" : {
+      "info" : "Mahogany color with no door"
+  }
+}

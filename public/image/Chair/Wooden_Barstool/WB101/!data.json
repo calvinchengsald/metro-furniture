@@ -1,0 +1,11 @@
+{
+  "WB101_M" : {
+      "info" : "Mahogany"
+  },
+  "WB101_N" : {
+      "info" : "Natural"
+  },
+  "WB101_W" : {
+      "info" : "Walnut"
+  }
+}

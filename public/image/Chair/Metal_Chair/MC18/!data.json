@@ -1,0 +1,13 @@
+{
+  "MC18_M" : {
+      "info" : "Picture is with standard black cushion",
+      "frame_color" : "Silver",
+      "back_color" : "Mahogany",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Woodseat Mahogany", "image" : "image/!seating/Woodseat_M.png"},
+        { "name" : "Veneer Woodseat Mahogany", "image" : "image/!seating/VWoodseat_M.png"}
+      ]
+  }
+}

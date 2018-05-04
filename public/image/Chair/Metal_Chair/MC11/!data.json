@@ -1,0 +1,24 @@
+{
+  "MC11_N" : {
+      "info" : "Picture is with standard black cushion",
+      "frame_color" : "Black",
+      "back_color" : "Natural",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Woodseat Natural", "image" : "image/!seating/Woodseat_N.png"},
+        { "name" : "Veneer Woodseat Natural", "image" : "image/!seating/VWoodseat_N.png"}
+      ]
+  },
+  "MC11_M" : {
+      "info" : "Picture is with veneer woodseat",
+      "frame_color" : "Black",
+      "back_color" : "Mahogany",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Woodseat Mahogany", "image" : "image/!seating/Woodseat_M.png"},
+        { "name" : "Veneer Woodseat Mahogany", "image" : "image/!seating/VWoodseat_M.png"}
+      ]
+  }
+}

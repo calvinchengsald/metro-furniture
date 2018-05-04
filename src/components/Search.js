@@ -41,7 +41,7 @@ class Type extends Component {
   filterContent(targetCode){
     this.filteredContent=[];
     this.allItems.map((item)=>{
-      if(this.unPicturify(item.name).toLowerCase().includes(targetCode.toLowerCase())){
+      if(this.unPicturify(item.name).toLowerCase().includes(targetCode.toLowerCase()) || (item.tags && this.hasTag(item, targetCode))){
         this.filteredContent.push({
           name: this.unPicturify(item.name),
           image: `${this.props.commonVars.awsPath}/image/${item.category}/${item.type}/${item.itemGroup}/${item.name}`,
@@ -53,7 +53,16 @@ class Type extends Component {
     })
 
   }
+  hasTag(item, targetCode){
 
+    this.bool = false;
+    item.tags.map((tag)=>{
+      if(tag.name.toLowerCase() === targetCode.toLowerCase()){
+        this.bool = true;
+      }
+    });
+    return this.bool;
+  }
   initialize(set){
 
   }

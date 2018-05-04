@@ -42,7 +42,9 @@ class Item extends Component {
           note: item.info,
           seating: item.seating,
           seat : item.seat,
-          frame_color : item.frame_color
+          frame_color : item.frame_color,
+          back_color : item.back_color,
+          tags : item.tags
         });
         this.notFound = false;
         if(hash === this.unPicturify(item.name)){
@@ -183,6 +185,7 @@ class Item extends Component {
         zoomPopup:  true,
       });
     }
+
   }
   setZoomPopup(b){
     this.setState({
@@ -245,7 +248,16 @@ class Item extends Component {
       mainPic: index,
     });
   }
+  hasTag(item, targetCode){
 
+    this.bool = false;
+    item.tags.map((tag)=>{
+      if(tag.name.toLowerCase() === targetCode.toLowerCase()){
+        this.bool = true;
+      }
+    });
+    return this.bool;
+  }
 
   render() {
     if(this.notFound){
@@ -271,41 +283,51 @@ class Item extends Component {
               />
             </div>
           </div>
-          <div className='row justify-content-center'>
-
-            <div className='heading1 text-center'>
-              {this.unlinkify(this.content[this.state.mainPic].name)}
-            </div>
-          </div>
 
           <div className='row justify-content-center'>
             <div className =' col-11'>
+              <div className="row mt-2  mb-2" id="list-tab" role="tablist">
+                {this.content.map((content, index)=>{
+
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+                      <div className='text-center'>
+                        {this.unlinkify(content.name)}
+                      </div>
+                      {content.tags && this.hasTag(content, "clearance")?
+                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} />
+                        :
+                        <div></div>
+                      }
+                    </a>
+                })}
+
+              </div>
+              <div className='heading1 text-center'>
+                {this.unlinkify(this.content[this.state.mainPic].name)}
+              </div>
               <div className='row'>
-                <div className="col-12 col-md-6">
-                  <img onLoad = {this.imageSetup.bind(this)} id="item-img-main" ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                  <div className='d-none d-md-block'>
+                <div className="col-12 col-md-6 ">
+                  <div className='item-img-holder'>
+                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    {this.content[this.state.mainPic].tags && this.hasTag(this.content[this.state.mainPic], "clearance")?
+                      <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} />
+                      :
+                      <div></div>
+                    }
+                  </div>
+                  <div className='d-none d-md-block '>
                     <div id='zoom-popup-rect' ref={this.popupRectRef} className={this.state.zoomPopup?"":"d-none"}> </div>
                   </div>
-                  <div className='text-center text-3'> {this.content[this.state.mainPic].note}</div>
 
                 </div>
                 <div className="col-12 col-md-6">
-                  <div className="row" id="list-tab" role="tablist">
-                    {this.content.map((content, index)=>{
 
-                      return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={index===this.state.mainPic?`list-group-item list-group-item-action border border-primary col-md-4 col-4`:`list-group-item list-group-item-action col-md-4 col-4`} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
-
-                          <div className='text-center'>
-                          {this.unlinkify(content.name)}
-                          </div>
-                        </a>
-                    })}
-
-                  </div>
                   {this.state.zoomPopup?
                     <div id='crop' className='border d-none d-md-block '>
                       <img className='zoom-popup' ref={this.zoomRef} src={`${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
                     </div>
+
                   :
 
                   <div id='item-info' className='row'>
@@ -313,14 +335,28 @@ class Item extends Component {
                       <div> </div>
                       :
                       <div className='col-12'>
-                        Frame Color : {this.content[this.state.mainPic].frame_color}
+                        Frame Color: {this.content[this.state.mainPic].frame_color}
+                      </div>
+                    }
+                    {this.content[this.state.mainPic].back_color === null?
+                      <div> </div>
+                      :
+                      <div className='col-12'>
+                        Back Color: {this.content[this.state.mainPic].back_color}
                       </div>
                     }
                     {this.content[this.state.mainPic].seat === null?
                       <div> </div>
                       :
                       <div className='col-12'>
-                        Seat : {this.content[this.state.mainPic].seat}
+                        Seat: {this.content[this.state.mainPic].seat}
+                      </div>
+                    }
+                    {this.content[this.state.mainPic].note === null?
+                      <div> </div>
+                      :
+                      <div className='col-12'>
+                        {this.content[this.state.mainPic].note}
                       </div>
                     }
                     {this.content[this.state.mainPic].seating === null?
@@ -339,6 +375,15 @@ class Item extends Component {
                         </div>
                       </div>
                     }
+                    {this.content[this.state.mainPic].tags && this.hasTag(this.content[this.state.mainPic], "clearance")?
+
+                    <div className='col-12 text-danger'>
+                      This is a clearance item, sizing and stock may be limited
+                    </div>
+                      :
+                      <div></div>
+                    }
+
                   </div>
                   }
 

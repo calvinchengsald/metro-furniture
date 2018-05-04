@@ -1,0 +1,12 @@
+{
+  "A05_B" : {
+      "info" : "",
+      "seat" : "Black Vinyl",
+      "frame_color" : "Silver Vein"
+  },
+  "A05_BU" : {
+      "info" : "",
+      "seat" : "Burgundy Vinyl",
+      "frame_color" : "Silver Vein"
+  }
+}

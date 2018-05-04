@@ -1,3 +1,4 @@
+#TO BE EXECUTED AT ROOT FOLDER
 cd ../image;
 str="export default [\\n";
 
@@ -5,7 +6,6 @@ getLS(){  #1 is file, 2 is tab
 
   data=$(ls);
 
-  counter=0;
   for entry in ${data}
   do
     if [[ $entry == *".json"* ]] || [[ $entry == "directory.js" ]];  then
@@ -21,7 +21,7 @@ getLS(){  #1 is file, 2 is tab
       str=`echo $str$tabber dirs: [\\\n`;
 
       cd ${entry};
-      getLS "${file}" "$tabber\\t" "${entry}";
+      getLS "${file}" "$tabber\\t" "${entry}" "false";
       cd ..;
 
 
@@ -32,18 +32,22 @@ getLS(){  #1 is file, 2 is tab
         changedName=${entry//-/_}
         changedName=${changedName/.png/""}
         changedName=${changedName/.jpg/""}
-        if [ ! -f $3.json ]; then
-            echo "$3.json is not found under /$3"
+        if [ ! -f !data.json ]; then
+            echo "!data.json is not found under /$3"
         else
           #  echo "parsing $entry at $3"
-            add=`jq .$changedName.info $3.json`;
-            seating=`jq .$changedName.seating $3.json`;
-            seat=`jq .$changedName.seat $3.json`;
-            frame_color=`jq .$changedName.frame_color $3.json`;
+            add=`jq .$changedName.info !data.json`;
+            seating=`jq .$changedName.seating !data.json`;
+            seat=`jq .$changedName.seat !data.json`;
+            frame_color=`jq .$changedName.frame_color !data.json`;
+            back_color=`jq .$changedName.back_color !data.json`;
+            tags=`jq .$changedName.tags !data.json`;
             str=`echo $str$tabber info: $add,\\\n`;
             str=`echo $str$tabber seating: $seating,\\\n`;
             str=`echo $str$tabber seat: $seat,\\\n`;
             str=`echo $str$tabber frame_color: $frame_color,\\\n`;
+            str=`echo $str$tabber back_color: $back_color,\\\n`;
+            str=`echo $str$tabber tags: $tags,\\\n`;
         fi
       fi
 
@@ -52,14 +56,17 @@ getLS(){  #1 is file, 2 is tab
 
 
     str=${str}$2},\\\n ;
-
+    if [[ $4 == "true" ]]; then
+      echo -ne 7-;
+    fi
 
   done
 }
 
+counter=0;
 file="directory.js";
 tab="\\t";
-getLS "${file}" "${tab}";
+getLS "${file}" "${tab}" "" "true";
 str=${str}\\n]\;;
 #echo -e ${str};
 echo -e ${str} >> ${file};

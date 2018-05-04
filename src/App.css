@@ -155,3 +155,15 @@ nav {
   background-color: rgba(136,206,250, 0.4);
   pointer-events: none;
 }
+.item-image-holder{
+  position: relative;
+  overflow: hidden;
+}
+.item-img-overlay{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0px;
+  top: 0px;
+  pointer-events: none;
+}
