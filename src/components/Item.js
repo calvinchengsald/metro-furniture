@@ -255,6 +255,7 @@ class Item extends Component {
       if(tag.name.toLowerCase() === targetCode.toLowerCase()){
         this.bool = true;
       }
+      return true;
     });
     return this.bool;
   }
@@ -289,15 +290,10 @@ class Item extends Component {
               <div className="row mt-2  mb-2" id="list-tab" role="tablist">
                 {this.content.map((content, index)=>{
 
-                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && this.hasTag(content, "clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
                       <div className='text-center'>
                         {this.unlinkify(content.name)}
                       </div>
-                      {content.tags && this.hasTag(content, "clearance")?
-                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} />
-                        :
-                        <div></div>
-                      }
                     </a>
                 })}
 
@@ -311,7 +307,7 @@ class Item extends Component {
                     <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     <img id="item-img-main" className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     {this.content[this.state.mainPic].tags && this.hasTag(this.content[this.state.mainPic], "clearance")?
-                      <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} />
+                      <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                       :
                       <div></div>
                     }

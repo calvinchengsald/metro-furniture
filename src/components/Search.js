@@ -46,7 +46,7 @@ class Type extends Component {
           name: this.unPicturify(item.name),
           image: `${this.props.commonVars.awsPath}/image/${item.category}/${item.type}/${item.itemGroup}/${item.name}`,
           href: `/${item.category}/${item.type}/${item.itemGroup}#${this.unPicturify(item.name)}`,
-
+          tags: item.tags,
         });
       }
       return item;
@@ -60,6 +60,7 @@ class Type extends Component {
       if(tag.name.toLowerCase() === targetCode.toLowerCase()){
         this.bool = true;
       }
+      return true;
     });
     return this.bool;
   }
@@ -84,8 +85,19 @@ class Type extends Component {
   linkify(str){
     return str.replace(/ /g, '_');
   }
+  checkRefresh(){
+    if(this.searchCode)
+    this.searchParams = new URLSearchParams(this.props.location.search);
+    if(this.searchCode!== this.searchParams.get("itemCode")){
+      this.searchCode = this.searchParams.get("itemCode");
+      this.props.commonVars.setSearchCurrent(this.searchCode);
+    }
+    this.filteredContent = [];
+    this.filterContent(this.searchCode);
+  }
 
   render() {
+      this.checkRefresh();
       return (
         <div id="type">
           <div className='row'>
@@ -110,7 +122,11 @@ class Type extends Component {
 
                     return <Link key={`link2-${index}`} className='border bg-light col-3' to={`/inventory${items.href}`}>
                         <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
-
+                        {items.tags && this.hasTag(items, "clearance")?
+                          <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
+                          :
+                          <div></div>
+                        }
                         <div className='row justify-content-center'>
                           <div className="text-muted text-center">{this.unlinkify(items.name)}</div>
                         </div>

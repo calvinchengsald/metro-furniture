@@ -37,3 +37,12 @@ dropdown sizing is wrong
 √arrow in history is weird
 √at items, when sidebar is up still see highlighted item name tab
 IE button group at home page is messed up
+
+
+JSON attributes
+  info: some info to be displayed, ie cushion in the picture
+  seat:
+  seating: all seating options available
+  frame_color: color of the frame, metal
+  back_color: color of the back/seat
+  tags: assosiated search tags, i.e. "clearance"

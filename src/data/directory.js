@@ -309,6 +309,24 @@ export default [
 				 tags: null,
 			},
 			{
+				 name: 'clearance.png',
+				 info: null,
+				 seating: null,
+				 seat: null,
+				 frame_color: null,
+				 back_color: null,
+				 tags: null,
+			},
+			{
+				 name: 'clearance_small.png',
+				 info: null,
+				 seating: null,
+				 seat: null,
+				 frame_color: null,
+				 back_color: null,
+				 tags: null,
+			},
+			{
 				 name: 'logo-top.png',
 				 info: null,
 				 seating: null,
@@ -2743,10 +2761,38 @@ export default [
 				 name: 'Color_Options',
 				 dirs: [
 					{
+						 name: 'Esprit',
+						 dirs: [
+							{
+								 name: 'Esprit.png',
+								 info: "",
+								 seating: null,
+								 seat: null,
+								 frame_color: null,
+								 back_color: null,
+								 tags: null,
+							},
+						],
+					},
+					{
 						 name: 'New_Soho',
 						 dirs: [
 							{
 								 name: 'New_Soho.png',
+								 info: "",
+								 seating: null,
+								 seat: null,
+								 frame_color: null,
+								 back_color: null,
+								 tags: null,
+							},
+						],
+					},
+					{
+						 name: 'Symphony_Classic',
+						 dirs: [
+							{
+								 name: 'Symphony_Classic.png',
 								 info: "",
 								 seating: null,
 								 seat: null,

@@ -103,6 +103,7 @@ class Type extends Component {
       if(tag.name.toLowerCase() === targetCode.toLowerCase()){
         this.bool = true;
       }
+      return true;
     });
     return this.bool;
   }
@@ -169,7 +170,7 @@ class Type extends Component {
                     <div className='item-img-holder'>
                       <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
                       {items.tags && this.hasTag(items, "clearance")?
-                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} />
+                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                         :
                         <div></div>
                       }

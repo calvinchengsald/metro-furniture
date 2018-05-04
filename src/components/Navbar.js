@@ -13,8 +13,6 @@ class Navbar extends Component {
     this.state={
       isOpen : arr,
     };
-
-
   }
 
   handleDropdown(index, bool){
@@ -35,6 +33,7 @@ class Navbar extends Component {
 
 
   render() {
+
     return (
       <div id="navbar" className={this.props.navbarCollapse?"":"col-12"}>
           {this.props.navCollapse?
@@ -60,6 +59,10 @@ class Navbar extends Component {
 
                     <div className="col btn bg-light text-md" >
                       <Link to={`/Contact`} className='text-muted'> Contact
+                      </Link>
+                    </div>
+                    <div className="col btn bg-light text-md" >
+                      <Link to={`/Search?itemCode=Clearance`} className='text-muted'> Clearance
                       </Link>
 
                     </div>
