@@ -1,23 +1,24 @@
 {
-
-  "WC104_M" : {
+  "WC114_B" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
-      "frame_color" : "Mahogany",
+      "frame_color" : "Black",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Green", "image" : "image/!seating/Round_Cushion_G.png"}
+      ],
+      "tags" : ["clearance"]
+  },
+  "WC114_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Black",
       "seating" : [
         { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
         { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
         { "name" : "Wood Mahogany", "image" : "image/!seating/Woodseat_M.png"}
-      ]
-  },
-  "WC104_W" : {
-      "info" : "",
-      "seat" : "Standard Black Cushion",
-      "frame_color" : "Walnut",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Walnut", "image" : "image/!seating/Woodseat_W.png"}
-      ]
+      ],
+      "tags" : ["clearance"]
   }
 }

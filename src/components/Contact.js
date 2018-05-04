@@ -49,7 +49,7 @@ class Contact extends Component {
             <img src={`${this.props.commonVars.awsPath}/image/!icon/Direction.png`} alt="google map" />
           </div>
           <div className='col-12 col-md-10 offset-md-2'>
-            <a className='text-muted' href="https://www.google.com/maps/place/Mayor+Restaurant+Furniture/@40.7134259,-73.9212232,15.42z/data=!4m5!3m4!1s0x0:0xf2cc81486bfc9e5!8m2!3d40.7137525!4d-73.9156187">
+            <a className='text-muted' target="_blank" href="https://www.google.com/maps/place/Mayor+Restaurant+Furniture/@40.7134259,-73.9212232,15.42z/data=!4m5!3m4!1s0x0:0xf2cc81486bfc9e5!8m2!3d40.7137525!4d-73.9156187">
             Open in google maps
             </a>
           </div>

@@ -96,17 +96,7 @@ class Type extends Component {
   linkify(str){
     return str.replace(/ /g, '_');
   }
-  hasTag(item, targetCode){
-
-    this.bool = false;
-    item.tags.map((tag)=>{
-      if(tag.name.toLowerCase() === targetCode.toLowerCase()){
-        this.bool = true;
-      }
-      return true;
-    });
-    return this.bool;
-  }
+  
 
   render() {
     if(this.notFound){
@@ -169,7 +159,7 @@ class Type extends Component {
                 return <Link key={`link2-${index}`} className='border bg-light col-3' to={`/inventory${items.href}`}>
                     <div className='item-img-holder'>
                       <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
-                      {items.tags && this.hasTag(items, "clearance")?
+                      {items.tags && items.tags.includes("clearance")?
                         <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                         :
                         <div></div>

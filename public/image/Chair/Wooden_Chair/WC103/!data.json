@@ -7,7 +7,6 @@
       "seating" : [
         { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
         { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Green", "image" : "image/!seating/Round_Cushion_G.png"},
         { "name" : "Wood Mahogany", "image" : "image/!seating/Woodseat_M.png"}
       ]
   },
@@ -18,7 +17,6 @@
       "seating" : [
         { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
         { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Green", "image" : "image/!seating/Round_Cushion_G.png"},
         { "name" : "Wood Natural", "image" : "image/!seating/Woodseat_N.png"}
       ]
   },
@@ -29,7 +27,6 @@
       "seating" : [
         { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
         { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Green", "image" : "image/!seating/Round_Cushion_G.png"},
         { "name" : "Wood Walnut", "image" : "image/!seating/Woodseat_W.png"}
       ]
   }

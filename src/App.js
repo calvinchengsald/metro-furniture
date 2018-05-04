@@ -164,7 +164,11 @@ class App extends Component {
       <div className="App background">
 
         <main>
+
         </main>
+        <div className='row bg-dark '>
+          <div className='text-light text-center col-10 offset-1'>This site is still under construction, we will be rolling out periodic updates</div>
+        </div>
         <Link to='/'>
         <div id="brand-bar" className='row justify-content-start'>
           <div className='col-12'>

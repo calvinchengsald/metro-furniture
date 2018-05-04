@@ -156,7 +156,7 @@ class Item extends Component {
 
   }
   _onMouseMove(e){
-    if(this.state.zoomPopup){
+    if(this.state.zoomPopup && this.popupRectRef.current){
       this.popupRectRef.current.style.left = (e.clientX-this.popupRectWidth/2)  + "px";
       this.popupRectRef.current.style.top = (e.clientY-this.popupRectHeight/2) + "px";
       if(parseFloat(this.popupRectRef.current.style.left) < this.imageRect.left){
@@ -248,17 +248,6 @@ class Item extends Component {
       mainPic: index,
     });
   }
-  hasTag(item, targetCode){
-
-    this.bool = false;
-    item.tags.map((tag)=>{
-      if(tag.name.toLowerCase() === targetCode.toLowerCase()){
-        this.bool = true;
-      }
-      return true;
-    });
-    return this.bool;
-  }
 
   render() {
     if(this.notFound){
@@ -290,7 +279,7 @@ class Item extends Component {
               <div className="row mt-2  mb-2" id="list-tab" role="tablist">
                 {this.content.map((content, index)=>{
 
-                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && this.hasTag(content, "clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
                       <div className='text-center'>
                         {this.unlinkify(content.name)}
                       </div>
@@ -306,7 +295,7 @@ class Item extends Component {
                   <div className='item-img-holder'>
                     <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     <img id="item-img-main" className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                    {this.content[this.state.mainPic].tags && this.hasTag(this.content[this.state.mainPic], "clearance")?
+                    {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
                       <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                       :
                       <div></div>
@@ -371,7 +360,7 @@ class Item extends Component {
                         </div>
                       </div>
                     }
-                    {this.content[this.state.mainPic].tags && this.hasTag(this.content[this.state.mainPic], "clearance")?
+                    {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
 
                     <div className='col-12 text-danger'>
                       This is a clearance item, sizing and stock may be limited

@@ -1,8 +1,5 @@
 {
   "MC916_R" : {
-      "info" : "Red"
-  },
-  "MC916_W" : {
-      "info" : "White"
+      "frame_color" : "Red"
   }
 }

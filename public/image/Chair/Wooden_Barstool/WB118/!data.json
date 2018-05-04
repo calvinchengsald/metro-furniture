@@ -1,5 +1,12 @@
 {
   "WB118_M" : {
-      "info" : "Mahogany"
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [
+        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
+        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
+        { "name" : "Wood Mahogany", "image" : "image/!seating/Woodseat_M.png"}
+      ]
   }
 }

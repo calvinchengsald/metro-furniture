@@ -67,6 +67,7 @@ counter=0;
 file="directory.js";
 tab="\\t";
 getLS "${file}" "${tab}" "" "true";
+echo " done";
 str=${str}\\n]\;;
 #echo -e ${str};
 echo -e ${str} >> ${file};
