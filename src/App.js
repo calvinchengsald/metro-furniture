@@ -15,14 +15,19 @@ class App extends Component {
 
   constructor(props){
     super(props);
+    this.debug = true;
     this.state = {
         navCollapse: true,
         landingCategory: "none",
         typeView: 0,
         searchCurrent: "",
     };
-    //this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
-    this.awsPath = '';
+    if(this.debug){
+      this.awsPath = '';
+    }
+    else {
+      this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
+    }
     this.categoryKeys = [];
     this.category = [];
     var types = [];

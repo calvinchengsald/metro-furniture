@@ -37,6 +37,7 @@ dropdown sizing is wrong
 √arrow in history is weird
 √at items, when sidebar is up still see highlighted item name tab
 IE button group at home page is messed up
+Add 404 page and if item/category is not found
 
 
 JSON attributes

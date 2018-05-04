@@ -351,7 +351,7 @@ class Item extends Component {
                         <div className='row'>
                         {this.content[this.state.mainPic].seating.map((seat,index)=>{
                           return <div key={`325-div-${index}`} className='card col-3'>
-                            <img className="card-img-top " src={`/${seat.image}`} alt={seat.name}/>
+                            <img className="card-img-top " src={`${this.props.commonVars.awsPath}/${seat.image}`} alt={seat.name}/>
                               <div className='row justify-content-center'>
                                 <div className="text-muted text-center">{seat.name}</div>
                               </div>
@@ -368,7 +368,6 @@ class Item extends Component {
                       :
                       <div></div>
                     }
-
                   </div>
                   }
 
