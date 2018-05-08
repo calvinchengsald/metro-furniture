@@ -10,6 +10,7 @@ class Item extends Component {
     this.firstRef= React.createRef();
     this.imageRef= React.createRef();
     this.popupRectRef= React.createRef();
+    this.zoomRectRef= React.createRef();
     this.zoomRef= React.createRef();
     this.category = this.props.match.params.category;
     this.type = this.props.match.params.type;
@@ -39,11 +40,11 @@ class Item extends Component {
         this.content.push({
           image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
           name: this.unPicturify(item.name),
-          note: item.info,
+          Note: item.info,
           seating: item.seating,
-          seat : item.seat,
-          frame_color : item.frame_color,
-          back_color : item.back_color,
+          Seat : item.seat,
+          Frame_Color : item.frame_color,
+          Back_Color : item.back_color,
           tags : item.tags
         });
         this.notFound = false;
@@ -59,7 +60,11 @@ class Item extends Component {
     this.state = {
       mainPic : this.mainPic,
       zoomPopup : false,
+      largePopup : false,
+      largePopupSrc : "",
     };
+    this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> ((key!=="image")&&(key!=="name")&&(key!=="tags")&&(key!=="seating")));
+  //  console.log(this.mainKeys);
   }
   // initialize(set){
   //   this.category = this.props.match.params.category;
@@ -178,6 +183,8 @@ class Item extends Component {
 
       this.zoomRef.current.style.width = this.popupImgWidth+"px";
       this.zoomRef.current.style.height = this.popupImgHeight+"px";
+
+      this.zoomRectRef.current.style.height = this.imageRect.height+"px";
       this.zoomRef.current.style.margin = `${topper*this.popupImgWidth}px 0% 0% ${lefter*this.popupImgWidth}px`;
     }
     else if (e.clientX> this.imageRect.left && e.clientX < this.imageRect.right && e.clientY> this.imageRect.top && e.clientY < this.imageRect.bottom ){
@@ -247,6 +254,21 @@ class Item extends Component {
     this.setState({
       mainPic: index,
     });
+    this.mainKeys = Object.keys(this.content[index]).filter(key=> ((key!=="image")&&(key!=="name")&&(key!=="tags")&&(key!=="seating")));
+  //  console.log(this.mainKeys);
+    // this.infoBody = "";
+    // this.mainKeys.map((key)=>{
+    //
+    //   console.log(`${key} ` + this.content[index][key]);
+    // });
+  }
+  setLargePopup(src){
+    let booler = !this.state.largePopup;
+    this.setState({
+      largePopup: booler,
+      largePopupSrc: src
+    });
+  //  console.log(src);
   }
 
   render() {
@@ -262,6 +284,13 @@ class Item extends Component {
     else
     return (
       <div id="item"  >
+
+          <div id='large-popup-black' onClick={()=>this.setLargePopup("none")} className={(this.state.largePopup?'':'d-none')}></div>
+          <div id='large-popup-holder' className={`row justify-content-center bg-light border border-secodary border-3 `+(this.state.largePopup?'':'d-none')}>
+            <img id="large-popup-img"  className='col-12 img-fluid' src={this.state.largePopupSrc} alt={this.content[this.state.mainPic].name}/>
+          </div>
+          <div id="large-popup-x" onClick={()=>this.setLargePopup("none")} className={`btn btn-primary rounded-circle `+(this.state.largePopup?'':'d-none')} > X </div>
+
           <div className='row'>
             <div className='col-10 offset-1'>
               <HistoryBar
@@ -293,8 +322,8 @@ class Item extends Component {
               <div className='row'>
                 <div className="col-12 col-md-6 ">
                   <div className='item-img-holder'>
-                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                    <img id="item-img-main" className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
                       <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                       :
@@ -308,50 +337,33 @@ class Item extends Component {
                 </div>
                 <div className="col-12 col-md-6">
 
+
                   {this.state.zoomPopup?
-                    <div id='crop' className='border d-none d-md-block '>
+                    <div id='crop' ref={this.zoomRectRef} className='border d-none d-md-block '>
                       <img className='zoom-popup' ref={this.zoomRef} src={`${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
                     </div>
 
                   :
 
                   <div id='item-info' className='row'>
-                    {this.content[this.state.mainPic].frame_color === null?
-                      <div> </div>
-                      :
-                      <div className='col-12'>
-                        Frame Color: {this.content[this.state.mainPic].frame_color}
+                    {this.mainKeys.map((keyz,index)=>{
+                      return <div key={`main-key-${index}`} className='col-12  mb-0'>
+                      {this.content[this.state.mainPic][keyz] !== null && this.content[this.state.mainPic][keyz] !== ""?
+
+                        `${this.unlinkify(keyz)}: ` + this.content[this.state.mainPic][keyz]
+
+                      : <div></div> }
                       </div>
-                    }
-                    {this.content[this.state.mainPic].back_color === null?
-                      <div> </div>
-                      :
-                      <div className='col-12'>
-                        Back Color: {this.content[this.state.mainPic].back_color}
-                      </div>
-                    }
-                    {this.content[this.state.mainPic].seat === null?
-                      <div> </div>
-                      :
-                      <div className='col-12'>
-                        Seat: {this.content[this.state.mainPic].seat}
-                      </div>
-                    }
-                    {this.content[this.state.mainPic].note === null?
-                      <div> </div>
-                      :
-                      <div className='col-12'>
-                        {this.content[this.state.mainPic].note}
-                      </div>
-                    }
+                    })}
+
                     {this.content[this.state.mainPic].seating === null?
                       <div> </div>
                       :
-                      <div className='col-12'> Seating Options
+                      <div className='col-12  mb-0'> Seating Options
                         <div className='row'>
                         {this.content[this.state.mainPic].seating.map((seat,index)=>{
                           return <div key={`325-div-${index}`} className='card col-3'>
-                            <img className="card-img-top " src={`${this.props.commonVars.awsPath}/${seat.image}`} alt={seat.name}/>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${seat.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${seat.image}`} alt={seat.name}/>
                               <div className='row justify-content-center'>
                                 <div className="text-muted text-center">{seat.name}</div>
                               </div>
@@ -362,7 +374,7 @@ class Item extends Component {
                     }
                     {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
 
-                    <div className='col-12 text-danger'>
+                    <div className='col-12 text-danger  mb-0'>
                       This is a clearance item, sizing and stock may be limited
                     </div>
                       :

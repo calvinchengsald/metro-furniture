@@ -43,7 +43,7 @@ Add 404 page and if item/category is not found
 JSON attributes
   info: some info to be displayed, ie cushion in the picture
   seat:
-  seating: all seating options available
   frame_color: color of the frame, metal
   back_color: color of the back/seat
+  seating: all seating options available
   tags: assosiated search tags, i.e. "clearance"
