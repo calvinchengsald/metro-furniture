@@ -1,0 +1,94 @@
+{
+  "PWT1_DN" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Dark Natural",
+      "thickness" : "1 - 1/2 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT1_DW" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Dark Walnut",
+      "thickness" : "1 - 1/2 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT1_G" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Grey",
+      "thickness" : "1 - 1/2 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT1_LGN" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Light Green",
+      "thickness" : "1 - 1/2 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT1_WH" : {
+      "info" : "Solid Pine Wood",
+      "color" : "White",
+      "thickness" : "1 - 1/2 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT2_DN" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Dark Natural",
+      "thickness" : "2 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT2_DW" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Dark Walnut",
+      "thickness" : "2 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT2_G" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Grey",
+      "thickness" : "2 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  },
+  "PWT2_S" : {
+      "info" : "Solid Pine Wood",
+      "color" : "Light Green",
+      "image_info" : "Image is with wood edge",
+      "thickness" : "2 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "tags" : ["solid wood"]
+  }
+
+}

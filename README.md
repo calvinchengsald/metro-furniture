@@ -40,10 +40,37 @@ IE button group at home page is messed up
 Add 404 page and if item/category is not found
 
 
+To add new Category:
+ 1- create the folder
+ 2- add it to this.categoryKeys at app.js
+ 3- make a !angle folder inside to store all angle pictures
+
+To add new Type:
+ 1- create the folder
+ 2- create !data.json to store all items inside this type
+
+To add new Item:
+ 1- add image for the item
+ 2- fill out field for image in !data.json
+
+To add attr of item:
+ 1- add attr in gen.sh so it is read in
+ 2- add attr to the json file for the item
+ 3- read in attr at item.js
+ 4- if custom handling such as arry attr, add to this.mainKeyCustom list
+
+*Run gen.sh at public/script to generate directory.js when changing file structure*
+
 JSON attributes
   info: some info to be displayed, ie cushion in the picture
-  seat:
+  seat: seat color
+  color: just COLOR
+  thickness: of table
+  image_info: what image is shown as
   frame_color: color of the frame, metal
   back_color: color of the back/seat
-  seating: all seating options available
-  tags: assosiated search tags, i.e. "clearance"
+  seating: all seating options available as array, name linked to note data
+  size: all size options, as array, name linked to note data
+  tags: assosiated search tags, i.e. "clearance" as array
+  angles: all pictures to show angles of the product, stored in
+      category/!angles folder

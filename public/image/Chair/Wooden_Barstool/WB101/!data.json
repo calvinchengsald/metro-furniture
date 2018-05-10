@@ -4,30 +4,18 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Mahogany",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Mahogany", "image" : "image/!seating/Woodseat_M.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
   },
   "WB101_N" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Natural",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Natural", "image" : "image/!seating/Woodseat_N.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
   },
   "WB101_W" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Walnut",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Walnut", "image" : "image/!seating/Woodseat_W.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
   }
 }

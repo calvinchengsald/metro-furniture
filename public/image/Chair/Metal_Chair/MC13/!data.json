@@ -2,21 +2,11 @@
   "MC13_B" : {
       "info" : "Picture is with standard black cushion",
       "frame_color" : "Black",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Woodseat Walnut", "image" : "image/!seating/Woodseat_W.png"},
-        { "name" : "Veneer Woodseat Walnut", "image" : "image/!seating/VWoodseat_W.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" , "Veneer Wood Walnut" ]
   },
   "MC13_S" : {
       "info" : "Picture is with standard black cushion",
       "frame_color" : "Silver",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Woodseat Walnut", "image" : "image/!seating/Woodseat_W.png"},
-        { "name" : "Veneer Woodseat Walnut", "image" : "image/!seating/VWoodseat_W.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut", "Veneer Wood Walnut" ]
   }
 }

@@ -8,7 +8,7 @@ getLS(){  #1 is file, 2 is tab
 
   for entry in ${data}
   do
-    if [[ $entry == *".json"* ]] || [[ $entry == "directory.js" ]];  then
+    if [[ $entry == *".json"* ]] || [[ $entry == "directory.js" ]] || [[ $entry == "!"* ]] ;  then
       continue
     fi
   #  str=${str}{\\\n$2name: \'${entry}\\n\' ;
@@ -42,12 +42,22 @@ getLS(){  #1 is file, 2 is tab
             frame_color=`jq .$changedName.frame_color !data.json`;
             back_color=`jq .$changedName.back_color !data.json`;
             tags=`jq .$changedName.tags !data.json`;
+            angles=`jq .$changedName.angles !data.json`;
+            color=`jq .$changedName.color !data.json`;
+            thickness=`jq .$changedName.thickness !data.json`;
+            image_info=`jq .$changedName.image_info !data.json`;
+            size=`jq .$changedName.size !data.json`;
             str=`echo $str$tabber info: $add,\\\n`;
             str=`echo $str$tabber seating: $seating,\\\n`;
             str=`echo $str$tabber seat: $seat,\\\n`;
             str=`echo $str$tabber frame_color: $frame_color,\\\n`;
             str=`echo $str$tabber back_color: $back_color,\\\n`;
+            str=`echo $str$tabber color: $color,\\\n`;
+            str=`echo $str$tabber thickness: $thickness,\\\n`;
+            str=`echo $str$tabber image_info: $image_info,\\\n`;
             str=`echo $str$tabber tags: $tags,\\\n`;
+            str=`echo $str$tabber angles: $angles,\\\n`;
+            str=`echo $str$tabber size: $size,\\\n`;
         fi
       fi
 

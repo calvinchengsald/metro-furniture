@@ -51,6 +51,9 @@ body{
 .div {
   font-size: 2vw;
 }
+.text-1 {
+  font-size: 1vw;
+}
 .text-md {
   font-size: 2vw;
 }
@@ -134,6 +137,9 @@ nav {
   width: 100%;
   overflow: hidden;
   position: relative;
+  position: absolute;;
+  top : 0;
+  left: 0;
 }
 .zoom-popup{
   position: absolute;

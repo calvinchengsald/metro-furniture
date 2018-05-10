@@ -4,11 +4,7 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Black",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Mahogany", "image" : "image/!seating/Woodseat_M.png"}
-      ],
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
       "tags" : ["clearance"]
   }
 }

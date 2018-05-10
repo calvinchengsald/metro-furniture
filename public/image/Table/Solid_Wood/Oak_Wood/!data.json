@@ -1,0 +1,17 @@
+{
+  "OWT_C" : {
+      "info" : "Cherry"
+  },
+  "OWT_DESIGN" : {
+      "info" : "Please call for custom design"
+  },
+  "OWT_M" : {
+      "info" : "Mahogany"
+  },
+  "OWT_N" : {
+      "info" : "Natural"
+  },
+  "OWT_W" : {
+      "info" : "Walnut"
+  }
+}

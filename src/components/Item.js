@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import directoryData from '../data/directory';
+import attributeNotes from '../data/attributeNotes';
 import HistoryBar from './HistoryBar';
 
 class Item extends Component {
@@ -19,7 +20,7 @@ class Item extends Component {
     this.notFound = false;
     this.mainPic = 0;
     this.menuCat= this.find(directoryData, this.category);
-
+    this.keyListenerRef = (e) => {this.handleKeyPress(e)};
 
     if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
       this.menuType= this.find(this.menuCat.dirs, this.type);
@@ -45,7 +46,12 @@ class Item extends Component {
           Seat : item.seat,
           Frame_Color : item.frame_color,
           Back_Color : item.back_color,
-          tags : item.tags
+          tags : item.tags,
+          angles : item.angles,
+          Color : item.color,
+          Thickness : item.thickness,
+          Image_Info: item.image_info,
+          size : item.size,
         });
         this.notFound = false;
         if(hash === this.unPicturify(item.name)){
@@ -63,60 +69,11 @@ class Item extends Component {
       largePopup : false,
       largePopupSrc : "",
     };
-    this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> ((key!=="image")&&(key!=="name")&&(key!=="tags")&&(key!=="seating")));
+    this.mainKeysCustom = ["image","name", "tags", "seating", "angles", "size"];
+    this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> (!this.mainKeysCustom.includes(key)));
   //  console.log(this.mainKeys);
   }
-  // initialize(set){
-  //   this.category = this.props.match.params.category;
-  //   this.type = this.props.match.params.type;
-  //   this.item = this.props.match.params.item;
-  //   this.content = [];
-  //   this.notFound = false;
-  //   this.mainPic = 0;
-  //
-  //   this.menuCat= this.find(directoryData, this.category);
-  //
-  //
-  //   if(this.menuCat !== undefined && this.menuCat.dirs !== undefined){
-  //     this.menuType= this.find(this.menuCat.dirs, this.type);
-  //   }
-  //   else {
-  //     this.notFound = true;
-  //   }
-  //
-  //   if(this.menuType !== undefined && this.menuType.dirs !== undefined){
-  //     this.itemType= this.find(this.menuType.dirs, this.item);
-  //   }
-  //   else {
-  //     this.notFound = true;
-  //   }
-  //   let hash = this.props.location.hash.replace('#', '');
-  //   if(this.itemType !== undefined && this.itemType.dirs !== undefined){
-  //     this.itemType.dirs.map((item,index)=>{
-  //       this.content.push({
-  //         image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
-  //         name: this.unPicturify(item.name),
-  //         note: item.info,
-  //         seating: item.seating,
-  //         seat : item.seat,
-  //         frame_color : item.frame_color
-  //       });
-  //       this.notFound = false;
-  //       if(hash === this.unPicturify(item.name)){
-  //         this.mainPic = index;
-  //       }
-  //       return item;
-  //     });
-  //   }
-  //   else {
-  //     this.notFound = true;
-  //   }
-  //   if(set){
-  //     this.setState({
-  //       mainPic : this.mainPic,
-  //     });
-  //   }
-  // }
+
 
   componentDidMount(){
     // if(!this.notFound){
@@ -125,10 +82,12 @@ class Item extends Component {
     // }
     window.addEventListener("resize", this.reinitializeImage.bind(this));
     window.addEventListener('scroll', this.reinitializeImage.bind(this));
+    window.addEventListener('keyup', this.keyListenerRef);
   }
   componentWillUnmount(){
-    window.removeEventListener("resize", this.reinitializeImage.bind(this));
+    window.removeEventListener("resize", this.reinitializeImage);
     window.removeEventListener('scroll', this.reinitializeImage.bind(this));
+    window.removeEventListener('keyup', this.keyListenerRef);
   }
 
   reinitializeImage(){
@@ -145,7 +104,6 @@ class Item extends Component {
       }
     }
   }
-
 
   imageSetup(e){
     let magnification = 2.5;
@@ -200,9 +158,7 @@ class Item extends Component {
     });
   }
   componentDidUpdate(){
-    if(!this.notFound){
-      this.firstRef.current.focus();
-    }
+
   }
   find(arr, target){
     for(var i = 0; i < arr.length; i++){
@@ -213,11 +169,14 @@ class Item extends Component {
     return arr[-1];
   }
   handleKeyPress(e){
-    if(e.keyCode === 87){
+    if(e.keyCode === 87  && !this.state.largePopup){
       this.scrollPic(1);
     }
-    else if(e.keyCode === 81){
+    else if(e.keyCode === 81 && !this.state.largePopup){
       this.scrollPic(0);
+    }
+    else if(e.keyCode === 27 && this.state.largePopup){
+      this.setLargePopup("none");
     }
   }
   scrollPic(dir){
@@ -244,23 +203,13 @@ class Item extends Component {
     str = str.replace(/.png/g, '');
     return str.replace(/.jpg/g, '');
   }
-  // checkRefresh(str){
-  //   if(str !== this.type){
-  //     this.initialize(true);
-  //   }
-  //   return "";
-  // }
+
   setMainPic(index){
     this.setState({
       mainPic: index,
     });
-    this.mainKeys = Object.keys(this.content[index]).filter(key=> ((key!=="image")&&(key!=="name")&&(key!=="tags")&&(key!=="seating")));
-  //  console.log(this.mainKeys);
-    // this.infoBody = "";
-    // this.mainKeys.map((key)=>{
-    //
-    //   console.log(`${key} ` + this.content[index][key]);
-    // });
+    this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> (!this.mainKeysCustom.includes(key)));
+
   }
   setLargePopup(src){
     let booler = !this.state.largePopup;
@@ -269,6 +218,15 @@ class Item extends Component {
       largePopupSrc: src
     });
   //  console.log(src);
+  }
+  find(arr, target){
+    for (var i =0; i < arr.length; i++){
+      if(arr[i].name === target){
+        return arr[i];
+      }
+    }
+    console.log(`error [${target}] was not found`);
+    return arr[0];
   }
 
   render() {
@@ -283,7 +241,7 @@ class Item extends Component {
     }
     else
     return (
-      <div id="item"  >
+      <div id="item" >
 
           <div id='large-popup-black' onClick={()=>this.setLargePopup("none")} className={(this.state.largePopup?'':'d-none')}></div>
           <div id='large-popup-holder' className={`row justify-content-center bg-light border border-secodary border-3 `+(this.state.largePopup?'':'d-none')}>
@@ -308,7 +266,7 @@ class Item extends Component {
               <div className="row mt-2  mb-2" id="list-tab" role="tablist">
                 {this.content.map((content, index)=>{
 
-                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"} onKeyUp={(e)=>this.handleKeyPress(e)} key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"}  key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
                       <div className='text-center'>
                         {this.unlinkify(content.name)}
                       </div>
@@ -338,17 +296,14 @@ class Item extends Component {
                 <div className="col-12 col-md-6">
 
 
-                  {this.state.zoomPopup?
-                    <div id='crop' ref={this.zoomRectRef} className='border d-none d-md-block '>
-                      <img className='zoom-popup' ref={this.zoomRef} src={`${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
-                    </div>
 
-                  :
-
+                  <div id='crop' ref={this.zoomRectRef} className={`'border d-none  ' + ${(this.state.zoomPopup?"d-md-block":"")}`} >
+                    <img className='zoom-popup' ref={this.zoomRef} src={`${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
+                  </div>
                   <div id='item-info' className='row'>
                     {this.mainKeys.map((keyz,index)=>{
-                      return <div key={`main-key-${index}`} className='col-12  mb-0'>
-                      {this.content[this.state.mainPic][keyz] !== null && this.content[this.state.mainPic][keyz] !== ""?
+                      return <div key={`main-key-${index}`} className='col-12  m-0'>
+                      {this.content[this.state.mainPic][keyz] !== null && this.content[this.state.mainPic][keyz] !== "" && this.content[this.state.mainPic][keyz] !== undefined?
 
                         `${this.unlinkify(keyz)}: ` + this.content[this.state.mainPic][keyz]
 
@@ -356,32 +311,62 @@ class Item extends Component {
                       </div>
                     })}
 
-                    {this.content[this.state.mainPic].seating === null?
+                    {this.content[this.state.mainPic].seating === null || this.content[this.state.mainPic].seating === undefined?
                       <div> </div>
                       :
                       <div className='col-12  mb-0'> Seating Options
                         <div className='row'>
                         {this.content[this.state.mainPic].seating.map((seat,index)=>{
+                          let seatData = this.find(this.find(attributeNotes,"seating").data,seat);
                           return <div key={`325-div-${index}`} className='card col-3'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${seat.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${seat.image}`} alt={seat.name}/>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${seatData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${seatData.image}`} alt={seatData.name}/>
                               <div className='row justify-content-center'>
-                                <div className="text-muted text-center">{seat.name}</div>
+                                <div className="text-muted text-center">{seatData.name}</div>
                               </div>
                           </div>
                         })}
                         </div>
                       </div>
                     }
-                    {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
-
-                    <div className='col-12 text-danger  mb-0'>
-                      This is a clearance item, sizing and stock may be limited
-                    </div>
+                    {this.content[this.state.mainPic].size === null || this.content[this.state.mainPic].size === undefined ?
+                      <div> </div>
                       :
-                      <div></div>
+                      <div className='col-12  mb-0'> Size Options
+                        <div className='row'>
+                        {this.content[this.state.mainPic].size.map((size,index)=>{
+                          let sizeData = this.find(this.find(attributeNotes,"size").data,size);
+                          return <div key={`sizing-div-${index}`} className='card col-2'>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${sizeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${sizeData.image}`} alt={size}/>
+                              <div className='row justify-content-center'>
+                                <div className="text-muted text-center text-1 ">{size}</div>
+                              </div>
+                          </div>
+                        })}
+                        </div>
+                      </div>
                     }
+                    {this.content[this.state.mainPic].angles === null || this.content[this.state.mainPic].angles === undefined?
+                      <div> </div>
+                      :
+                      <div className='col-12  mb-0'> Angles
+                        <div className='row'>
+                        {this.content[this.state.mainPic].angles.map((angle,index)=>{
+                          return <div key={`angle-div-${index}`} className='card col-3'>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`} alt="angle"/>
+
+                          </div>
+                        })}
+                        </div>
+                      </div>
+                    }
+                    {this.find(attributeNotes,"tags").data.map((tag,index)=>{
+                      if(this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes(tag.name)){
+                        return <div key={`${index}-${tag.name}`} className={`col-12 ${tag.textFont}`}>
+                          {tag.note}
+                        </div>
+                      }
+                    })}
                   </div>
-                  }
 
                 </div>
               </div>

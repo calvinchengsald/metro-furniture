@@ -1,0 +1,22 @@
+{
+  "XD201_B" : {
+      "frame_color" : "Black",
+      "angles" : ["XD201_EXP1"]
+  },
+  "XD201_BR" : {
+      "frame_color" : "Brown",
+      "angles" : ["XD201_EXP1"]
+  },
+  "XD201_BU" : {
+      "frame_color" : "Blue",
+      "angles" : ["XD201_EXP1"]
+  },
+  "XD201_G" : {
+      "frame_color" : "Grey",
+      "angles" : ["XD201_EXP1"]
+  },
+  "XD201_GN" : {
+      "frame_color" : "Green",
+      "angles" : ["XD201_EXP1"]
+  }
+}

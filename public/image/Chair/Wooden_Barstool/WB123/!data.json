@@ -3,10 +3,6 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Walnut",
-      "seating" : [
-        { "name" : "Black", "image" : "image/!seating/Round_Cushion_B.png"},
-        { "name" : "Burgundy", "image" : "image/!seating/Round_Cushion_BU.png"},
-        { "name" : "Wood Walnut", "image" : "image/!seating/Woodseat_W.png"}
-      ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
   }
 }
