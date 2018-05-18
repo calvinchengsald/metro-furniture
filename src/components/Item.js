@@ -122,7 +122,7 @@ class Item extends Component {
 
   }
   _onMouseMove(e){
-    if(this.state.zoomPopup && this.popupRectRef.current){
+    if(this.state.zoomPopup && this.popupRectRef.current && this.popupRectRef.current.style && this.imageRect){
       this.popupRectRef.current.style.left = (e.clientX-this.popupRectWidth/2)  + "px";
       this.popupRectRef.current.style.top = (e.clientY-this.popupRectHeight/2) + "px";
       if(parseFloat(this.popupRectRef.current.style.left) < this.imageRect.left){
@@ -255,8 +255,13 @@ class Item extends Component {
           <div id='large-popup-black' onClick={()=>this.setLargePopup("none")} className={(this.state.largePopup?'':'d-none')}></div>
           <div id='large-popup-holder' className={`row justify-content-center bg-light border border-secodary border-3 `+(this.state.largePopup?'':'d-none')}>
             <img id="large-popup-img"  className='col-12 img-fluid' src={this.state.largePopupSrc} alt={this.content[this.state.mainPic].name}/>
+            <div id="large-popup-x" onClick={()=>this.setLargePopup("none")} className={`btn btn-primary rounded-circle `} >
+              <div className='d-none d-lg-block text-3 '> X </div>
+              <div className='d-none d-sm-block d-lg-none text-md'> X </div>
+              <div className='d-block d-sm-none text-md'> X </div>
+            </div>
+
           </div>
-          <div id="large-popup-x" onClick={()=>this.setLargePopup("none")} className={`btn btn-primary rounded-circle `+(this.state.largePopup?'':'d-none')} > X </div>
 
           <div className='row'>
             <div className='col-10 offset-1'>
@@ -314,8 +319,8 @@ class Item extends Component {
               </div>
               <div className='row'>
                 <div className="col-12 col-md-6 ">
-                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid-1 border d-none d-md-block" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                    <img id="item-img-main" onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} className="img-fluid-1 border d-block d-md-none" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`)}  onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid-1 border d-none d-md-block" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`)} className="img-fluid-1 border d-block d-md-none" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
                       <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                       :
@@ -368,11 +373,16 @@ class Item extends Component {
                         <div className='row'>
                         {this.content[this.state.mainPic].size.map((size,index)=>{
                           let sizeData = this.find(this.find(attributeNotes,"size").data,size);
-                          return <div key={`sizing-div-${index}`} className='card col-2'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${sizeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${sizeData.image}`} alt={size}/>
-                              <div className='row justify-content-center'>
-                                <div className="text-muted text-center text-1 ">{size}</div>
+                          return <div key={`sizing-div-${index}`} className='col-2 border border'>
+                            <div className='row'  onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${sizeData.image}`)} >
+                              <div className = 'col-12'>
+                                <img className="img-fluid-1 " src={`${this.props.commonVars.awsPath}/icon/${sizeData.image}`} alt={size}/>
                               </div>
+                              <div className='col-12 justify-content-center'>
+                                <div className="d-none d-md-block text-muted text-center text-1 ">{size}</div>
+                                <div className="d-md-none text-muted text-center text-2 ">{size}</div>
+                              </div>
+                            </div>
                           </div>
                         })}
                         </div>

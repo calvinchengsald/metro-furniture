@@ -203,12 +203,11 @@ nav {
 }
 
 #large-popup-x{
-  position: fixed;
+  position: absolute;
   width: 4vw;
-  height: auto;
-  right: 5vw;
-  top: 4vh;
-  z-index : 4;
+  height: 4vw;
+  right: 0vw;
+  top: 0vw;
 }
 
 #all-view{
