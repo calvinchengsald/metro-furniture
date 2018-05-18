@@ -1,0 +1,41 @@
+{
+  "TB11_BD" : {
+      "info" : "Bolt Down Base"
+  },
+  "TB18R" : {
+      "info" : "18\" Round Bottom"
+  },
+  "TB22_R" : {
+      "info" : "22\" Round Bottom"
+  },
+  "TB30_R" : {
+      "info" : "30\" Round Bottom"
+  },
+  "TB522" : {
+      "info" : "5\" x 22\" Base"
+  },
+  "TB945_3" : {
+      "info" : "19\" x 19\" 3 leg Base"
+  },
+  "TB945_4" : {
+      "info" : "18\" x 18\" 4 leg Base"
+  },
+  "TB945_4G" : {
+      "info" : "18\" x 18\" 3 leg Base, Gold"
+  },
+  "TB953_G" : {
+      "info" : "17\" x 17\" Base, Gold"
+  },
+  "TB953D_G" : {
+      "info" : "21\" x 34\" Base, Gold"
+  },
+  "TB2222" : {
+      "info" : "22\" x 22\" Base"
+  },
+  "TB2430" : {
+      "info" : "24\" x 30\" Base"
+  },
+  "TB3030" : {
+      "info" : "30\" x 30\" Base"
+  }
+}

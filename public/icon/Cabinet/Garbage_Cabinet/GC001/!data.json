@@ -1,0 +1,17 @@
+{
+  "GC001_B" : {
+      "info" : "Back color"
+  },
+  "GC001_M" : {
+      "info" : "Mahogany color"
+  },
+  "GC001_N" : {
+      "info" : "Natural color"
+  },
+  "Z_Inner" : {
+      "info" : "Inner garbage pale"
+  },
+  "WS003_M" : {
+      "info" : "Mahogany color"
+  }
+}

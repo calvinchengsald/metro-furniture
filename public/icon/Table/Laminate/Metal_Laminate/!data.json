@@ -1,0 +1,102 @@
+{
+  "MT001" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT004" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT007" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT010" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT013" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT014" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+        "tags" : ["metal laminate", "laminate"]
+  },
+  "MT017" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT021" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT022" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  },
+  "MT023" : {
+      "info" : "Metal Laminate",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Aluminium Edge", "Chrome Plastic"],
+      "tags" : ["metal laminate", "laminate"]
+  }
+}

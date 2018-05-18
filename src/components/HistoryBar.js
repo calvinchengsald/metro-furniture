@@ -48,7 +48,7 @@ class HistoryBar extends Component {
           }
           <div className='ml-auto'>
             <form action="/search">
-              <input name='itemCode' type="text" placeholder='item code' defaultValue={this.props.search}/>
+              <input name='itemCode' type="text" placeholder='item code or tag' defaultValue={this.props.search}/>
               <input type="submit" value="Search"/>
             </form>
           </div>

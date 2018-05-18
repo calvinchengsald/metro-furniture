@@ -1,0 +1,16 @@
+{
+  "WC114_B" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Black",
+      "seating" : [ "Black" , "Burgundy", "Green" ],
+      "tags" : ["clearance"]
+  },
+  "WC114_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Black",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "tags" : ["clearance"]
+  }
+}

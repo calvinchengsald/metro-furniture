@@ -1,0 +1,21 @@
+
+{
+  "WB101_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+  },
+  "WB101_N" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Natural",
+      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
+  },
+  "WB101_W" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Walnut",
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+  }
+}

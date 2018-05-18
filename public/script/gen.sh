@@ -47,6 +47,7 @@ getLS(){  #1 is file, 2 is tab
             thickness=`jq .$changedName.thickness !data.json`;
             image_info=`jq .$changedName.image_info !data.json`;
             size=`jq .$changedName.size !data.json`;
+            edge=`jq .$changedName.edge !data.json`;
             str=`echo $str$tabber info: $add,\\\n`;
             str=`echo $str$tabber seating: $seating,\\\n`;
             str=`echo $str$tabber seat: $seat,\\\n`;
@@ -58,6 +59,7 @@ getLS(){  #1 is file, 2 is tab
             str=`echo $str$tabber tags: $tags,\\\n`;
             str=`echo $str$tabber angles: $angles,\\\n`;
             str=`echo $str$tabber size: $size,\\\n`;
+            str=`echo $str$tabber edge: $edge,\\\n`;
         fi
       fi
 
@@ -67,7 +69,8 @@ getLS(){  #1 is file, 2 is tab
 
     str=${str}$2},\\\n ;
     if [[ $4 == "true" ]]; then
-      echo -ne 7-;
+      counter=$((counter+1));
+      echo -ne ${counter}-;
     fi
 
   done

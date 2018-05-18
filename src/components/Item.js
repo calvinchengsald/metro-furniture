@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import directoryData from '../data/directory';
 import attributeNotes from '../data/attributeNotes';
 import HistoryBar from './HistoryBar';
+import {Link} from "react-router-dom";
 
 class Item extends Component {
 
@@ -39,7 +40,7 @@ class Item extends Component {
     if(this.itemType !== undefined && this.itemType.dirs !== undefined){
       this.itemType.dirs.map((item,index)=>{
         this.content.push({
-          image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
+          image: `${this.category}/${this.type}/${this.itemType.name}/${item.name}`,
           name: this.unPicturify(item.name),
           Note: item.info,
           seating: item.seating,
@@ -52,6 +53,7 @@ class Item extends Component {
           Thickness : item.thickness,
           Image_Info: item.image_info,
           size : item.size,
+          edge: item.edge,
         });
         this.notFound = false;
         if(hash === this.unPicturify(item.name)){
@@ -68,8 +70,9 @@ class Item extends Component {
       zoomPopup : false,
       largePopup : false,
       largePopupSrc : "",
+      allView: false,
     };
-    this.mainKeysCustom = ["image","name", "tags", "seating", "angles", "size"];
+    this.mainKeysCustom = ["image","name", "tags", "seating", "angles", "size", "edge"];
     this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> (!this.mainKeysCustom.includes(key)));
   //  console.log(this.mainKeys);
   }
@@ -158,7 +161,13 @@ class Item extends Component {
     });
   }
   componentDidUpdate(){
+  }
 
+  setAllView(){
+    let b = this.state.allView;
+    this.setState({
+      allView : !b,
+    });
   }
   find(arr, target){
     for(var i = 0; i < arr.length; i++){
@@ -260,6 +269,32 @@ class Item extends Component {
               />
             </div>
           </div>
+          <div className='row'>
+            <div className =' col-10 offset-1'>
+              <div  id="all-view" className='row'>
+                <div onClick={()=>this.setAllView()} className='btn btn-primary'>
+                  {this.state.allView?
+                    <span>&#42779; Hide Picture View &#42779;</span>
+                    :
+                    <span>&#42780; Show Picture View &#42780;</span>
+                  }
+                </div>
+              </div>
+              <div className={'row ' + (`${this.state.allView?'':' d-none'}`)}>
+                <div id = "all-view-popup" className='col-12 bg-secondary'>
+                  <div className='row'>
+                    {this.content.map((content,index)=>{
+                      return <a href={`#${content.name}`}  onClick={()=>this.setMainPic(index)} className={'col-3 border ' + (`${this.state.mainPic === index?'bg-dark':''}`)}>
+                        <img className="img-fluid-1"  onClick={()=>this.setAllView()} src={`${this.props.commonVars.awsPath}/icon/${content.image}`} alt={content.name}/>
+                        <div className="text-center text-md text-white"> {content.name} </div>
+                      </a>
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <div className='row justify-content-center'>
             <div className =' col-11'>
@@ -279,15 +314,13 @@ class Item extends Component {
               </div>
               <div className='row'>
                 <div className="col-12 col-md-6 ">
-                  <div className='item-img-holder'>
-                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid border d-none d-md-block" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
-                    <img id="item-img-main" onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} className="img-fluid border d-block d-md-none" src={`${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid-1 border d-none d-md-block" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onClick={()=>this.setLargePopup(this.content[this.state.mainPic].image)} className="img-fluid-1 border d-block d-md-none" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
                       <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
                       :
                       <div></div>
                     }
-                  </div>
                   <div className='d-none d-md-block '>
                     <div id='zoom-popup-rect' ref={this.popupRectRef} className={this.state.zoomPopup?"":"d-none"}> </div>
                   </div>
@@ -298,7 +331,7 @@ class Item extends Component {
 
 
                   <div id='crop' ref={this.zoomRectRef} className={`'border d-none  ' + ${(this.state.zoomPopup?"d-md-block":"")}`} >
-                    <img className='zoom-popup' ref={this.zoomRef} src={`${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
+                    <img className='zoom-popup' ref={this.zoomRef} src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt='zoomed in'/>
                   </div>
                   <div id='item-info' className='row'>
                     {this.mainKeys.map((keyz,index)=>{
@@ -319,7 +352,7 @@ class Item extends Component {
                         {this.content[this.state.mainPic].seating.map((seat,index)=>{
                           let seatData = this.find(this.find(attributeNotes,"seating").data,seat);
                           return <div key={`325-div-${index}`} className='card col-3'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${seatData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${seatData.image}`} alt={seatData.name}/>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${seatData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${seatData.image}`} alt={seatData.name}/>
                               <div className='row justify-content-center'>
                                 <div className="text-muted text-center">{seatData.name}</div>
                               </div>
@@ -336,9 +369,26 @@ class Item extends Component {
                         {this.content[this.state.mainPic].size.map((size,index)=>{
                           let sizeData = this.find(this.find(attributeNotes,"size").data,size);
                           return <div key={`sizing-div-${index}`} className='card col-2'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/${sizeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/${sizeData.image}`} alt={size}/>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${sizeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${sizeData.image}`} alt={size}/>
                               <div className='row justify-content-center'>
                                 <div className="text-muted text-center text-1 ">{size}</div>
+                              </div>
+                          </div>
+                        })}
+                        </div>
+                      </div>
+                    }
+                    {this.content[this.state.mainPic].edge === null || this.content[this.state.mainPic].edge === undefined ?
+                      <div> </div>
+                      :
+                      <div className='col-12  mb-0'> Edge Options
+                        <div className='row'>
+                        {this.content[this.state.mainPic].edge.map((edge,index)=>{
+                          let edgeData = this.find(this.find(attributeNotes,"edge").data,edge);
+                          return <div key={`edge-div-${index}`} className='card col-2'>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.props.commonVars.awsPath}/${edgeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${this.props.commonVars.awsPath}/${edgeData.image}`} alt={edge}/>
+                              <div className='row justify-content-center'>
+                                <div className="text-muted text-center text-1 ">{edge}</div>
                               </div>
                           </div>
                         })}
@@ -352,7 +402,7 @@ class Item extends Component {
                         <div className='row'>
                         {this.content[this.state.mainPic].angles.map((angle,index)=>{
                           return <div key={`angle-div-${index}`} className='card col-3'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`} alt="angle"/>
+                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${this.category}/!Angle/${angle}.png`} alt="angle"/>
 
                           </div>
                         })}
@@ -366,6 +416,19 @@ class Item extends Component {
                         </div>
                       }
                     })}
+                    {this.content[this.state.mainPic].tags === null || this.content[this.state.mainPic].tags === undefined?
+                      <div> </div>
+                      :
+                      <div className='col-12  mb-0'> Tags
+                        <div className='row'>
+                        {this.content[this.state.mainPic].tags.map((tag,index)=>{
+                          return <Link to={`/Search?itemCode=${tag}`} key={`tag-div-${index}`} className='ml-1 mr-1'>
+                            <div className = "btn btn-primary"> {tag} </div>
+                          </Link>
+                        })}
+                        </div>
+                      </div>
+                    }
                   </div>
 
                 </div>

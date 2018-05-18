@@ -1,0 +1,14 @@
+{
+  "TBB8_S" : {
+      "info" : "Bar height bolt down base"
+  },
+  "TBB17_S" : {
+      "info" : "Bar height 18\" round base"
+  },
+  "TBB1818_S" : {
+      "info" : "Bar height 18\" x 18\" square base"
+  },
+  "TBB1818_SQ" : {
+      "info" : "Bar height 18\" x 18\" square base and column"
+  }
+}

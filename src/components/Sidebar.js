@@ -40,7 +40,15 @@ class Sidebar extends Component {
                       </Link>
                     </div>
                   </div>
+                  <div className='col-12'>
+                    <div className='row'>
+                      <Link className='border sidebar-heading text-6 text-left' to='/Search?itemCode=Clearance'>
+                        <div className=''>Clearance</div>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
+
                 {this.props.categoryKeys.map((key,index)=>{
                   return <div key={`sidebar-cat-${index}`} className='row'>
                     <div className='col-12'>

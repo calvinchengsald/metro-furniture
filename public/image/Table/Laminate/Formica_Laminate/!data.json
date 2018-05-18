@@ -1,0 +1,81 @@
+{
+  "ELT_B" : {
+      "info" : "Formica Laminate",
+      "color" : "Black",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT_W" : {
+      "info" : "Formica Laminate",
+      "color" : "White",
+      "image_info" : "Comes with White Vinyl to match",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT12" : {
+      "info" : "Formica Laminate",
+      "color" : "Mahogany",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT13" : {
+      "info" : "Formica Laminate",
+      "color" : "Dark Walnut",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT15" : {
+      "info" : "Formica Laminate",
+      "color" : "Natural",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT8086" : {
+      "info" : "Formica Laminate",
+      "color" : "Natural Zebra",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  },
+  "ELT8249" : {
+      "info" : "Formica Laminate",
+      "image_info" : "Image with Aluminium Edge",
+      "color" : "Dark Zebra",
+      "thickness" : "1 - 1/4 inch",
+      "size" : [ "24\"x24\"", "24\"x28\"", "24\"x42\"", "28\"x46\"", "28\"x65\"",
+         "36\"x36\"", "36\"x36\">51\"R", "24\"R", "30\"R", "36\"R",
+          "48\"R", "60\"R", "Custom"
+        ],
+      "edge" : ["Black Vinyl", "Aluminium Edge", "Wood Edge", "Chrome Plastic", "Self Edge"],
+      "tags" : ["formica laminate", "laminate"]
+  }
+}

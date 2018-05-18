@@ -1,0 +1,29 @@
+{
+  "TB8_S" : {
+      "info" : "Bolt down base"
+  },
+  "TB17_S" : {
+      "info" : "18\" round base"
+  },
+  "TB22_S" : {
+      "info" : "22\" round base"
+  },
+  "TB84_D" : {
+      "info" : "5\" x 22\""
+  },
+  "TB84" : {
+      "info" : "19\" x 19\""
+  },
+  "TB1625_S" : {
+      "info" : "16\" x 25\" square base "
+  },
+  "TB1625_SQ" : {
+      "info" : "16\" x 25\" square base and column "
+  },
+  "TB1818_S" : {
+      "info" : "18\" x 18\" square base "
+  },
+  "TB1818_SQ" : {
+      "info" : "18\" x 18\" square base and column "
+  }
+}

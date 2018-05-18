@@ -1,0 +1,16 @@
+{
+
+  "WB121_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+  },
+  "WB121_W" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Walnut",
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+  }
+
+}

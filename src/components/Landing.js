@@ -56,7 +56,7 @@ class Landing extends Component {
             <div className="btn-group row" role="group">
               {this.props.commonVars.categoryKeys.map((key, index)=>{
                 return <button key={index} type="button" className="btn btn-secondary col-2" onClick={()=>this.props.commonVars.setCategory(key)}>
-                    <img src={`${this.props.commonVars.awsPath}/image/!icon/${key}.png`} className="img-fluid img-thumbnail" alt={key}/>
+                    <img src={`${this.props.commonVars.awsPath}/icon/!icon/${key}.png`} className="img-fluid-1 img-thumbnail" alt={key}/>
                     <div> {this.unlinkify(key)} </div>
                   </button>;
               })}
@@ -75,13 +75,14 @@ class Landing extends Component {
 
           <div id="type" className="row">
             <div className="offset-1 col-10">
-              <div className="btn-group row justify-content-center" role="group">
+              <div className="row justify-content-center" >
                 {this.props.commonVars.category[this.props.commonVars.landingCategory].map((type, index)=>{
 
-
                   return <Link key={`landing-key-${index}`} className='bg-light col-3' to={`/inventory/${this.props.commonVars.landingCategory}/`+type}>
-                      <img className="img-fluid" src={`${this.props.commonVars.awsPath}/image/!icon/${type}.png`} alt={type}/>
-                      <div className='row'>
+                      <div className="row">
+                        <div className="col-12">
+                          <img className="img-fluid-1" src={`${this.props.commonVars.awsPath}/icon/!icon/${type}.png`} alt={type}/>
+                        </div>
                         <div className="col-12 text-muted text-center text-md">{this.unlinkify(type)}</div>
                       </div>
                   </Link>

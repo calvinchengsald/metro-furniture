@@ -1,0 +1,17 @@
+{
+  "TBB18_R" : {
+      "info" : "Bar height 18\" Round Bottom"
+  },
+  "TBB18_RR" : {
+      "info" : "Bar height 18\" Round Bottom with step ring"
+  },
+  "TBB945_B" : {
+      "info" : "Bar height 4 leg base, Black"
+  },
+  "TBB2222_R" : {
+      "info" : "Bar height 22\" x 22\" Bottom with step ring"
+  },
+  "TBB2222" : {
+      "info" : "Bar height 22\" x 22\" Bottom"
+  }
+}

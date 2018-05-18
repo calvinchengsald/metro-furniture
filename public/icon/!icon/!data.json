@@ -1,0 +1,107 @@
+{
+  "ash_barrel" : {
+      "info" : "INFO HERE"
+  },
+  "Logo" : {
+      "info" : "Metro Logo"
+  },
+  "base" : {
+      "info" : "INFO HERE"
+  },
+  "booth" : {
+      "info" : "INFO HERE"
+  },
+  "cabinet" : {
+      "info" : "INFO HERE"
+  },
+  "cashier_counter" : {
+      "info" : "INFO HERE"
+  },
+  "cast_iron" : {
+      "info" : "INFO HERE"
+  },
+  "chair" : {
+      "info" : "INFO HERE"
+  },
+  "color_options" : {
+      "info" : "INFO HERE"
+  },
+  "fast_food_table" : {
+      "info" : "INFO HERE"
+  },
+  "fiber_glass" : {
+      "info" : "INFO HERE"
+  },
+  "garbage_cabinet" : {
+      "info" : "INFO HERE"
+  },
+  "japanese_tableware" : {
+      "info" : "INFO HERE"
+  },
+  "laminated" : {
+      "info" : "INFO HERE"
+  },
+  "LED_signs" : {
+      "info" : "INFO HERE"
+  },
+  "maitred_d_stand" : {
+      "info" : "INFO HERE"
+  },
+  "menu-A_Frame_board" : {
+      "info" : "INFO HERE"
+  },
+  "metal_barstool" : {
+      "info" : "INFO HERE"
+  },
+  "metal_char" : {
+      "info" : "INFO HERE"
+  },
+  "metal_laminated" : {
+      "info" : "INFO HERE"
+  },
+  "other" : {
+      "info" : "INFO HERE"
+  },
+  "outdoor_chair" : {
+      "info" : "INFO HERE"
+  },
+  "resin" : {
+      "info" : "INFO HERE"
+  },
+  "solid_wood" : {
+      "info" : "INFO HERE"
+  },
+  "stainless_steel" : {
+      "info" : "INFO HERE"
+  },
+  "table" : {
+      "info" : "INFO HERE"
+  },
+  "traditional_booth" : {
+      "info" : "INFO HERE"
+  },
+  "veneer" : {
+      "info" : "INFO HERE"
+  },
+  "waiter_station" : {
+      "info" : "INFO HERE"
+  },
+  "veneer" : {
+      "info" : "INFO HERE"
+  },
+  "waiter_station" : {
+      "info" : "INFO HERE"
+  },
+  "wallpaper" : {
+      "info" : "INFO HERE"
+  },
+  "wooden_barstool" : {
+      "info" : "INFO HERE"
+  },
+  "wooden_chair" : {
+      "info" : "INFO HERE"
+  },
+  "wooden_screen" : {
+      "info" : "INFO HERE"
+  }
+}

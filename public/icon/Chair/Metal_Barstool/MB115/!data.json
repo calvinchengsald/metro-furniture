@@ -1,0 +1,14 @@
+{
+  "MB115_B" : {
+      "info" : "Black"
+  },
+  "MB115_R" : {
+      "info" : "Red"
+  },
+  "MB115_RI" : {
+      "info" : "With ring"
+  },
+  "MB115_WB" : {
+      "info" : "With backing"
+  }
+}

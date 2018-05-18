@@ -32,9 +32,17 @@ class Type extends Component {
     if(this.menuType !== undefined && this.menuType.dirs !== undefined){
       this.menuType.dirs.map((type, index)=>{
         try{
+          let dummyImg = "";
+          if(this.menuCat.name === "Table"){
+            dummyImg = `${this.props.commonVars.awsPath}/icon/${this.category}/${this.type}/${type.name}/!icon.png`;
+          }
+          else {
+            dummyImg = `${this.props.commonVars.awsPath}/icon/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`;
+          }
           this.content.push({
             name: type.name,
-            image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
+            //image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${type.name}/${type.dirs[0].name}`,
+            image: dummyImg,
             href: `/${this.category}/${this.type}/${type.name}`,
             object: type
           });
@@ -58,7 +66,7 @@ class Type extends Component {
       this.content.map((content, index)=>{
         content.object.dirs.map((item, index) =>{
           this.allItems.push({
-            image: `${this.props.commonVars.awsPath}/image/${this.category}/${this.type}/${content.object.name}/${item.name}`,
+            image: `${this.props.commonVars.awsPath}/icon/${this.category}/${this.type}/${content.object.name}/${item.name}`,
             name: this.unPicturify(item.name),
             href: `/${this.category}/${this.type}/${content.object.name}#${this.unPicturify(item.name)}`,
             tags: item.tags
@@ -96,7 +104,7 @@ class Type extends Component {
   linkify(str){
     return str.replace(/ /g, '_');
   }
-  
+
 
   render() {
     if(this.notFound){
@@ -160,7 +168,7 @@ class Type extends Component {
                     <div className='item-img-holder'>
                       <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
                       {items.tags && items.tags.includes("clearance")?
-                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
+                        <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/icon/!icon/clearance.png`} alt='clearance'/>
                         :
                         <div></div>
                       }

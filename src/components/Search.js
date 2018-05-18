@@ -44,7 +44,7 @@ class Type extends Component {
       if(this.unPicturify(item.name).toLowerCase().includes(targetCode.toLowerCase()) || (item.tags && item.tags.includes(targetCode.toLowerCase()))){
         this.filteredContent.push({
           name: this.unPicturify(item.name),
-          image: `${this.props.commonVars.awsPath}/image/${item.category}/${item.type}/${item.itemGroup}/${item.name}`,
+          image: `${this.props.commonVars.awsPath}/icon/${item.category}/${item.type}/${item.itemGroup}/${item.name}`,
           href: `/${item.category}/${item.type}/${item.itemGroup}#${this.unPicturify(item.name)}`,
           tags: item.tags,
         });
@@ -113,7 +113,7 @@ class Type extends Component {
                     return <Link key={`link2-${index}`} className='border bg-light col-3' to={`/inventory${items.href}`}>
                         <img className="card-img-top " src={`${items.image}`} alt={items.name}/>
                         {items.tags && items.tags.includes("clearance")?
-                          <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
+                          <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/icon/!icon/clearance.png`} alt='clearance'/>
                           :
                           <div></div>
                         }

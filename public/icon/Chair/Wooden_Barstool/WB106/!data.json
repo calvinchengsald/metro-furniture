@@ -1,0 +1,14 @@
+{
+  "WB106_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+  },
+  "WB106_N" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Natural",
+      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
+  }
+}

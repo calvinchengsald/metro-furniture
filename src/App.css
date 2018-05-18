@@ -161,9 +161,9 @@ nav {
   background-color: rgba(136,206,250, 0.4);
   pointer-events: none;
 }
-.item-image-holder{
-  position: relative;
-  overflow: hidden;
+.img-fluid-1{
+  width: 100%;
+  height: auto;
 }
 .item-img-overlay{
   position: absolute;
@@ -209,4 +209,14 @@ nav {
   right: 5vw;
   top: 4vh;
   z-index : 4;
+}
+
+#all-view{
+
+}
+#all-view-popup{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index : 5;
 }

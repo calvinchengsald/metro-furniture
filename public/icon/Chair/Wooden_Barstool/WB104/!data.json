@@ -1,0 +1,15 @@
+{
+
+  "WB104_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+  },
+  "WB104_W" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Walnut",
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+  }
+}
