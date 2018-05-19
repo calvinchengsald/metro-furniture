@@ -46,28 +46,28 @@
   font-size: 4vw;
 }
 body{
-  font-size: 2vw;
+  font-size: 2vmin;
 }
 .div {
-  font-size: 2vw;
+  font-size: 2vmin;
 }
 .text-1 {
-  font-size: 1vw;
+  font-size: 1vmin;
 }
 .text-md {
-  font-size: 2vw;
+  font-size: 2vmin;
 }
 .text-3 {
-  font-size: 3vw;
+  font-size: 3vmin;
 }
 .text-lg {
-  font-size: 4vw;
+  font-size: 4vmin;
 }
 .text-5 {
-  font-size: 5vw;
+  font-size: 5vmin;
 }
 .text-6 {
-  font-size: 6vw;
+  font-size: 6vmin;
 }
 
 .img-align{

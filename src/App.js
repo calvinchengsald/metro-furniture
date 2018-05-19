@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.debug = true;
+    this.debug = false;
     this.state = {
         navCollapse: true,
         landingCategory: "none",
@@ -26,7 +26,8 @@ class App extends Component {
       this.awsPath = '';
     }
     else {
-      this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
+      //this.awsPath = 'https://s3.amazonaws.com/metro-furniture-resources';
+      this.awsPath = 'https://s3.amazonaws.com/www.metrofurnitureny.com';
     }
     this.categoryKeys = [];
     this.category = [];

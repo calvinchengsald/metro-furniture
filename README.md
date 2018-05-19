@@ -15,7 +15,8 @@ wallpaper link is wrong...
 b4w-single is not a single...
 b6 bottom slightly cut
 b63 bottom pic cut
-all images are 500x500 png
+all images are 3000x3000 png
+corresponding image at /icon is 300x300 png
 metal laminate, edge options? thickness?
 DVT VS VT?
 

@@ -10,17 +10,17 @@ export default [
       {
         "name" : "solid wood",
         "note" : "Solid wood tables are subject to shrinkage, warping and seasonal cracks due to natural moisture within. These occurrences are non-structural and will not affect the durability of table. It is the responsibility of the user to maintain a 30%-40% humity level to accommodate solid wood.",
-        "textFont" : "text-danger text-1"
+        "textFont" : "text-danger text-md"
       },
       {
         "name" : "formica laminate",
         "note" : "All Formica Laminate comes with Black Vinyl Edge by default",
-        "textFont" : "text-danger text-1"
+        "textFont" : "text-danger text-md"
       },
       {
         "name" : "metal laminate",
         "note" : "All Metal Laminate comes with Aluminium Edge by default",
-        "textFont" : "text-danger text-1"
+        "textFont" : "text-danger text-md"
       }
     ]
   },

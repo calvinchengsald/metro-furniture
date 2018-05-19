@@ -10,7 +10,7 @@ do
   dateStr=$(echo $entry | cut -c 1-10);
   timeStr=$(echo $entry | cut -c 12-19);
   str=`echo ${str}${dateStr}\\\t${timeStr} \\\n`;
-  mv ${entry} ../storage/${entry};
+  rm ${entry};
 done
 cd ..;
 echo -e ${str} >> "data/data.tsv"

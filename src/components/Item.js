@@ -4,6 +4,7 @@ import directoryData from '../data/directory';
 import attributeNotes from '../data/attributeNotes';
 import HistoryBar from './HistoryBar';
 import {Link} from "react-router-dom";
+import $ from 'jquery'
 
 class Item extends Component {
 
@@ -86,6 +87,8 @@ class Item extends Component {
     window.addEventListener("resize", this.reinitializeImage.bind(this));
     window.addEventListener('scroll', this.reinitializeImage.bind(this));
     window.addEventListener('keyup', this.keyListenerRef);
+  //  $(".text1-10").css("font-size", $("window").width()+"px");
+
   }
   componentWillUnmount(){
     window.removeEventListener("resize", this.reinitializeImage);
@@ -121,8 +124,11 @@ class Item extends Component {
 
 
   }
-  _onMouseMove(e){
-    if(this.state.zoomPopup && this.popupRectRef.current && this.popupRectRef.current.style && this.imageRect){
+  _onMouseMove = (e) =>{
+    if(!(this.popupRectRef.current && this.popupRectRef.current.style && this.imageRect)){
+      return;
+    }
+    if(this.state.zoomPopup ){
       this.popupRectRef.current.style.left = (e.clientX-this.popupRectWidth/2)  + "px";
       this.popupRectRef.current.style.top = (e.clientY-this.popupRectHeight/2) + "px";
       if(parseFloat(this.popupRectRef.current.style.left) < this.imageRect.left){
@@ -163,10 +169,15 @@ class Item extends Component {
   componentDidUpdate(){
   }
 
-  setAllView(){
+  toggleAllView(){
     let b = this.state.allView;
     this.setState({
       allView : !b,
+    });
+  }
+  setAllView(b){
+    this.setState({
+      allView : b,
     });
   }
   find(arr, target){
@@ -277,7 +288,7 @@ class Item extends Component {
           <div className='row'>
             <div className =' col-10 offset-1'>
               <div  id="all-view" className='row'>
-                <div onClick={()=>this.setAllView()} className='btn btn-primary'>
+                <div onClick={()=>this.toggleAllView()} className='btn btn-primary'>
                   {this.state.allView?
                     <span>&#42779; Hide Picture View &#42779;</span>
                     :
@@ -285,18 +296,23 @@ class Item extends Component {
                   }
                 </div>
               </div>
-              <div className={'row ' + (`${this.state.allView?'':' d-none'}`)}>
-                <div id = "all-view-popup" className='col-12 bg-secondary'>
-                  <div className='row'>
-                    {this.content.map((content,index)=>{
-                      return <a href={`#${content.name}`}  onClick={()=>this.setMainPic(index)} className={'col-3 border ' + (`${this.state.mainPic === index?'bg-dark':''}`)}>
-                        <img className="img-fluid-1"  onClick={()=>this.setAllView()} src={`${this.props.commonVars.awsPath}/icon/${content.image}`} alt={content.name}/>
-                        <div className="text-center text-md text-white"> {content.name} </div>
-                      </a>
-                    })}
+              {this.state.allView?
+                <div className='row'>
+                  <div id = "all-view-popup" className='col-12 bg-secondary' onMouseLeave={()=>this.setAllView(false)} >
+                    <div className='row'>
+                      {this.content.map((content,index)=>{
+                        return <a key={`allview-${index}`} href={`#${content.name}`}  onClick={()=>this.setMainPic(index)} className={'col-3 border ' + (`${this.state.mainPic === index?'bg-dark':''}`)}>
+                          <img className="img-fluid-1"  onClick={()=>this.toggleAllView()} src={`${this.props.commonVars.awsPath}/icon/${content.image}`} alt={content.name}/>
+                          <div className="text-center text-md text-white"> {content.name} </div>
+                        </a>
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
+                :
+                <div></div>
+              }
+
             </div>
 
           </div>
@@ -319,7 +335,7 @@ class Item extends Component {
               </div>
               <div className='row'>
                 <div className="col-12 col-md-6 ">
-                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove.bind(this)} onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`)}  onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid-1 border d-none d-md-block" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
+                    <img id="item-img-main" onLoad = {this.imageSetup.bind(this)}  ref={this.imageRef} onMouseMove={this._onMouseMove} onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`)}  onMouseEnter={()=> this.setZoomPopup(true)} onMouseLeave={()=>this.setZoomPopup(false)} className="img-fluid-1 border d-none d-md-block" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     <img id="item-img-main" onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`)} className="img-fluid-1 border d-block d-md-none" src={`${this.props.commonVars.awsPath}/image/${this.content[this.state.mainPic].image}`} alt={this.content[this.state.mainPic].name}/>
                     {this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes("clearance")?
                       <img className='item-img-overlay' src={`${this.props.commonVars.awsPath}/image/!icon/clearance.png`} alt='clearance'/>
@@ -341,25 +357,43 @@ class Item extends Component {
                   <div id='item-info' className='row'>
                     {this.mainKeys.map((keyz,index)=>{
                       return <div key={`main-key-${index}`} className='col-12  m-0'>
-                      {this.content[this.state.mainPic][keyz] !== null && this.content[this.state.mainPic][keyz] !== "" && this.content[this.state.mainPic][keyz] !== undefined?
+                        <div className="row">
+                        {this.content[this.state.mainPic][keyz] !== null && this.content[this.state.mainPic][keyz] !== "" && this.content[this.state.mainPic][keyz] !== undefined?
 
-                        `${this.unlinkify(keyz)}: ` + this.content[this.state.mainPic][keyz]
+                          `${this.unlinkify(keyz)}: ` + this.content[this.state.mainPic][keyz]
 
-                      : <div></div> }
+                        : <div></div> }
+                        </div>
                       </div>
+                    })}
+                    {this.find(attributeNotes,"tags").data.map((tag,index)=>{
+                      if(this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes(tag.name)){
+                        return <div key={`${index}-${tag.name}`} className={`col-12 ${tag.textFont}`}>
+                          <div className="row">
+                          {tag.note}
+                          </div>
+                        </div>
+                      }
                     })}
 
                     {this.content[this.state.mainPic].seating === null || this.content[this.state.mainPic].seating === undefined?
                       <div> </div>
                       :
-                      <div className='col-12  mb-0'> Seating Options
+                      <div className='col-12  mb-0'>
+                        <div className='row  text-lg'> Seating Options </div>
                         <div className='row'>
                         {this.content[this.state.mainPic].seating.map((seat,index)=>{
                           let seatData = this.find(this.find(attributeNotes,"seating").data,seat);
                           return <div key={`325-div-${index}`} className='card col-3'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${seatData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${seatData.image}`} alt={seatData.name}/>
-                              <div className='row justify-content-center'>
-                                <div className="text-muted text-center">{seatData.name}</div>
+
+                              <div className='row'  onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${seatData.image}`)}>
+                                <div className = 'col-12'>
+                                  <img className="img-fluid-1 " src={`${this.props.commonVars.awsPath}/icon/${seatData.image}`} alt={seatData.name}/>
+                                </div>
+                                <div className='col-12 justify-content-center'>
+                                  <div className="d-none d-md-block text-muted text-center text-1 ">{seatData.name}</div>
+                                  <div className="d-md-none text-muted text-center text-1 ">{seatData.name}</div>
+                                </div>
                               </div>
                           </div>
                         })}
@@ -369,7 +403,8 @@ class Item extends Component {
                     {this.content[this.state.mainPic].size === null || this.content[this.state.mainPic].size === undefined ?
                       <div> </div>
                       :
-                      <div className='col-12  mb-0'> Size Options
+                      <div className='col-12 mt-1 mb-0 '>
+                        <div className='row  text-lg'> Sizing Options </div>
                         <div className='row'>
                         {this.content[this.state.mainPic].size.map((size,index)=>{
                           let sizeData = this.find(this.find(attributeNotes,"size").data,size);
@@ -380,7 +415,7 @@ class Item extends Component {
                               </div>
                               <div className='col-12 justify-content-center'>
                                 <div className="d-none d-md-block text-muted text-center text-1 ">{size}</div>
-                                <div className="d-md-none text-muted text-center text-2 ">{size}</div>
+                                <div className="d-md-none text-muted text-center text-1 ">{size}</div>
                               </div>
                             </div>
                           </div>
@@ -391,14 +426,21 @@ class Item extends Component {
                     {this.content[this.state.mainPic].edge === null || this.content[this.state.mainPic].edge === undefined ?
                       <div> </div>
                       :
-                      <div className='col-12  mb-0'> Edge Options
+                      <div className='col-12  mt-1 mb-0'>
+                        <div className='row  text-lg'> Edge Options </div>
                         <div className='row'>
                         {this.content[this.state.mainPic].edge.map((edge,index)=>{
                           let edgeData = this.find(this.find(attributeNotes,"edge").data,edge);
-                          return <div key={`edge-div-${index}`} className='card col-2'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.props.commonVars.awsPath}/${edgeData.image}`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${this.props.commonVars.awsPath}/${edgeData.image}`} alt={edge}/>
-                              <div className='row justify-content-center'>
-                                <div className="text-muted text-center text-1 ">{edge}</div>
+                          return <div key={`edge-div-${index}`} className='border col-2'>
+
+                              <div className='row'  onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${edgeData.image}`)}>
+                                <div className = 'col-12'>
+                                  <img className="img-fluid-1 " src={`${this.props.commonVars.awsPath}/icon/${edgeData.image}`} alt={edge}/>
+                                </div>
+                                <div className='col-12 justify-content-center'>
+                                  <div className="d-none d-md-block text-muted text-center text-1 ">{edge}</div>
+                                  <div className="d-md-none text-muted text-center text-1 ">{edge}</div>
+                                </div>
                               </div>
                           </div>
                         })}
@@ -408,32 +450,27 @@ class Item extends Component {
                     {this.content[this.state.mainPic].angles === null || this.content[this.state.mainPic].angles === undefined?
                       <div> </div>
                       :
-                      <div className='col-12  mb-0'> Angles
+                      <div className='col-12  mt-1 mb-0 '>
+                        <div className='row  text-lg'> Angles </div>
                         <div className='row'>
                         {this.content[this.state.mainPic].angles.map((angle,index)=>{
-                          return <div key={`angle-div-${index}`} className='card col-3'>
-                            <img onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`)} className="card-img-top " src={`${this.props.commonVars.awsPath}/icon/${this.category}/!Angle/${angle}.png`} alt="angle"/>
+                          return <div key={`angle-div-${index}`} onClick={()=>this.setLargePopup(`${this.props.commonVars.awsPath}/image/${this.category}/!Angle/${angle}.png`)} className='col-3'>
+                            <img  className="img-fluid-1" src={`${this.props.commonVars.awsPath}/icon/${this.category}/!Angle/${angle}.png`} alt="angle"/>
 
                           </div>
                         })}
                         </div>
                       </div>
                     }
-                    {this.find(attributeNotes,"tags").data.map((tag,index)=>{
-                      if(this.content[this.state.mainPic].tags && this.content[this.state.mainPic].tags.includes(tag.name)){
-                        return <div key={`${index}-${tag.name}`} className={`col-12 ${tag.textFont}`}>
-                          {tag.note}
-                        </div>
-                      }
-                    })}
                     {this.content[this.state.mainPic].tags === null || this.content[this.state.mainPic].tags === undefined?
                       <div> </div>
                       :
-                      <div className='col-12  mb-0'> Tags
-                        <div className='row'>
+                      <div className='col-12 mt-1 mb-0 '>
+                        <div className='row  text-lg'> Tags </div>
+                        <div className='row mt-0'>
                         {this.content[this.state.mainPic].tags.map((tag,index)=>{
                           return <Link to={`/Search?itemCode=${tag}`} key={`tag-div-${index}`} className='ml-1 mr-1'>
-                            <div className = "btn btn-primary"> {tag} </div>
+                            <div className = "btn btn-primary text-1 p-1 m-0"> {tag} </div>
                           </Link>
                         })}
                         </div>
