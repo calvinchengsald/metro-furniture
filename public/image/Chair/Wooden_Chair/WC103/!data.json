@@ -4,18 +4,23 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Mahogany",
-      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "tags" : ["wooden chair", "chair"],
+      "image_info" : "Image shown with custom color cushion"
   },
   "WC103_N" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Natural",
-      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Natural" ],
+      "tags" : ["wooden chair", "chair"],
+      "image_info" : "Image shown with custom color cushion"
   },
   "WC103_W" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Walnut",
-      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ],
+      "tags" : ["wooden chair", "chair"]
   }
 }

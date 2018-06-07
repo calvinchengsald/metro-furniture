@@ -1,8 +1,10 @@
 {
-  "WC130_M" : {
+  "WC230" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
+      "image_info" : "Image shown with Mahogany Woodeseat",
       "frame_color" : "Mahogany",
-      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "tags" : ["wooden chair", "chair"]
   }
 }

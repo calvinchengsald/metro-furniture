@@ -3,12 +3,8 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Mahogany",
-      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
-  },
-  "WB106_N" : {
-      "info" : "",
-      "seat" : "Standard Black Cushion",
-      "frame_color" : "Natural",
-      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "image_info" : "Image with burgundy cushion",
+      "tags" : ["barstool", "wood barstool"]
   }
 }

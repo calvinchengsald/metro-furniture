@@ -1,0 +1,10 @@
+{
+  "WB230_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "image_info" : "Image shown with burgundy cushion",
+      "tags" : ["barstool", "wood barstool"]
+  }
+}

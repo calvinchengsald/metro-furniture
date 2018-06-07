@@ -1,0 +1,8 @@
+{
+  "WC241" : {
+      "info" : "Call for optional colors",
+      "frame_color" : "Mahogany",
+      "tags" : ["wooden chair", "chair"],
+      "image_info" : "Image shown with custom color cushion"
+  }
+}

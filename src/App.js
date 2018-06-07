@@ -15,7 +15,7 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.debug = false;
+    this.debug = true;
     this.state = {
         navCollapse: true,
         landingCategory: "none",

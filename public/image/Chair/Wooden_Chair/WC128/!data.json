@@ -1,8 +1,16 @@
 {
   "WC128_W" : {
       "info" : "",
+      "seat" : "Wood Seat",
+      "frame_color" : "Walnut",
+      "tags" : [ "wooden chair", "chair"],
+      "image_info" : "Image shown with woodseat"
+  },
+  "WC128" : {
+      "info" : "",
       "seat" : "Special Seat",
       "frame_color" : "Walnut",
-      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+      "tags" : [ "wooden chair", "chair"],
+      "image_info" : "Image shown with special seat"
   }
 }

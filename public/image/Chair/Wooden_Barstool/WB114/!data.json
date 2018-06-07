@@ -5,6 +5,7 @@
       "seat" : "Standard Black Cushion",
       "frame_color" : "Black",
       "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
-      "tags" : ["clearance"]
+      "image_info" : "Image with burgundy cushion",
+      "tags" : ["barstool", "wood barstool", "clearance"]
   }
 }

@@ -1,22 +1,32 @@
 {
   "XD201_B" : {
+      "info" : "For indoor and outdoor use",
       "frame_color" : "Black",
-      "angles" : ["XD201_EXP1"]
+      "angles" : ["XD201_EXP1"],
+      "tags" : ["plastic chair"]
   },
   "XD201_BR" : {
+      "info" : "For indoor and outdoor use",
       "frame_color" : "Brown",
-      "angles" : ["XD201_EXP1"]
+      "angles" : ["XD201_EXP1"],
+      "tags" : ["plastic chair"]
   },
   "XD201_BU" : {
+      "info" : "For indoor and outdoor use",
       "frame_color" : "Blue",
-      "angles" : ["XD201_EXP1"]
+      "angles" : ["XD201_EXP1"],
+      "tags" : ["plastic chair"]
   },
   "XD201_G" : {
+      "info" : "For indoor and outdoor use",
       "frame_color" : "Grey",
-      "angles" : ["XD201_EXP1"]
+      "angles" : ["XD201_EXP1"],
+      "tags" : ["plastic chair"]
   },
   "XD201_GN" : {
+      "info" : "For indoor and outdoor use",
       "frame_color" : "Green",
-      "angles" : ["XD201_EXP1"]
+      "angles" : ["XD201_EXP1"],
+      "tags" : ["plastic chair"]
   }
 }

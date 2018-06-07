@@ -1,0 +1,12 @@
+{
+
+
+  "WC106_M" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Mahogany",
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ],
+      "tags" : ["wooden chair", "chair"],
+      "image_info" : "Image shown with burgundy cushion"
+  }
+}

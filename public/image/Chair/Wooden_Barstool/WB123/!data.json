@@ -3,6 +3,8 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Walnut",
-      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ],
+      "image_info" : "Image shown with custom color cushion",
+      "tags" : ["barstool", "wood barstool"]
   }
 }

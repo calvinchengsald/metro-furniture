@@ -4,24 +4,32 @@
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Cherry",
-      "seating" : [ "Black" , "Burgundy", "Wood Cherry" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Cherry" ],
+      "image_info" : "Image with burgundy cushion",
+      "tags" : ["barstool", "wood barstool"]
   },
   "WB102_M" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Mahogany",
-      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
+      "image_info" : "Image with burgundy cushion",
+      "tags" : ["barstool", "wood barstool"]
   },
   "WB102_N" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Natural",
-      "seating" : [ "Black" , "Burgundy", "Wood Natural" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Natural" ],
+      "image_info" : "Image with custom color cushion",
+      "tags" : ["barstool", "wood barstool"]
   },
   "WB102_W" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Walnut",
-      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ]
+      "seating" : [ "Black" , "Burgundy", "Wood Walnut" ],
+      "image_info" : "Image with walnut woodseat",
+      "tags" : ["barstool", "wood barstool"]
   }
 }

@@ -1,5 +1,5 @@
 
-
+www.metrofurnitureny.com
 
 In directory, each folder with actual image needs a <br>
   [directoryName].json file which has a JSON object for each picture, with info field <br>

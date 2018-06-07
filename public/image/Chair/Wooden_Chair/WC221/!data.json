@@ -1,0 +1,10 @@
+{
+  "WC221_C" : {
+      "info" : "",
+      "seat" : "Standard Black Cushion",
+      "frame_color" : "Natural",
+      "seating" : [ "Black" , "Burgundy", "Green" ],
+      "tags" : [ "wooden chair", "chair"],
+      "image_info" : "Image shown with custom color cushion"
+  }
+}

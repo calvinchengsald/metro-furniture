@@ -71,7 +71,7 @@ class Item extends Component {
       zoomPopup : false,
       largePopup : false,
       largePopupSrc : "",
-      allView: false,
+      allView: true,
     };
     this.mainKeysCustom = ["image","name", "tags", "seating", "angles", "size", "edge"];
     this.mainKeys = Object.keys(this.content[this.mainPic]).filter(key=> (!this.mainKeysCustom.includes(key)));
@@ -296,22 +296,6 @@ class Item extends Component {
                   }
                 </div>
               </div>
-              {this.state.allView?
-                <div className='row'>
-                  <div id = "all-view-popup" className='col-12 bg-secondary' onMouseLeave={()=>this.setAllView(false)} >
-                    <div className='row'>
-                      {this.content.map((content,index)=>{
-                        return <a key={`allview-${index}`} href={`#${content.name}`}  onClick={()=>this.setMainPic(index)} className={'col-3 border ' + (`${this.state.mainPic === index?'bg-dark':''}`)}>
-                          <img className="img-fluid-1"  onClick={()=>this.toggleAllView()} src={`${this.props.commonVars.awsPath}/icon/${content.image}`} alt={content.name}/>
-                          <div className="text-center text-md text-white"> {content.name} </div>
-                        </a>
-                      })}
-                    </div>
-                  </div>
-                </div>
-                :
-                <div></div>
-              }
 
             </div>
 
@@ -321,12 +305,19 @@ class Item extends Component {
             <div className =' col-11'>
               <div className="row mt-2  mb-2" id="list-tab" role="tablist">
                 {this.content.map((content, index)=>{
+                  if(this.state.allView){
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"}  key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-1 col-2 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
 
-                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"}  key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-2 col-3 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
-                      <div className='text-center'>
-                        {this.unlinkify(content.name)}
-                      </div>
+                      <img className="img-fluid" src={`${this.props.commonVars.awsPath}/icon/${content.image}`} />
                     </a>
+                  }
+                  else {
+                  return <a onClick={()=>this.setMainPic(index) } ref={index===this.state.mainPic?this.firstRef:"none"}  key={`${index}`} className={'item-img-holder list-group-item list-group-item-action col-md-1 col-2 p-1 rounded-40 border '+(index===this.state.mainPic?` border-primary bg-dark text-light`:``)+ (content.tags && content.tags.includes("clearance")?" bg-danger":"")} id={`list-${content.name}-list`}  href={`#${content.name}`}  aria-controls={`${content.name}`} >
+
+                      <div >{this.unlinkify(content.name)} </div>
+                  </a>
+                  }
+
                 })}
 
               </div>
@@ -470,7 +461,7 @@ class Item extends Component {
                         <div className='row mt-0'>
                         {this.content[this.state.mainPic].tags.map((tag,index)=>{
                           return <Link to={`/Search?itemCode=${tag}`} key={`tag-div-${index}`} className='ml-1 mr-1'>
-                            <div className = "btn btn-primary text-1 p-1 m-0"> {tag} </div>
+                            <div className = "btn btn-primary text-md p-1 m-0"> {tag} </div>
                           </Link>
                         })}
                         </div>

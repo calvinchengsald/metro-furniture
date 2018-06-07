@@ -4,13 +4,13 @@
       "seat" : "Standard Black Cushion",
       "frame_color" : "Black",
       "seating" : [ "Black" , "Burgundy", "Green" ],
-      "tags" : ["clearance"]
+      "tags" : ["clearance", "wooden chair", "chair"]
   },
   "WC114_M" : {
       "info" : "",
       "seat" : "Standard Black Cushion",
       "frame_color" : "Black",
       "seating" : [ "Black" , "Burgundy", "Wood Mahogany" ],
-      "tags" : ["clearance"]
+      "tags" : ["clearance", "wooden chair", "chair"]
   }
 }

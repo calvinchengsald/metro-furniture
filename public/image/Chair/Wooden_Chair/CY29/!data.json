@@ -1,0 +1,9 @@
+{
+  "CY29" : {
+      "info" : "Call for pad seat options",
+      "seat" : "Wood Seat",
+      "frame_color" : "Walnut",
+      "angles" : ["CY29_1"],
+      "tags" : ["wooden chair", "chair", "wood chair"]
+  }
+}
